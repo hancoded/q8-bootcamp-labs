@@ -714,6 +714,22 @@
     font-size: 11px; color: var(--li-text-low); font-weight: 500;
   }
 
+
+  /* ========================== PROFILE LINKS ========================== */
+  .profile-link {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-weight: inherit !important;
+  }
+  .profile-link:hover {
+    text-decoration: underline !important;
+    color: var(--li-blue) !important;
+    cursor: pointer;
+  }
+  .sb-person.has-link { cursor: pointer; }
+  .sb-person.has-link:hover { background: #f5f5f5; border-radius: 6px; padding: 8px; margin: -8px; }
+  .sb-person.has-link:hover .sb-person-name { color: var(--li-blue); }
+
 </style>
 </head>
 <body>
@@ -1055,7 +1071,7 @@ Born in <strong>Hawalli</strong>, raised in <strong>Salmiya</strong>, KU CS clas
             <div class="skill-endorsement-dots">
               <span class="endorser-dot" style="background: linear-gradient(135deg, #f59e0b, #ef4444);"></span>
             </div>
-            <span>Endorsed by Sarah Al-Khalid and 41 others</span>
+            <span>Endorsed by <a class="profile-link" href="sarah-linkedin.html">Sarah Al-Khalid</a> and 41 others</span>
           </div>
         </div>
 
@@ -1143,7 +1159,7 @@ Born in <strong>Hawalli</strong>, raised in <strong>Salmiya</strong>, KU CS clas
         <div class="rec-card">
           <div class="rec-card-img" style="background: linear-gradient(135deg,#f59e0b,#ef4444)">SK</div>
           <div class="rec-card-content">
-            <div class="rec-card-name">Sarah Al-Khalid</div>
+            <div class="rec-card-name"><a class="profile-link" href="sarah-linkedin.html">Sarah Al-Khalid</a></div>
             <div class="rec-card-rel">Marketing Manager at Q8 Logistics &nbsp;•&nbsp; May 4, 2024, Sarah and Ahmed worked at the same company</div>
             <div class="rec-card-text">"Ahmed has been the IT backbone of Q8 since 2018. He's the kind of person who takes 'we have an outage' calls at 2AM, fixes it before you wake up, and sends a calm 9AM email with what he learned. We've worked together on countless projects — most recently the Saudi data localization migration. Anyone who gets to work with him is lucky. Highest recommendation."</div>
           </div>
@@ -1165,7 +1181,7 @@ Born in <strong>Hawalli</strong>, raised in <strong>Salmiya</strong>, KU CS clas
           <div class="rec-card">
             <div class="rec-card-img" style="background: linear-gradient(135deg,#f59e0b,#ef4444)">SK</div>
             <div class="rec-card-content">
-              <div class="rec-card-name">Sarah Al-Khalid</div>
+              <div class="rec-card-name"><a class="profile-link" href="sarah-linkedin.html">Sarah Al-Khalid</a></div>
               <div class="rec-card-rel">Marketing Manager at Q8 Logistics &nbsp;•&nbsp; April 12, 2024, Ahmed and Sarah worked at the same company</div>
               <div class="rec-card-text">"Sarah is the rare marketing leader who reads the engineering tickets before complaining about them. In our 5+ years at Q8 she's rebuilt our brand and managed to do it without ever once asking IT for the impossible at 4PM on a Thursday. She runs hard problems with calm. Anyone hiring senior marketing in Kuwait should call her first."</div>
             </div>
@@ -1231,13 +1247,13 @@ Born in <strong>Hawalli</strong>, raised in <strong>Salmiya</strong>, KU CS clas
       <div style="font-size: 13px; color: var(--li-text-low); margin-bottom: 12px;">From Sarah's company</div>
 
       <div class="sb-people">
-        <div class="sb-person">
+        <div class="sb-person has-link" onclick="window.location.href='sarah-linkedin.html'">
           <div class="sb-person-img" style="background: linear-gradient(135deg,#f59e0b,#ef4444)">SK</div>
           <div class="sb-person-info">
             <div class="sb-person-name">Sarah Al-Khalid</div>
             <div class="sb-person-headline">Marketing Manager at Q8 Logistics</div>
             <div class="sb-person-mutual">🤝 47 mutual connections</div>
-            <button class="sb-connect">Connect</button>
+            <button class="sb-connect" onclick="event.stopPropagation()">Connect</button>
           </div>
         </div>
 
@@ -1247,7 +1263,7 @@ Born in <strong>Hawalli</strong>, raised in <strong>Salmiya</strong>, KU CS clas
             <div class="sb-person-name">Yousef Al-Mutawa</div>
             <div class="sb-person-headline">Founder & CEO at Q8 Logistics</div>
             <div class="sb-person-mutual">🤝 38 mutual connections</div>
-            <button class="sb-connect">Connect</button>
+            <button class="sb-connect" onclick="event.stopPropagation()">Connect</button>
           </div>
         </div>
 
@@ -1257,7 +1273,7 @@ Born in <strong>Hawalli</strong>, raised in <strong>Salmiya</strong>, KU CS clas
             <div class="sb-person-name">Hassan Al-Mutairi</div>
             <div class="sb-person-headline">Senior DevOps at Gulf Bank</div>
             <div class="sb-person-mutual">🤝 23 mutual connections</div>
-            <button class="sb-connect">Connect</button>
+            <button class="sb-connect" onclick="event.stopPropagation()">Connect</button>
           </div>
         </div>
 
@@ -1267,7 +1283,7 @@ Born in <strong>Hawalli</strong>, raised in <strong>Salmiya</strong>, KU CS clas
             <div class="sb-person-name">Omar Al-Saleh</div>
             <div class="sb-person-headline">Head of Cybersecurity at NBK</div>
             <div class="sb-person-mutual">🤝 31 mutual connections</div>
-            <button class="sb-connect">Connect</button>
+            <button class="sb-connect" onclick="event.stopPropagation()">Connect</button>
           </div>
         </div>
       </div>
@@ -1331,6 +1347,17 @@ Born in <strong>Hawalli</strong>, raised in <strong>Salmiya</strong>, KU CS clas
 </div>
 
 <script>
+const PROFILE_LINKS = {
+  'Ahmed Al-Rashid': 'ahmed-linkedin.html',
+  'Sarah Al-Khalid': 'sarah-linkedin.html',
+};
+function profileNameHtml(name) {
+  const url = PROFILE_LINKS[name];
+  return url
+    ? `<a class="profile-link" href="${url}">${name}</a>`
+    : name;
+}
+
 const POSTS = {
   'p-layan-birthday': {
     img: { type: 'family', text: '📷 birthday cake<br>(Layan\'s 7th — USB-C symbol on it, Ahmed beside it looking smug)' },
@@ -1428,7 +1455,7 @@ function openPost(id) {
       <div class="comment-content">
         <div class="comment-bubble">
           <div class="comment-author-row">
-            <span class="comment-author-name">${c.name}</span>
+            <span class="comment-author-name">${profileNameHtml(c.name)}</span>
             <span class="comment-author-headline">${c.headline} • ${c.time}</span>
           </div>
           <div class="comment-text">${c.text}</div>
