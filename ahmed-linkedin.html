@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>(4) Ahmed Al-Rashid | LinkedIn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --li-blue: #0a66c2;
+    --li-blue-hover: #004182;
+    --li-text: #000000e6;
+    --li-text-low: #00000099;
+    --li-text-muted: #00000066;
+    --li-bg: #f4f2ee;
+    --li-card: #ffffff;
+    --li-border: #00000014;
+    --li-divider: #e8e8e8;
+    --li-success: #057642;
+    --li-pill: #f5f5f5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    font-family: 'Source Sans 3', -apple-system, system-ui, sans-serif;
+    background: var(--li-bg);
+    color: var(--li-text);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  a { color: var(--li-blue); text-decoration: none; font-weight: 600; }
+  a:hover { text-decoration: underline; color: var(--li-blue-hover); }
+  button { cursor: pointer; font-family: inherit; }
+  /* ========================== TOP NAV ========================== */
+  .topnav {
+    position: sticky; top: 0; z-index: 100;
+    background: #fff; border-bottom: 1px solid var(--li-border);
+    height: 52px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0);
+  }
+  .topnav-inner {
+    width: 100%; max-width: 1128px; padding: 0 16px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .li-logo {
+    width: 34px; height: 34px;
+    background: var(--li-blue); color: #fff;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 22px;
+  }
+  .search {
+    flex: 0 1 280px;
+    background: #edf3f8;
+    border-radius: 4px;
+    height: 34px;
+    display: flex; align-items: center;
+    padding: 0 8px;
+    gap: 8px;
+  }
+  .search input {
+    border: 0; background: transparent; outline: 0;
+    flex: 1; height: 100%; font-size: 14px;
+    font-family: inherit;
+  }
+  .search-icon { color: var(--li-text-low); font-size: 16px; }
+  .nav-items {
+    display: flex; align-items: center; gap: 4px;
+    margin-left: auto;
+  }
+  .nav-item {
+    padding: 6px 12px;
+    display: flex; flex-direction: column; align-items: center;
+    color: var(--li-text-low);
+    cursor: pointer;
+    min-width: 80px;
+    border-bottom: 2px solid transparent;
+    margin-top: 4px;
+  }
+  .nav-item:hover { color: var(--li-text); }
+  .nav-item.active { color: var(--li-text); border-bottom-color: var(--li-text); }
+  .nav-icon { font-size: 22px; line-height: 1; }
+  .nav-label { font-size: 12px; margin-top: 2px; }
+  .nav-divider { width: 1px; height: 32px; background: var(--li-border); margin: 0 4px; }
+  .nav-me {
+    display: flex; flex-direction: column; align-items: center;
+    cursor: pointer; padding: 4px 12px;
+  }
+  .nav-me-img {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: linear-gradient(135deg, #c084fc, #f472b6);
+    border: 1px solid #fff;
+  }
+  .nav-me-label { font-size: 12px; color: var(--li-text-low); margin-top: 4px; }
+  .nav-me-caret { font-size: 10px; }
+
+  /* ========================== LAYOUT ========================== */
+  .container {
+    max-width: 1128px; margin: 24px auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 24px; padding: 0 16px;
+    align-items: start;
+  }
+  .main {
+    grid-column: 1;
+    min-width: 0;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .sidebar {
+    grid-column: 2;
+    position: sticky; top: 68px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .card {
+    background: var(--li-card);
+    border: 1px solid var(--li-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  /* ========================== PROFILE HEADER ========================== */
+  .cover {
+    height: 201px;
+    background:
+      linear-gradient(135deg, #1a3a52 0%, #2d5a87 35%, #4a7ba6 70%, #87b5d6 100%);
+    position: relative;
+  }
+  .cover::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06) 0%, transparent 40%);
+  }
+  .profile-body {
+    padding: 0 24px 24px;
+    position: relative;
+  }
+  .profile-photo {
+    width: 152px; height: 152px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e40af, #06b6d4);
+    border: 4px solid #fff;
+    margin-top: -75px; position: relative; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 56px; font-weight: 600;
+    overflow: hidden;
+  }
+  .profile-photo .ph-text {
+    font-family: 'Source Sans 3', sans-serif;
+    letter-spacing: -2px;
+  }
+  .profile-name-row {
+    margin-top: 12px;
+    display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;
+  }
+  .profile-name { font-size: 24px; font-weight: 600; color: var(--li-text); }
+  .profile-pronouns { color: var(--li-text-low); font-size: 14px; }
+  .profile-headline {
+    font-size: 16px; color: var(--li-text);
+    margin-top: 4px; line-height: 1.4;
+  }
+  .profile-location-row {
+    margin-top: 4px;
+    display: flex; align-items: center; gap: 6px;
+    color: var(--li-text-low); font-size: 14px;
+  }
+  .profile-location-row .dot { color: var(--li-text-muted); }
+  .profile-location-row a { font-weight: 600; color: var(--li-blue); }
+  .current-company {
+    margin-top: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .company-logo {
+    width: 32px; height: 32px;
+    background: #0d2949;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: #f59e0b; font-weight: 700; font-size: 11px;
+    letter-spacing: -0.5px;
+  }
+  .company-name {
+    font-size: 14px; color: var(--li-text); font-weight: 600;
+  }
+  .education-line {
+    margin-top: 4px;
+    display: flex; align-items: center; gap: 8px;
+    color: var(--li-text-low); font-size: 14px;
+  }
+  .ku-logo {
+    width: 32px; height: 32px;
+    background: #003366; border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fbbf24; font-size: 9px; font-weight: 700; letter-spacing: -0.3px;
+  }
+  .profile-actions {
+    margin-top: 16px;
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .btn {
+    height: 32px; padding: 0 16px;
+    border-radius: 16px;
+    font-weight: 600; font-size: 14px;
+    border: 1px solid transparent;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: background .12s;
+  }
+  .btn-primary {
+    background: var(--li-blue); color: #fff;
+  }
+  .btn-primary:hover { background: var(--li-blue-hover); }
+  .btn-secondary {
+    background: transparent; color: var(--li-blue);
+    border-color: var(--li-blue); font-weight: 600;
+  }
+  .btn-secondary:hover { background: rgba(112,181,249,0.15); }
+  .btn-tertiary {
+    background: transparent; color: var(--li-text-low);
+    border-color: var(--li-text-low);
+  }
+  .btn-tertiary:hover { background: rgba(0,0,0,0.06); color: var(--li-text); }
+  .open-to-banner {
+    margin-top: 16px; padding: 12px;
+    background: #f5f5f5; border-radius: 8px;
+    display: flex; align-items: center; gap: 12px;
+    border: 1px solid var(--li-border);
+  }
+  .open-to-banner .label { font-weight: 600; font-size: 14px; }
+  .open-to-banner .desc { color: var(--li-text-low); font-size: 13px; margin-top: 2px; }
+
+  /* ========================== ANALYTICS / HIGHLIGHTS ========================== */
+  .panel {
+    padding: 16px 24px;
+  }
+  .panel h2 {
+    font-size: 20px; font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .panel-row {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 8px 0;
+  }
+  .panel-row .icon {
+    width: 24px; font-size: 22px; color: var(--li-text-low);
+  }
+  .panel-row .text strong { font-weight: 600; }
+  .panel-row .text small { color: var(--li-text-low); display: block; }
+
+  /* ========================== ABOUT ========================== */
+  .about-text {
+    font-size: 14px; color: var(--li-text); line-height: 1.5;
+    white-space: pre-wrap;
+  }
+  .about-text .highlight {
+    background: rgba(245, 158, 11, 0.15);
+    padding: 0 2px; border-radius: 2px;
+  }
+  .top-skills {
+    margin-top: 16px;
+    border: 1px solid var(--li-border);
+    border-radius: 8px; padding: 12px 16px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .top-skills-label {
+    font-size: 14px; font-weight: 600;
+  }
+  .top-skills-value {
+    color: var(--li-text-low); font-size: 14px;
+  }
+
+  /* ========================== FEATURED ========================== */
+  .featured-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .featured-card {
+    border: 1px solid var(--li-border);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .featured-card:hover { background: #f9fafb; }
+  .featured-img {
+    height: 140px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; text-align: center; padding: 12px;
+    font-size: 12px;
+    font-style: italic;
+  }
+  .featured-img.beach {
+    background: linear-gradient(160deg, #06b6d4 0%, #0ea5e9 50%, #fcd34d 100%);
+  }
+  .featured-img.family {
+    background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+  }
+  .featured-img.office {
+    background: linear-gradient(135deg, #0d2949 0%, #1e3a5f 100%);
+  }
+  .featured-img.grad {
+    background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  }
+  .featured-meta {
+    padding: 12px;
+  }
+  .featured-meta .post-type {
+    font-size: 12px; color: var(--li-text-low); font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .featured-meta .post-text {
+    font-size: 14px; color: var(--li-text);
+    margin-top: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4;
+  }
+  .featured-meta .post-engagement {
+    font-size: 12px; color: var(--li-text-low);
+    margin-top: 8px;
+  }
+
+  /* ========================== ACTIVITY POSTS ========================== */
+  .activity-tabs {
+    display: flex; gap: 8px; margin: 8px 0 16px;
+  }
+  .pill {
+    height: 32px; padding: 0 12px; border-radius: 16px;
+    border: 1px solid var(--li-border);
+    background: transparent; color: var(--li-text);
+    font-size: 14px; font-weight: 600;
+  }
+  .pill.active { background: #01754f1a; color: var(--li-success); border-color: var(--li-success); }
+  .pill:hover:not(.active) { background: #f5f5f5; }
+  .post {
+    border-top: 1px solid var(--li-divider);
+    padding: 12px 0;
+  }
+  .post-header {
+    display: flex; align-items: flex-start; gap: 8px;
+    margin-bottom: 8px;
+  }
+  .post-author-img {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, #1e40af, #06b6d4);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-weight: 600; flex-shrink: 0;
+  }
+  .post-author-info {
+    flex: 1;
+  }
+  .post-author-action {
+    color: var(--li-text-low); font-size: 12px;
+  }
+  .post-author-action strong { color: var(--li-text); font-weight: 600; }
+  .post-time {
+    color: var(--li-text-low); font-size: 12px;
+  }
+  .post-body {
+    font-size: 14px; line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .post-body .hashtag { color: var(--li-blue); font-weight: 600; }
+  .post-img {
+    margin-top: 8px;
+    height: 200px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; text-align: center;
+    font-style: italic; font-size: 12px;
+    padding: 12px;
+  }
+  .post-engagement-bar {
+    margin-top: 8px;
+    display: flex; align-items: center; justify-content: space-between;
+    color: var(--li-text-low); font-size: 12px;
+    padding: 8px 0;
+    border-top: 1px solid var(--li-divider);
+  }
+  .reactions {
+    display: flex; align-items: center; gap: 4px;
+  }
+  .reaction-emoji {
+    width: 18px; height: 18px; border-radius: 50%;
+    border: 2px solid #fff;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 12px;
+  }
+  .reaction-emoji:not(:first-child) { margin-left: -6px; }
+  .like { background: #df704d; }
+  .clap { background: #f5bb5c; }
+  .heart { background: #df704d; }
+
+  /* ========================== EXPERIENCE / EDUCATION ========================== */
+  .timeline-item {
+    display: flex; gap: 16px; padding: 12px 0;
+    border-top: 1px solid var(--li-divider);
+  }
+  .timeline-item:first-child { border-top: 0; padding-top: 0; }
+  .timeline-icon {
+    width: 48px; height: 48px;
+    border-radius: 4px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 12px;
+  }
+  .timeline-icon.q8 { background: #0d2949; color: #f59e0b; letter-spacing: -0.5px; }
+  .timeline-icon.zain { background: #6b21a8; color: #fff; }
+  .timeline-icon.aub { background: #003366; color: #fbbf24; font-size: 10px; letter-spacing: -0.3px; }
+  .timeline-icon.ku { background: #003366; color: #fbbf24; font-size: 10px; letter-spacing: -0.3px; }
+  .timeline-icon.bbs { background: #16a34a; color: #fff; }
+  .timeline-content { flex: 1; }
+  .timeline-title { font-size: 14px; font-weight: 600; }
+  .timeline-company { font-size: 14px; color: var(--li-text); }
+  .timeline-meta { font-size: 12px; color: var(--li-text-low); margin-top: 2px; }
+  .timeline-desc { font-size: 14px; color: var(--li-text); margin-top: 6px; line-height: 1.5; }
+
+  /* ========================== SKILLS ========================== */
+  .skill-row {
+    padding: 12px 0;
+    border-top: 1px solid var(--li-divider);
+  }
+  .skill-row:first-child { border-top: 0; padding-top: 0; }
+  .skill-name { font-size: 14px; font-weight: 600; }
+  .skill-endorsement {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--li-text-low); margin-top: 4px;
+  }
+  .skill-endorsement-dots {
+    display: flex; gap: -4px;
+  }
+  .endorser-dot {
+    width: 16px; height: 16px; border-radius: 50%;
+    border: 2px solid #fff;
+    background: linear-gradient(135deg, #c084fc, #f472b6);
+    display: inline-block;
+  }
+  .endorser-dot:not(:first-child) { margin-left: -6px; }
+
+  /* ========================== RECOMMENDATIONS ========================== */
+  .rec-tabs {
+    display: flex; gap: 32px;
+    border-bottom: 1px solid var(--li-divider);
+    margin-bottom: 16px;
+  }
+  .rec-tab {
+    padding: 8px 0; font-size: 14px; font-weight: 600;
+    color: var(--li-text-low);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px; cursor: pointer;
+  }
+  .rec-tab.active { color: var(--li-success); border-bottom-color: var(--li-success); }
+  .rec-card {
+    display: flex; gap: 12px;
+    margin-top: 8px;
+  }
+  .rec-card-img {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    color: #fff; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600;
+  }
+  .rec-card-content { flex: 1; }
+  .rec-card-name { font-size: 14px; font-weight: 600; }
+  .rec-card-rel { font-size: 12px; color: var(--li-text-low); }
+  .rec-card-text {
+    font-size: 14px; color: var(--li-text);
+    margin-top: 8px; line-height: 1.5;
+  }
+
+  /* ========================== INTERESTS ========================== */
+  .interest-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    margin-top: 8px;
+  }
+  .interest-card {
+    border: 1px solid var(--li-border);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .interest-img {
+    width: 56px; height: 56px;
+    border-radius: 4px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 11px;
+  }
+  .interest-name {
+    font-size: 14px; font-weight: 600;
+    line-height: 1.3;
+  }
+  .interest-followers { font-size: 12px; color: var(--li-text-low); margin-top: 2px; }
+
+  /* ========================== SIDEBAR ========================== */
+  .sb-card { padding: 16px; }
+  .sb-title {
+    font-size: 16px; font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .sb-people {
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .sb-person {
+    display: flex; gap: 8px; align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--li-divider);
+  }
+  .sb-person:last-child { border-bottom: 0; }
+  .sb-person-img {
+    width: 40px; height: 40px; border-radius: 50%;
+    flex-shrink: 0;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 14px;
+  }
+  .sb-person-info { flex: 1; min-width: 0; }
+  .sb-person-name { font-size: 13px; font-weight: 600; line-height: 1.3; }
+  .sb-person-headline {
+    font-size: 12px; color: var(--li-text-low);
+    margin-top: 2px;
+    line-height: 1.3;
+  }
+  .sb-person-mutual {
+    font-size: 12px; color: var(--li-text-muted);
+    margin-top: 4px;
+  }
+  .sb-connect {
+    margin-top: 8px; height: 28px; padding: 0 12px;
+    border-radius: 14px; font-size: 13px; font-weight: 600;
+    color: var(--li-text); background: transparent;
+    border: 1px solid var(--li-text);
+  }
+  .sb-connect:hover { background: rgba(0,0,0,0.06); }
+  .sb-show-all {
+    margin-top: 12px; text-align: center;
+    color: var(--li-text-low); font-size: 14px; font-weight: 600;
+    padding: 8px;
+    cursor: pointer;
+  }
+  .sb-show-all:hover { background: #f5f5f5; border-radius: 4px; }
+
+  /* ========================== FOOTER ========================== */
+  .footer {
+    margin-top: 24px; text-align: center;
+    color: var(--li-text-low); font-size: 12px;
+    padding: 16px;
+  }
+  .footer-links {
+    display: flex; gap: 16px; justify-content: center;
+    margin-bottom: 8px;
+  }
+  .footer-links a { color: var(--li-text-low); font-weight: 400; }
+
+  /* show-more text */
+  .see-more {
+    font-size: 14px; color: var(--li-text-low);
+    margin-top: 8px; cursor: pointer; display: inline-block;
+  }
+  .see-more:hover { color: var(--li-blue); }
+
+  @media (max-width: 768px) {
+    .container { grid-template-columns: 1fr; }
+    .sidebar { position: static; max-height: none; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .interest-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ========================== INTERACTIVE: clickable posts ========================== */
+  .post, .featured-card { cursor: pointer; transition: background .15s, transform .15s; }
+  .post:hover { background: #fafafa; }
+  .featured-card:hover { background: #f9fafb; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+
+  /* ========================== MODAL ========================== */
+  .modal-backdrop {
+    display: none;
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.6);
+    justify-content: center; align-items: flex-start;
+    padding: 40px 16px 16px;
+    overflow-y: auto;
+  }
+  .modal-backdrop.show { display: flex; }
+  .modal-card {
+    background: #fff;
+    border-radius: 8px;
+    width: 100%; max-width: 580px;
+    overflow: hidden;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+    animation: modalIn .25s ease-out;
+    cursor: default;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(-12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .modal-header {
+    padding: 12px 16px;
+    display: flex; align-items: center; gap: 10px;
+    border-bottom: 1px solid var(--li-divider);
+  }
+  .modal-author-img {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, #1e40af, #06b6d4);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-weight: 600; flex-shrink: 0;
+  }
+  .modal-author-info { flex: 1; }
+  .modal-author-name { font-size: 14px; font-weight: 600; }
+  .modal-author-headline {
+    font-size: 12px; color: var(--li-text-low);
+    display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .modal-time { font-size: 12px; color: var(--li-text-low); }
+  .modal-close {
+    background: transparent; border: 0; padding: 6px;
+    color: var(--li-text-low); font-size: 24px; cursor: pointer;
+    border-radius: 50%; width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    line-height: 1;
+  }
+  .modal-close:hover { background: #f5f5f5; color: var(--li-text); }
+  .modal-body { padding: 0 16px 12px; }
+  .modal-post-text {
+    font-size: 14px; line-height: 1.5;
+    padding: 12px 0;
+  }
+  .modal-post-img {
+    height: 280px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; text-align: center; padding: 12px;
+    font-style: italic; font-size: 12px;
+    margin-bottom: 12px;
+  }
+  .modal-engagement {
+    display: flex; align-items: center; justify-content: space-between;
+    color: var(--li-text-low); font-size: 13px;
+    padding: 8px 0;
+    border-top: 1px solid var(--li-divider);
+    border-bottom: 1px solid var(--li-divider);
+  }
+  .modal-actions {
+    display: flex; padding: 4px 0;
+    border-bottom: 1px solid var(--li-divider);
+  }
+  .modal-action {
+    flex: 1; padding: 10px;
+    background: transparent; border: 0;
+    color: var(--li-text-low); font-weight: 600;
+    font-size: 14px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    border-radius: 4px;
+  }
+  .modal-action:hover { background: #f5f5f5; }
+  .modal-comments-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 0 8px;
+    font-size: 13px; color: var(--li-text);
+  }
+  .modal-comments-header strong { font-weight: 600; }
+  .modal-comment-input {
+    display: flex; align-items: flex-start; gap: 8px; padding: 8px 0;
+  }
+  .modal-comment-input-img {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: linear-gradient(135deg, #c084fc, #f472b6);
+    flex-shrink: 0;
+  }
+  .modal-comment-input input {
+    flex: 1; height: 36px; padding: 0 12px;
+    border: 1px solid var(--li-text-low);
+    border-radius: 18px;
+    font-family: inherit; font-size: 14px;
+    outline: none;
+  }
+  .comment {
+    display: flex; gap: 8px;
+    padding: 10px 0;
+  }
+  .comment-img {
+    width: 32px; height: 32px; border-radius: 50%;
+    color: #fff; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 12px;
+  }
+  .comment-content { flex: 1; min-width: 0; }
+  .comment-bubble {
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 8px 12px;
+  }
+  .comment-author-row {
+    display: flex; align-items: baseline; gap: 8px;
+    flex-wrap: wrap;
+  }
+  .comment-author-name { font-size: 14px; font-weight: 600; }
+  .comment-author-headline { font-size: 11px; color: var(--li-text-low); }
+  .comment-text {
+    font-size: 14px; line-height: 1.45; margin-top: 4px;
+  }
+  .comment-actions {
+    display: flex; gap: 12px; padding: 4px 12px;
+    font-size: 12px; color: var(--li-text-low); font-weight: 600;
+  }
+  .comment-actions span { cursor: pointer; }
+  .comment-actions span:hover { color: var(--li-text); }
+  .comment-actions .reactions-pill {
+    display: inline-flex; align-items: center; gap: 2px;
+    margin-left: auto;
+    font-size: 11px; color: var(--li-text-low); font-weight: 500;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ============================== TOP NAV ============================== -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="li-logo">in</div>
+    <div class="search">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Search" />
+    </div>
+    <div class="nav-items">
+      <div class="nav-item"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></div>
+      <div class="nav-item active"><span class="nav-icon">👥</span><span class="nav-label">My Network</span></div>
+      <div class="nav-item"><span class="nav-icon">💼</span><span class="nav-label">Jobs</span></div>
+      <div class="nav-item"><span class="nav-icon">💬</span><span class="nav-label">Messaging</span></div>
+      <div class="nav-item"><span class="nav-icon">🔔</span><span class="nav-label">Notifications</span></div>
+      <div class="nav-divider"></div>
+      <div class="nav-me">
+        <div class="nav-me-img"></div>
+        <div class="nav-me-label">Me ▾</div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================== MAIN ============================== -->
+<div class="container">
+  <main class="main">
+
+    <!-- =========== PROFILE HEADER CARD =========== -->
+    <div class="card">
+      <div class="cover"></div>
+      <div class="profile-body">
+        <div class="profile-photo"><span class="ph-text">AR</span></div>
+        <div class="profile-name-row">
+          <div class="profile-name">Ahmed Al-Rashid</div>
+          <div class="profile-pronouns">(He/Him)</div>
+        </div>
+        <div class="profile-headline">
+          IT Director at Q8 Logistics &nbsp;•&nbsp; Cloud Infrastructure &amp; Security &nbsp;•&nbsp; KU CS '12
+        </div>
+        <div class="profile-location-row">
+          <span>Salmiya, Kuwait</span>
+          <span class="dot">•</span>
+          <a href="#">Contact info</a>
+        </div>
+        <div class="profile-location-row" style="margin-top:4px">
+          <a href="#">500+ connections</a>
+        </div>
+
+        <div class="current-company">
+          <div class="company-logo">Q8</div>
+          <div class="company-name">Q8 Logistics</div>
+        </div>
+        <div class="education-line">
+          <div class="ku-logo">KU</div>
+          <span>Kuwait University</span>
+        </div>
+
+        <div class="profile-actions">
+          <button class="btn btn-primary">Open to ▾</button>
+          <button class="btn btn-secondary">Add profile section ▾</button>
+          <button class="btn btn-secondary">Enhance profile</button>
+          <button class="btn btn-tertiary">Resources ▾</button>
+        </div>
+
+        <div class="open-to-banner">
+          <div style="font-size: 24px;">💼</div>
+          <div>
+            <div class="label">Open to mentoring</div>
+            <div class="desc">Showing recruiters and others you're open to mentoring junior IT &amp; security folks in Kuwait.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========== ANALYTICS =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>Analytics</h2>
+        <div style="font-size:12px;color:var(--li-text-low);margin-bottom:8px">🔒 Private to you</div>
+        <div class="panel-row">
+          <span class="icon">👁️</span>
+          <div class="text"><strong>247 profile views</strong><small>Discover who's viewed your profile</small></div>
+        </div>
+        <div class="panel-row">
+          <span class="icon">📊</span>
+          <div class="text"><strong>1,892 post impressions</strong><small>Past 7 days</small></div>
+        </div>
+        <div class="panel-row">
+          <span class="icon">🔍</span>
+          <div class="text"><strong>134 search appearances</strong><small>Discover how often you appear in search results</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========== ABOUT =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>About</h2>
+        <div class="about-text">IT Director at <strong>Q8 Logistics</strong> — running infrastructure across Kuwait, KSA, and UAE. Sysadmin who somehow keeps getting called "director." Still happiest with a terminal open and root on something I'm trying to fix.
+
+Joined Q8 in <strong>March 2018</strong> as the company's first IT hire. Hand-built our first server rack in Yousef's spare meeting room. Today I lead a team of 4 engineers and manage a fleet of 20+ production hosts.
+
+Before Q8: 6 years at Burgan Bank and Boubyan Bank — banks taught me how to do change management properly and gave me a healthy fear of unscheduled downtime.
+
+Outside work I'm husband to <strong>Mariam</strong> (no, not the Mariam from Zain — that's Sarah's friend), dad to <strong>Layan</strong> (born 2017, future "computer fixer" by her own admission) and <strong>Faris</strong> (born 2020, currently more interested in Hot Wheels than networking), Real Madrid fan since I was 12 (don't bring up 2009), and weekend coffee snob.
+
+Born in <strong>Hawalli</strong>, raised in <strong>Salmiya</strong>, KU CS class of 2012, lifetime Kuwait resident.
+
+📩 ahmed.alrashid@q8logistics.com  &nbsp;•&nbsp;  DMs open for infrastructure questions, coffee recs, or arguments about Real Madrid.</div>
+
+        <div class="top-skills">
+          <div class="top-skills-label">Top skills</div>
+          <div class="top-skills-value">Linux Administration &nbsp;•&nbsp; Network Security &nbsp;•&nbsp; AWS Infrastructure &nbsp;•&nbsp; DevOps &nbsp;•&nbsp; Bash Scripting</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========== FEATURED =========== -->
+    <div class="card" id="featured-section">
+      <div class="panel">
+        <h2>Featured</h2>
+        <div class="featured-grid">
+          <div class="featured-card" onclick="openPost('p-layan-birthday')">
+            <div class="featured-img family">📷 birthday cake<br>(Layan's 7th — USB-C symbol on it)</div>
+            <div class="featured-meta">
+              <div class="post-type">POST</div>
+              <div class="post-text">Layan turned 7 yesterday and announced she wants to be a "computer fixer" like dad. Mariam is concerned. I am vindicated. #ParentingWins</div>
+              <div class="post-engagement">287 reactions • 31 comments</div>
+            </div>
+          </div>
+          <div class="featured-card" onclick="openPost('p-q8-anniversary')">
+            <div class="featured-img office">📷 office photo<br>(7 years at Q8, server room selfie)</div>
+            <div class="featured-meta">
+              <div class="post-type">POST</div>
+              <div class="post-text">7 years at Q8 Logistics today. From racking the first server in Yousef's spare meeting room in March 2018 to running 20+ production hosts across 3 countries today. The job hasn't stopped surprising me.</div>
+              <div class="post-engagement">412 reactions • 47 comments</div>
+            </div>
+          </div>
+          <div class="featured-card" onclick="openPost('p-bernabeu')">
+            <div class="featured-img beach" style="background: linear-gradient(135deg, #fef3c7 0%, #f59e0b 50%, #dc2626 100%);">📷 stadium photo<br>(Bernabéu trip, March 2024)</div>
+            <div class="featured-meta">
+              <div class="post-type">POST</div>
+              <div class="post-text">Bucket list ✓ Took Layan to Madrid for her 7th birthday. We went to a Real Madrid match together. She made me explain offsides four times. The Bernabéu was worth every dinar. Hala Madrid 🤍</div>
+              <div class="post-engagement">624 reactions • 58 comments</div>
+            </div>
+          </div>
+          <div class="featured-card" onclick="openPost('p-ku-reunion')">
+            <div class="featured-img grad">📷 reunion photo<br>(KU CS 2012 batch)</div>
+            <div class="featured-meta">
+              <div class="post-type">POST</div>
+              <div class="post-text">KU CS 2008-2012 reunion last week — first time since 2018 we got the whole batch in one room. Most went into IT/dev/security. A few brave ones went into research. One genuinely runs a cybersecurity firm now (you know who you are 👀)</div>
+              <div class="post-engagement">245 reactions • 38 comments</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========== ACTIVITY =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>Activity</h2>
+        <div style="font-size: 14px; color: var(--li-blue); font-weight: 600;">2,847 followers</div>
+        <div class="activity-tabs">
+          <button class="pill active" onclick="showActivityTab('posts', this)">Posts</button>
+          <button class="pill" onclick="showActivityTab('comments', this)">Comments</button>
+        </div>
+
+        <!-- Posts list (default visible) -->
+        <div id="activity-posts">
+
+        <!-- Post 1 -->
+        <div class="post" style="border-top:0" onclick="openPost('p-sysadmin-humor')">
+          <div class="post-header">
+            <div class="post-author-img">AR</div>
+            <div class="post-author-info">
+              <div class="post-author-action"><strong>Sarah Al-Khalid</strong> • You</div>
+              <div class="post-author-action">posted this • <strong>5d</strong> • 🌍</div>
+            </div>
+          </div>
+          <div class="post-body">
+            Reminder for fellow sysadmins on this fine Tuesday morning: there is no "just turn it off and on again" on a production database. Anyone who tells you there is hasn't been on call long enough.
+            <br><br>
+            Coffee is the only acceptable response. <span class="hashtag">#SysadminLife</span> <span class="hashtag">#ITHumor</span>
+          </div>
+          <div class="post-engagement-bar">
+            <div class="reactions">
+              <span class="reaction-emoji like">👍</span>
+              <span class="reaction-emoji clap">👏</span>
+              <span class="reaction-emoji heart">❤️</span>
+              <span style="margin-left:6px">187 • Sarah Al-Khalid and 186 others</span>
+            </div>
+            <div>34 comments</div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="post" onclick="openPost('p-security-psa')">
+          <div class="post-header">
+            <div class="post-author-img">AR</div>
+            <div class="post-author-info">
+              <div class="post-author-action"><strong>Sarah Al-Khalid</strong> • You</div>
+              <div class="post-author-action">posted this • <strong>1mo</strong> • 🌍</div>
+            </div>
+          </div>
+          <div class="post-body">
+            PSA for the Kuwait IT community: please rotate your service account passwords before the year ends. I have audited too many environments where "AdminAdmin2019" is still in use and I cannot keep my facial expression neutral when I see it.
+            <br><br>
+            Also: enable 2FA on everything. Yes, even the staging environment.
+          </div>
+          <div class="post-engagement-bar">
+            <div class="reactions">
+              <span class="reaction-emoji like">👍</span>
+              <span class="reaction-emoji heart">❤️</span>
+              <span style="margin-left:6px">329 reactions</span>
+            </div>
+            <div>67 comments</div>
+          </div>
+        </div>
+
+        </div>
+        <!-- end #activity-posts -->
+
+        <!-- Comments tab empty state -->
+        <div id="activity-comments" style="display:none; padding:48px 16px; text-align:center;">
+          <div style="font-size:42px;margin-bottom:12px">💬</div>
+          <div style="font-weight:600;color:var(--li-text);margin-bottom:4px;font-size:16px">No recent comments to show</div>
+          <div style="font-size:13px;color:var(--li-text-low)">When Sarah comments on someone else's post, it'll appear here.</div>
+        </div>
+
+        <div class="see-more" onclick="document.getElementById('featured-section').scrollIntoView({behavior:'smooth', block:'start'})">Show all posts ↑</div>
+      </div>
+    </div>
+
+    <!-- =========== EXPERIENCE =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>Experience</h2>
+
+        <div class="timeline-item">
+          <div class="timeline-icon q8">Q8</div>
+          <div class="timeline-content">
+            <div class="timeline-title">IT Director</div>
+            <div class="timeline-company">Q8 Logistics &nbsp;•&nbsp; Full-time</div>
+            <div class="timeline-meta">Apr 2022 - Present &nbsp;•&nbsp; 3 yrs 1 mo</div>
+            <div class="timeline-meta">Salmiya, Kuwait</div>
+            <div class="timeline-desc">Lead infrastructure team of 4 engineers. Manage 20+ production servers across Kuwait, KSA, UAE. Own security posture, monitoring stack, disaster recovery, identity. Recent wins: SOC2 readiness, multi-region failover, 99.97% uptime FY24.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon q8">Q8</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Senior Systems Engineer</div>
+            <div class="timeline-company">Q8 Logistics &nbsp;•&nbsp; Full-time</div>
+            <div class="timeline-meta">Mar 2018 - Apr 2022 &nbsp;•&nbsp; 4 yrs 1 mo</div>
+            <div class="timeline-meta">Salmiya, Kuwait</div>
+            <div class="timeline-desc">First IT hire at Q8. Built infrastructure from racks to AWS. Led the migration off shared hosting in 2019 ahead of our KSA launch. Set up our identity provider, monitoring, on-call rotation.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon zain" style="background:#0d2949">BB</div>
+          <div class="timeline-content">
+            <div class="timeline-title">IT Operations Specialist</div>
+            <div class="timeline-company">Burgan Bank &nbsp;•&nbsp; Full-time</div>
+            <div class="timeline-meta">Aug 2014 - Mar 2018 &nbsp;•&nbsp; 3 yrs 7 mos</div>
+            <div class="timeline-meta">Kuwait City, Kuwait</div>
+            <div class="timeline-desc">Server administration, change management, supporting trading and operations infrastructure. Got my SOC2 chops here.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon zain" style="background:#16a34a">BO</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Junior Systems Administrator</div>
+            <div class="timeline-company">Boubyan Bank &nbsp;•&nbsp; Full-time</div>
+            <div class="timeline-meta">Aug 2012 - Aug 2014 &nbsp;•&nbsp; 2 yrs</div>
+            <div class="timeline-meta">Kuwait City, Kuwait</div>
+            <div class="timeline-desc">First job out of KU. Linux/Windows admin, ticketing, on-call. Drank a lot of coffee.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =========== EDUCATION =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>Education</h2>
+
+        <div class="timeline-item">
+          <div class="timeline-icon ku">KU</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Kuwait University</div>
+            <div class="timeline-company">Bachelor of Science, Computer Science</div>
+            <div class="timeline-meta">2008 - 2012</div>
+            <div class="timeline-desc">CS Society 2010-2012, GPA 3.6. Graduated with honors. Final year project: distributed file system in Java (don't ask me to defend the architecture today).</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon bbs" style="background:#1e40af">SHS</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Salmiya High School</div>
+            <div class="timeline-company">High School Diploma</div>
+            <div class="timeline-meta">2002 - 2008</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =========== SKILLS =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>Skills</h2>
+
+        <div class="skill-row">
+          <div class="skill-name">Linux Administration</div>
+          <div class="skill-endorsement">
+            <div class="skill-endorsement-dots">
+              <span class="endorser-dot" style="background: linear-gradient(135deg, #ea580c, #f97316);"></span>
+              <span class="endorser-dot" style="background: linear-gradient(135deg, #f59e0b, #ef4444);"></span>
+              <span class="endorser-dot" style="background: linear-gradient(135deg, #16a34a, #22c55e);"></span>
+            </div>
+            <span>Endorsed by Yousef Al-Mutawa and 89 others</span>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-name">Network Security</div>
+          <div class="skill-endorsement">
+            <div class="skill-endorsement-dots">
+              <span class="endorser-dot" style="background: linear-gradient(135deg, #f59e0b, #ef4444);"></span>
+            </div>
+            <span>Endorsed by Sarah Al-Khalid and 41 others</span>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-name">Cloud Infrastructure (AWS)</div>
+          <div class="skill-endorsement">
+            <span style="margin-left: 22px;">52 endorsements</span>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-name">DevOps</div>
+          <div class="skill-endorsement">
+            <span style="margin-left: 22px;">38 endorsements</span>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-name">Bash Scripting</div>
+          <div class="skill-endorsement">
+            <span style="margin-left: 22px;">29 endorsements</span>
+          </div>
+        </div>
+
+        <!-- Hidden skills, shown when toggle clicked -->
+        <div id="extra-skills" style="display:none">
+          <div class="skill-row">
+            <div class="skill-name">Active Directory</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">24 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">VMware vSphere</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">19 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Docker</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">22 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Kubernetes</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">11 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Python</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">17 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">MySQL Administration</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">14 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Cybersecurity</div>
+            <div class="skill-endorsement">
+              <div class="skill-endorsement-dots">
+                <span class="endorser-dot" style="background: linear-gradient(135deg, #ea580c, #f97316);"></span>
+              </div>
+              <span>Endorsed by Yousef Al-Mutawa and 27 others</span>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Incident Response</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">12 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Arabic - Native or bilingual</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">8 endorsements</span></div>
+          </div>
+        </div>
+
+        <div class="see-more" id="skills-toggle" onclick="toggleSkills()">Show all 14 skills ↓</div>
+      </div>
+    </div>
+
+    <!-- =========== RECOMMENDATIONS =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>Recommendations</h2>
+        <div class="rec-tabs">
+          <div class="rec-tab active" onclick="showRecTab('received', this)">Received</div>
+          <div class="rec-tab" onclick="showRecTab('given', this)">Given</div>
+        </div>
+
+        <!-- Received recommendations -->
+        <div id="rec-received">
+        <div class="rec-card">
+          <div class="rec-card-img" style="background: linear-gradient(135deg,#f59e0b,#ef4444)">SK</div>
+          <div class="rec-card-content">
+            <div class="rec-card-name">Sarah Al-Khalid</div>
+            <div class="rec-card-rel">Marketing Manager at Q8 Logistics &nbsp;•&nbsp; May 4, 2024, Sarah and Ahmed worked at the same company</div>
+            <div class="rec-card-text">"Ahmed has been the IT backbone of Q8 since 2018. He's the kind of person who takes 'we have an outage' calls at 2AM, fixes it before you wake up, and sends a calm 9AM email with what he learned. We've worked together on countless projects — most recently the Saudi data localization migration. Anyone who gets to work with him is lucky. Highest recommendation."</div>
+          </div>
+        </div>
+
+        <div class="rec-card" style="margin-top:24px">
+          <div class="rec-card-img" style="background: linear-gradient(135deg,#ea580c,#f97316)">YA</div>
+          <div class="rec-card-content">
+            <div class="rec-card-name">Yousef Al-Mutawa</div>
+            <div class="rec-card-rel">Founder & CEO at Q8 Logistics &nbsp;•&nbsp; January 17, 2024, Yousef managed Ahmed directly</div>
+            <div class="rec-card-text">"Ahmed was hire #11 at Q8. I asked him to set up our IT 'system' on a Tuesday in March 2018. By Friday we had email, file sharing, and SSO. He's been the unflappable engineer I've needed in every Q8 chapter since. He's grown a team of 4, owned our security posture, and saved my reputation more times than I can count. If you're considering him for a senior IT role, just hire him."</div>
+          </div>
+        </div>
+        </div>
+        <!-- end #rec-received -->
+
+        <!-- Given recommendations -->
+        <div id="rec-given" style="display:none">
+          <div class="rec-card">
+            <div class="rec-card-img" style="background: linear-gradient(135deg,#f59e0b,#ef4444)">SK</div>
+            <div class="rec-card-content">
+              <div class="rec-card-name">Sarah Al-Khalid</div>
+              <div class="rec-card-rel">Marketing Manager at Q8 Logistics &nbsp;•&nbsp; April 12, 2024, Ahmed and Sarah worked at the same company</div>
+              <div class="rec-card-text">"Sarah is the rare marketing leader who reads the engineering tickets before complaining about them. In our 5+ years at Q8 she's rebuilt our brand and managed to do it without ever once asking IT for the impossible at 4PM on a Thursday. She runs hard problems with calm. Anyone hiring senior marketing in Kuwait should call her first."</div>
+            </div>
+          </div>
+
+          <div class="rec-card" style="margin-top:24px">
+            <div class="rec-card-img" style="background: linear-gradient(135deg,#0369a1,#0891b2)">HM</div>
+            <div class="rec-card-content">
+              <div class="rec-card-name">Hassan Al-Mutairi</div>
+              <div class="rec-card-rel">Senior DevOps Engineer at Gulf Bank &nbsp;•&nbsp; September 5, 2023, Ahmed managed Hassan directly</div>
+              <div class="rec-card-text">"I joined Ahmed's team at Q8 as a junior in 2019 and learned more in 18 months than in my first 4 years out of school. He's the kind of senior who takes time to explain WHY a config does what it does, not just what to type. Q8's loss when I left in 2022, but I'm still calling him when stuff breaks at 3AM. Highest recommendation."</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =========== INTERESTS =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>Interests</h2>
+        <div class="interest-grid">
+          <div class="interest-card">
+            <div class="interest-img" style="background: #0d2949; color: #f59e0b;">Q8</div>
+            <div>
+              <div class="interest-name">Q8 Logistics</div>
+              <div class="interest-followers">12,847 followers</div>
+            </div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-img" style="background: #003366; color: #fbbf24;">KU</div>
+            <div>
+              <div class="interest-name">Kuwait University</div>
+              <div class="interest-followers">189,234 followers</div>
+            </div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-img" style="background: linear-gradient(135deg,#0ea5e9,#06b6d4);">RM</div>
+            <div>
+              <div class="interest-name">Real Madrid C.F.</div>
+              <div class="interest-followers">8.2M followers</div>
+            </div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-img" style="background: linear-gradient(135deg,#0d2949,#1e3a5f);">AWS</div>
+            <div>
+              <div class="interest-name">Amazon Web Services</div>
+              <div class="interest-followers">8.7M followers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ============================== SIDEBAR ============================== -->
+  <aside class="sidebar">
+
+    <div class="card sb-card">
+      <div class="sb-title">People you may know</div>
+      <div style="font-size: 13px; color: var(--li-text-low); margin-bottom: 12px;">From Sarah's company</div>
+
+      <div class="sb-people">
+        <div class="sb-person">
+          <div class="sb-person-img" style="background: linear-gradient(135deg,#f59e0b,#ef4444)">SK</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Sarah Al-Khalid</div>
+            <div class="sb-person-headline">Marketing Manager at Q8 Logistics</div>
+            <div class="sb-person-mutual">🤝 47 mutual connections</div>
+            <button class="sb-connect">Connect</button>
+          </div>
+        </div>
+
+        <div class="sb-person">
+          <div class="sb-person-img" style="background: linear-gradient(135deg,#ea580c,#f97316)">YA</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Yousef Al-Mutawa</div>
+            <div class="sb-person-headline">Founder & CEO at Q8 Logistics</div>
+            <div class="sb-person-mutual">🤝 38 mutual connections</div>
+            <button class="sb-connect">Connect</button>
+          </div>
+        </div>
+
+        <div class="sb-person">
+          <div class="sb-person-img" style="background: linear-gradient(135deg,#0369a1,#0891b2)">HM</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Hassan Al-Mutairi</div>
+            <div class="sb-person-headline">Senior DevOps at Gulf Bank</div>
+            <div class="sb-person-mutual">🤝 23 mutual connections</div>
+            <button class="sb-connect">Connect</button>
+          </div>
+        </div>
+
+        <div class="sb-person">
+          <div class="sb-person-img" style="background: linear-gradient(135deg,#7c3aed,#a855f7)">OA</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Omar Al-Saleh</div>
+            <div class="sb-person-headline">Head of Cybersecurity at NBK</div>
+            <div class="sb-person-mutual">🤝 31 mutual connections</div>
+            <button class="sb-connect">Connect</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="sb-show-all">Show all →</div>
+    </div>
+
+    <div class="card sb-card">
+      <div class="sb-title">You might like</div>
+      <div style="font-size: 13px; color: var(--li-text-low); margin-bottom: 12px;">Pages for you</div>
+
+      <div class="sb-people">
+        <div class="sb-person">
+          <div class="sb-person-img" style="background: #0d2949; color: #f59e0b;">Q8</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Q8 Logistics</div>
+            <div class="sb-person-headline">Logistics & Supply Chain • Kuwait</div>
+            <div class="sb-person-mutual">🏢 12,847 followers</div>
+            <button class="sb-connect">+ Follow</button>
+          </div>
+        </div>
+
+        <div class="sb-person">
+          <div class="sb-person-img" style="background: linear-gradient(135deg,#7c3aed,#2563eb)">CC</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">CODED Academy</div>
+            <div class="sb-person-headline">Coding Bootcamps • Kuwait</div>
+            <div class="sb-person-mutual">🏢 24,891 followers</div>
+            <button class="sb-connect">+ Follow</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card sb-card" style="background: linear-gradient(135deg,#fef3c7,#fde68a); border-color: #fcd34d;">
+      <div class="sb-title">Add to your feed</div>
+      <div style="font-size: 13px; color: var(--li-text);">Follow people and topics to see their posts in your feed.</div>
+      <button class="btn btn-primary" style="margin-top:12px">View suggestions</button>
+    </div>
+
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Accessibility</a>
+        <a href="#">Help Center</a>
+        <a href="#">Privacy & Terms</a>
+      </div>
+      <div>LinkedIn Corporation © 2025</div>
+    </div>
+
+  </aside>
+
+</div>
+
+
+<!-- ============================== MODAL ============================== -->
+<div class="modal-backdrop" id="postModal" onclick="if(event.target===this)closePost()">
+  <div class="modal-card" id="modalCard">
+    <!-- populated by JS -->
+  </div>
+</div>
+
+<script>
+const POSTS = {
+  'p-layan-birthday': {
+    img: { type: 'family', text: '📷 birthday cake<br>(Layan\'s 7th — USB-C symbol on it, Ahmed beside it looking smug)' },
+    time: '2mo',
+    body: 'Layan turned 7 yesterday and announced over birthday cake that she wants to be a "computer fixer" like dad. <strong>Mariam</strong> is concerned. I am vindicated.<br><br>(Yes, the cake had a USB-C symbol on it. I made it. No, I will not apologize. Layan picked the design herself, born 2017 and already opinionated about port standards.)<br><br><span class="hashtag">#ParentingWins</span> <span class="hashtag">#FutureSysadmin</span>',
+    likes: '287 reactions',
+    comments_count: '31 comments',
+    comments: [
+      { initials: 'SK', color: 'linear-gradient(135deg,#f59e0b,#ef4444)', name: 'Sarah Al-Khalid', headline: 'Marketing Manager at Q8 Logistics', time: '2mo', text: 'Layan is going to grow up to be the most chaotic CTO Kuwait has ever seen and I am here for it 💕' },
+      { initials: 'YA', color: 'linear-gradient(135deg,#ea580c,#f97316)', name: 'Yousef Al-Mutawa', headline: 'Founder & CEO at Q8 Logistics', time: '2mo', text: 'Hold a spot for her on the IT team in 12 years. We need succession planning.' },
+      { initials: 'HM', color: 'linear-gradient(135deg,#0369a1,#0891b2)', name: 'Hassan Al-Mutairi', headline: 'Senior DevOps Engineer at Gulf Bank', time: '2mo', text: 'The cake. The CAKE. I cannot. Tell Layan she has my respect.' },
+    ],
+  },
+  'p-q8-anniversary': {
+    img: { type: 'office', text: '📷 server room selfie<br>(7 years at Q8, racks visible behind)' },
+    time: '6mo',
+    body: '7 years at <strong>Q8 Logistics</strong> today.<br><br>From racking the first server in <strong>Yousef</strong>\'s spare meeting room in <strong>March 2018</strong> to running 20+ production hosts across 3 countries today. The job hasn\'t stopped surprising me.<br><br>Some milestones I\'m oddly proud of:<br>• Migrated us off shared hosting in 2019 (the Saudi launch was the deadline)<br>• Rolled out 2FA across the org in 2021 (took 3 weeks of begging marketing)<br>• Survived 4 holiday weekends without an incident (Yousef counts these)<br><br>Onwards. <span class="hashtag">#Q8Logistics</span> <span class="hashtag">#ITDepartment</span>',
+    likes: '412 reactions',
+    comments_count: '47 comments',
+    comments: [
+      { initials: 'YA', color: 'linear-gradient(135deg,#ea580c,#f97316)', name: 'Yousef Al-Mutawa', headline: 'Founder & CEO at Q8 Logistics', time: '6mo', text: 'I gave you 4 days. By Friday we had email, files, SSO. Best hire I ever made. Here\'s to seven more.' },
+      { initials: 'SK', color: 'linear-gradient(135deg,#f59e0b,#ef4444)', name: 'Sarah Al-Khalid', headline: 'Marketing Manager at Q8 Logistics', time: '6mo', text: 'I still think about the all-nighter for the Saudi soft-launch in 2019. Marketing owes engineering a permanent dinner debt 🙏' },
+      { initials: 'HM', color: 'linear-gradient(135deg,#0369a1,#0891b2)', name: 'Hassan Al-Mutairi', headline: 'Senior DevOps Engineer at Gulf Bank', time: '6mo', text: 'Best 3 years of mentorship I had at Q8. Onwards 🚀' },
+      { initials: 'OA', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Omar Al-Saleh', headline: 'Head of Cybersecurity at NBK', time: '6mo', text: 'Congrats Ahmed. The 2FA rollout post still gets quoted in our team retros.' },
+    ],
+  },
+  'p-bernabeu': {
+    img: { type: 'beach', text: '📷 stadium photo<br>(Bernabéu pitch view, Layan in Real Madrid jersey)' },
+    time: '8mo',
+    body: 'Bucket list ✓<br><br>Took <strong>Layan</strong> to Madrid for her 7th birthday. We went to a <strong>Real Madrid</strong> match together — her first ever. She made me explain offsides four times. I made her a fan for life on time #4.<br><br>The Bernabéu was worth every dinar. Hala Madrid 🤍<br><br>(For those wondering: yes I\'ve been a fan since I was 12, yes 2009 final still hurts, no I do not want to talk about Mbappé yet.)<br><br><span class="hashtag">#HalaMadrid</span> <span class="hashtag">#FamilyFirst</span>',
+    likes: '624 reactions',
+    comments_count: '58 comments',
+    comments: [
+      { initials: 'YA', color: 'linear-gradient(135deg,#ea580c,#f97316)', name: 'Yousef Al-Mutawa', headline: 'Founder & CEO at Q8 Logistics', time: '8mo', text: 'You\'re raising her right. Hala Madrid 🤍' },
+      { initials: 'SK', color: 'linear-gradient(135deg,#f59e0b,#ef4444)', name: 'Sarah Al-Khalid', headline: 'Marketing Manager at Q8 Logistics', time: '8mo', text: 'Layan in a Real Madrid jersey is the cutest thing I will see this year 💕' },
+      { initials: 'HM', color: 'linear-gradient(135deg,#0369a1,#0891b2)', name: 'Hassan Al-Mutairi', headline: 'Senior DevOps Engineer at Gulf Bank', time: '8mo', text: 'Layan > everyone. Tell her offsides is irrelevant if your striker is good enough.' },
+    ],
+  },
+  'p-ku-reunion': {
+    img: { type: 'grad', text: '📷 reunion photo<br>(KU CS class of 2012, group shot)' },
+    time: '1mo',
+    body: '<strong>KU CS 2008-2012</strong> reunion last week — first time since 2018 we got the whole batch in one room.<br><br>Most of us have moved into IT, dev, or security roles. A few brave ones went into research. One genuinely runs a cybersecurity firm now (you know who you are 👀).<br><br>Kuwait University built the foundation. Everything after has been on-the-job. Class of 2012, where you at?<br><br><span class="hashtag">#KUCSAlumni</span> <span class="hashtag">#KuwaitTech</span>',
+    likes: '245 reactions',
+    comments_count: '38 comments',
+    comments: [
+      { initials: 'OA', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Omar Al-Saleh', headline: 'Head of Cybersecurity at NBK', time: '1mo', text: 'KU CS 2012 strong 💪 still the best 4 years of my life' },
+      { initials: 'SK', color: 'linear-gradient(135deg,#f59e0b,#ef4444)', name: 'Sarah Al-Khalid', headline: 'Marketing Manager at Q8 Logistics', time: '1mo', text: 'Wait we were both KU 2012?? How did I not know this. Marketing dept stayed in the cafeteria 🤝' },
+      { initials: 'HM', color: 'linear-gradient(135deg,#0369a1,#0891b2)', name: 'Hassan Al-Mutairi', headline: 'Senior DevOps Engineer at Gulf Bank', time: '1mo', text: 'I\'m KU CS 2017. The bar set by your batch is unreasonable.' },
+    ],
+  },
+  'p-sysadmin-humor': {
+    img: null,
+    time: '5d',
+    body: 'Reminder for fellow sysadmins on this fine Tuesday morning:<br><br>There is no "just turn it off and on again" on a production database. Anyone who tells you there is hasn\'t been on call long enough.<br><br>Coffee is the only acceptable response.<br><br><span class="hashtag">#SysadminLife</span> <span class="hashtag">#ITHumor</span>',
+    likes: '187 reactions',
+    comments_count: '24 comments',
+    comments: [
+      { initials: 'HM', color: 'linear-gradient(135deg,#0369a1,#0891b2)', name: 'Hassan Al-Mutairi', headline: 'Senior DevOps Engineer at Gulf Bank', time: '5d', text: '"Just restart it" - someone who has never managed a Postgres replica' },
+      { initials: 'SK', color: 'linear-gradient(135deg,#f59e0b,#ef4444)', name: 'Sarah Al-Khalid', headline: 'Marketing Manager at Q8 Logistics', time: '5d', text: 'Reading this at 9am with my second espresso. We see you.' },
+      { initials: 'OA', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Omar Al-Saleh', headline: 'Head of Cybersecurity at NBK', time: '5d', text: 'I have screenshotted this and pinned it in our team channel.' },
+    ],
+  },
+  'p-security-psa': {
+    img: null,
+    time: '1mo',
+    body: 'PSA for the Kuwait IT community: please rotate your service account passwords before the year ends. I have audited too many environments where "AdminAdmin2019" is still in use and I cannot keep my facial expression neutral when I see it.<br><br>Also: enable 2FA on everything. Yes, even the staging environment. <strong>Especially</strong> the staging environment.',
+    likes: '329 reactions',
+    comments_count: '41 comments',
+    comments: [
+      { initials: 'OA', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Omar Al-Saleh', headline: 'Head of Cybersecurity at NBK', time: '1mo', text: 'Send this to every CIO in Kuwait. Especially the ones who say "we\'re not a target."' },
+      { initials: 'HM', color: 'linear-gradient(135deg,#0369a1,#0891b2)', name: 'Hassan Al-Mutairi', headline: 'Senior DevOps Engineer at Gulf Bank', time: '1mo', text: 'I have audited 3 banks this year. The number of "Welcome123" admin accounts is genuinely scary.' },
+      { initials: 'YA', color: 'linear-gradient(135deg,#ea580c,#f97316)', name: 'Yousef Al-Mutawa', headline: 'Founder & CEO at Q8 Logistics', time: '1mo', text: 'Plug for our team: we rotate quarterly and have for 4 years. Ahmed runs a tight ship 🙏' },
+    ],
+  },
+};
+
+const IMG_GRADIENTS = {
+  family: 'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',
+  office: 'linear-gradient(135deg, #0d2949 0%, #1e3a5f 100%)',
+  beach:  'linear-gradient(160deg, #06b6d4 0%, #0ea5e9 50%, #fcd34d 100%)',
+  grad:   'linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)',
+  cat:    'linear-gradient(135deg, #1f2937, #475569)',
+};
+
+function openPost(id) {
+  const post = POSTS[id];
+  if (!post) return;
+  const card = document.getElementById('modalCard');
+  const imgHtml = post.img
+    ? `<div class="modal-post-img" style="background: ${IMG_GRADIENTS[post.img.type] || '#888'}">${post.img.text}</div>`
+    : '';
+  const commentsHtml = post.comments.map(c => `
+    <div class="comment">
+      <div class="comment-img" style="background: ${c.color}">${c.initials}</div>
+      <div class="comment-content">
+        <div class="comment-bubble">
+          <div class="comment-author-row">
+            <span class="comment-author-name">${c.name}</span>
+            <span class="comment-author-headline">${c.headline} • ${c.time}</span>
+          </div>
+          <div class="comment-text">${c.text}</div>
+        </div>
+        <div class="comment-actions">
+          <span>Like</span>
+          <span>Reply</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  card.innerHTML = `
+    <div class="modal-header">
+      <div class="modal-author-img">AR</div>
+      <div class="modal-author-info">
+        <div class="modal-author-name">Ahmed Al-Rashid <span style="color:var(--li-text-low);font-weight:400;font-size:12px">(He/Him)</span></div>
+        <div class="modal-author-headline">IT Director at Q8 Logistics • Cloud &amp; Security</div>
+        <div class="modal-time">${post.time} • 🌍</div>
+      </div>
+      <button class="modal-close" onclick="closePost()" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-post-text">${post.body}</div>
+      ${imgHtml}
+      <div class="modal-engagement">
+        <div class="reactions">
+          <span class="reaction-emoji like">👍</span>
+          <span class="reaction-emoji clap">👏</span>
+          <span class="reaction-emoji heart">❤️</span>
+          <span style="margin-left:6px">${post.likes}</span>
+        </div>
+        <div>${post.comments_count}</div>
+      </div>
+      <div class="modal-actions">
+        <button class="modal-action">👍 Like</button>
+        <button class="modal-action">💬 Comment</button>
+        <button class="modal-action">🔁 Repost</button>
+        <button class="modal-action">📤 Send</button>
+      </div>
+      <div class="modal-comments-header">
+        <strong>Most relevant ▾</strong>
+      </div>
+      <div class="modal-comment-input">
+        <div class="modal-comment-input-img"></div>
+        <input type="text" placeholder="Add a comment..." />
+      </div>
+      <div class="modal-comments-list">
+        ${commentsHtml}
+      </div>
+    </div>
+  `;
+  document.getElementById('postModal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePost() {
+  document.getElementById('postModal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closePost();
+});
+
+function showActivityTab(tab, btn) {
+  document.querySelectorAll('.activity-tabs .pill').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('activity-posts').style.display = tab === 'posts' ? 'block' : 'none';
+  document.getElementById('activity-comments').style.display = tab === 'comments' ? 'block' : 'none';
+}
+function showRecTab(tab, btn) {
+  document.querySelectorAll('.rec-tab').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('rec-received').style.display = tab === 'received' ? 'block' : 'none';
+  document.getElementById('rec-given').style.display = tab === 'given' ? 'block' : 'none';
+}
+function toggleSkills() {
+  const extra = document.getElementById('extra-skills');
+  const toggle = document.getElementById('skills-toggle');
+  if (extra.style.display === 'none' || extra.style.display === '') {
+    extra.style.display = 'block';
+    toggle.innerHTML = 'Show less ↑';
+  } else {
+    extra.style.display = 'none';
+    toggle.innerHTML = 'Show all 14 skills ↓';
+  }
+}
+
+
+</script>
+
+</body>
+</html>
