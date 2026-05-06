@@ -557,6 +557,152 @@
     .featured-grid { grid-template-columns: 1fr; }
     .interest-grid { grid-template-columns: 1fr; }
   }
+
+  /* ========================== INTERACTIVE: clickable posts ========================== */
+  .post, .featured-card { cursor: pointer; transition: background .15s, transform .15s; }
+  .post:hover { background: #fafafa; }
+  .featured-card:hover { background: #f9fafb; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+
+  /* ========================== MODAL ========================== */
+  .modal-backdrop {
+    display: none;
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.6);
+    justify-content: center; align-items: flex-start;
+    padding: 40px 16px 16px;
+    overflow-y: auto;
+  }
+  .modal-backdrop.show { display: flex; }
+  .modal-card {
+    background: #fff;
+    border-radius: 8px;
+    width: 100%; max-width: 580px;
+    overflow: hidden;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+    animation: modalIn .25s ease-out;
+    cursor: default;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(-12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .modal-header {
+    padding: 12px 16px;
+    display: flex; align-items: center; gap: 10px;
+    border-bottom: 1px solid var(--li-divider);
+  }
+  .modal-author-img {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-weight: 600; flex-shrink: 0;
+  }
+  .modal-author-info { flex: 1; }
+  .modal-author-name { font-size: 14px; font-weight: 600; }
+  .modal-author-headline {
+    font-size: 12px; color: var(--li-text-low);
+    display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .modal-time { font-size: 12px; color: var(--li-text-low); }
+  .modal-close {
+    background: transparent; border: 0; padding: 6px;
+    color: var(--li-text-low); font-size: 24px; cursor: pointer;
+    border-radius: 50%; width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    line-height: 1;
+  }
+  .modal-close:hover { background: #f5f5f5; color: var(--li-text); }
+  .modal-body { padding: 0 16px 12px; }
+  .modal-post-text {
+    font-size: 14px; line-height: 1.5;
+    padding: 12px 0;
+  }
+  .modal-post-img {
+    height: 280px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; text-align: center; padding: 12px;
+    font-style: italic; font-size: 12px;
+    margin-bottom: 12px;
+  }
+  .modal-engagement {
+    display: flex; align-items: center; justify-content: space-between;
+    color: var(--li-text-low); font-size: 13px;
+    padding: 8px 0;
+    border-top: 1px solid var(--li-divider);
+    border-bottom: 1px solid var(--li-divider);
+  }
+  .modal-actions {
+    display: flex; padding: 4px 0;
+    border-bottom: 1px solid var(--li-divider);
+  }
+  .modal-action {
+    flex: 1; padding: 10px;
+    background: transparent; border: 0;
+    color: var(--li-text-low); font-weight: 600;
+    font-size: 14px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    border-radius: 4px;
+  }
+  .modal-action:hover { background: #f5f5f5; }
+  .modal-comments-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 0 8px;
+    font-size: 13px; color: var(--li-text);
+  }
+  .modal-comments-header strong { font-weight: 600; }
+  .modal-comment-input {
+    display: flex; align-items: flex-start; gap: 8px; padding: 8px 0;
+  }
+  .modal-comment-input-img {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: linear-gradient(135deg, #c084fc, #f472b6);
+    flex-shrink: 0;
+  }
+  .modal-comment-input input {
+    flex: 1; height: 36px; padding: 0 12px;
+    border: 1px solid var(--li-text-low);
+    border-radius: 18px;
+    font-family: inherit; font-size: 14px;
+    outline: none;
+  }
+  .comment {
+    display: flex; gap: 8px;
+    padding: 10px 0;
+  }
+  .comment-img {
+    width: 32px; height: 32px; border-radius: 50%;
+    color: #fff; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 12px;
+  }
+  .comment-content { flex: 1; min-width: 0; }
+  .comment-bubble {
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 8px 12px;
+  }
+  .comment-author-row {
+    display: flex; align-items: baseline; gap: 8px;
+    flex-wrap: wrap;
+  }
+  .comment-author-name { font-size: 14px; font-weight: 600; }
+  .comment-author-headline { font-size: 11px; color: var(--li-text-low); }
+  .comment-text {
+    font-size: 14px; line-height: 1.45; margin-top: 4px;
+  }
+  .comment-actions {
+    display: flex; gap: 12px; padding: 4px 12px;
+    font-size: 12px; color: var(--li-text-low); font-weight: 600;
+  }
+  .comment-actions span { cursor: pointer; }
+  .comment-actions span:hover { color: var(--li-text); }
+  .comment-actions .reactions-pill {
+    display: inline-flex; align-items: center; gap: 2px;
+    margin-left: auto;
+    font-size: 11px; color: var(--li-text-low); font-weight: 500;
+  }
+
 </style>
 </head>
 <body>
@@ -681,7 +827,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
       <div class="panel">
         <h2>Featured</h2>
         <div class="featured-grid">
-          <div class="featured-card">
+          <div class="featured-card" onclick="openPost('p-layla-birthday')">
             <div class="featured-img family">📷 family photo<br>(Layla's 7th birthday)</div>
             <div class="featured-meta">
               <div class="post-type">POST</div>
@@ -689,7 +835,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
               <div class="post-engagement">247 reactions • 31 comments</div>
             </div>
           </div>
-          <div class="featured-card">
+          <div class="featured-card" onclick="openPost('p-q8-anniversary')">
             <div class="featured-img office">📷 office photo<br>(Q8 7-year anniversary)</div>
             <div class="featured-meta">
               <div class="post-type">POST</div>
@@ -697,7 +843,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
               <div class="post-engagement">892 reactions • 67 comments</div>
             </div>
           </div>
-          <div class="featured-card">
+          <div class="featured-card" onclick="openPost('p-maldives')">
             <div class="featured-img beach">📷 beach photo<br>(Maldives 2024)</div>
             <div class="featured-meta">
               <div class="post-type">POST</div>
@@ -705,7 +851,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
               <div class="post-engagement">1,243 reactions • 102 comments</div>
             </div>
           </div>
-          <div class="featured-card">
+          <div class="featured-card" onclick="openPost('p-graduation')">
             <div class="featured-img grad">📷 graduation photo<br>(KU 2012)</div>
             <div class="featured-meta">
               <div class="post-type">POST</div>
@@ -729,7 +875,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
         </div>
 
         <!-- Post 1 -->
-        <div class="post" style="border-top:0">
+        <div class="post" style="border-top:0" onclick="openPost('p-layla-marketing')">
           <div class="post-header">
             <div class="post-author-img">SK</div>
             <div class="post-author-info">
@@ -754,37 +900,10 @@ Passionate about: building marketing teams that actually ship work, baking sourd
             <div>34 comments</div>
           </div>
         </div>
-
-        <!-- Post 2 -->
-        <div class="post">
-          <div class="post-header">
-            <div class="post-author-img">SK</div>
-            <div class="post-author-info">
-              <div class="post-author-action"><strong>Sarah Al-Khalid</strong> • You</div>
-              <div class="post-author-action">posted this • <strong>1mo</strong> • 🌍</div>
-            </div>
-          </div>
-          <div class="post-body">
-            8 years ago I married my best friend on a Thursday because we were both impatient and didn't want to wait for a Friday. Best Thursday decision of my life. Happy anniversary, Khaled — here's to another 8 (and counting).
-            <br><br>
-            <span class="hashtag">#Anniversary</span> <span class="hashtag">#Kuwait</span>
-          </div>
-          <div class="post-img" style="background: linear-gradient(135deg,#fb7185,#f472b6); height: 240px;">
-            📷 anniversary photo<br>(October 2017 wedding)
-          </div>
-          <div class="post-engagement-bar">
-            <div class="reactions">
-              <span class="reaction-emoji like">👍</span>
-              <span class="reaction-emoji heart">❤️</span>
-              <span class="reaction-emoji clap">👏</span>
-              <span style="margin-left:6px">1,847 reactions</span>
-            </div>
-            <div>156 comments</div>
-          </div>
         </div>
 
         <!-- Post 3 -->
-        <div class="post">
+        <div class="post" onclick="openPost('p-loki')">
           <div class="post-header">
             <div class="post-author-img">SK</div>
             <div class="post-author-info">
@@ -1110,6 +1229,180 @@ Passionate about: building marketing teams that actually ship work, baking sourd
   </aside>
 
 </div>
+
+
+<!-- ============================== MODAL ============================== -->
+<div class="modal-backdrop" id="postModal" onclick="if(event.target===this)closePost()">
+  <div class="modal-card" id="modalCard">
+    <!-- populated by JS -->
+  </div>
+</div>
+
+<script>
+const POSTS = {
+  'p-layla-birthday': {
+    img: { type: 'family', text: '📷 family photo<br>(Layla\'s 7th birthday — Layla in a tiara, Sarah in the background)' },
+    time: '1y',
+    body: 'Layla turned 7 today 💕 She asked me what I want to be when she grows up. Best birthday gift ever.<br><br>Caught between this and the time she asked me last week why we have a cat that hates everyone except her. We\'re raising a future investigative journalist. <span class="hashtag">#ParentingWins</span>',
+    likes: '247 reactions',
+    comments_count: '31 comments',
+    comments: [
+      { initials: 'MS', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Mariam Al-Sabah', headline: 'Senior Marketing • Zain Kuwait', time: '1y', text: 'Aunt Mariam wants a hug! Seven?? When did this happen 💕 last time I saw her she was 4!' },
+      { initials: 'YA', color: 'linear-gradient(135deg,#ea580c,#f97316)', name: 'Yousef Al-Mutawa', headline: 'Founder & CEO at Q8 Logistics', time: '1y', text: 'Tell her uncle Yousef wishes her happy birthday and to please not grow up so fast. Rate of change is concerning.' },
+      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '1y', text: 'Layla is my favorite Q8 employee even though she has never set foot in the office.' },
+      { initials: 'KK', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Khaled Al-Khalid', headline: 'Senior Architect • KEO International', time: '1y', text: 'Best 7 years of our lives ❤️ proud of her every day.' },
+    ],
+  },
+  'p-q8-anniversary': {
+    img: { type: 'office', text: '📷 office photo<br>(Q8 team holding 7-year cake)' },
+    time: '6mo',
+    body: '7 years at Q8 Logistics 🚀<br><br>Joined March 2018 as employee #31, when our "marketing team" was me, a printer that worked 60% of the time, and a Google Drive folder. Today we\'re 8 people, regional reach across KSA + UAE, and we just shipped our first national TV campaign.<br><br>Grateful to <strong>Yousef Al-Mutawa</strong> for taking a chance on a Zain alumna with strong opinions about brand consistency. Here\'s to many more.<br><br><span class="hashtag">#WorkAnniversary</span> <span class="hashtag">#Q8Logistics</span>',
+    likes: '892 reactions',
+    comments_count: '67 comments',
+    comments: [
+      { initials: 'YA', color: 'linear-gradient(135deg,#ea580c,#f97316)', name: 'Yousef Al-Mutawa', headline: 'Founder & CEO at Q8 Logistics', time: '6mo', text: 'Strong opinions about brand consistency = exactly why I hired you. Thank you for everything Sarah. Here\'s to seven more.' },
+      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '6mo', text: 'Remember the all-nighter for the Saudi soft-launch in 2019? Different lifetime. Proud of you.' },
+      { initials: 'MS', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Mariam Al-Sabah', headline: 'Senior Marketing • Zain Kuwait', time: '6mo', text: 'I knew you were going to do big things at Zain. Look at you now ❤️' },
+      { initials: 'FO', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Fatma Al-Otaibi', headline: 'Marketing Director at Boubyan Bank', time: '6mo', text: 'Inspiring as always 👏 congratulations Sarah!' },
+    ],
+  },
+  'p-maldives': {
+    img: { type: 'beach', text: '📷 beach photo<br>(turquoise water + sunset, Khaled and Layla in silhouette)' },
+    time: '3mo',
+    body: 'Maldives, again 🏝️<br><br>Layla wants to be a marine biologist now. <strong>Khaled</strong> wants to retire here. I want Wi-Fi that doesn\'t drop every 4 minutes. We all want different things 😅<br><br>(But also: you should see the way she lit up snorkeling for the first time. That\'s the kind of memory I\'ll keep forever.)<br><br><span class="hashtag">#FamilyVacation</span> <span class="hashtag">#Maldives</span>',
+    likes: '1,243 reactions',
+    comments_count: '102 comments',
+    comments: [
+      { initials: 'MS', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Mariam Al-Sabah', headline: 'Senior Marketing • Zain Kuwait', time: '3mo', text: 'LIVING THE DREAM 🏝️' },
+      { initials: 'KK', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Khaled Al-Khalid', headline: 'Senior Architect • KEO International', time: '3mo', text: 'I will retire here, just watch me 👀' },
+      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '3mo', text: 'Send me Wi-Fi tips, going next month. Resort name?' },
+    ],
+  },
+  'p-graduation': {
+    img: { type: 'grad', text: '📷 graduation photo<br>(KU class of 2012, Sarah in blue gown holding diploma)' },
+    time: '1mo',
+    body: '13 years ago I graduated <strong>Kuwait University</strong> with a Marketing degree and absolutely no clue what I was doing.<br><br>Today my team at Q8 Logistics is launching our first national TV campaign — radio, billboards, the whole thing. Time is wild. <strong>Class of 2012</strong>, where you at? 🎓',
+    likes: '654 reactions',
+    comments_count: '48 comments',
+    comments: [
+      { initials: 'MS', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Mariam Al-Sabah', headline: 'Senior Marketing • Zain Kuwait', time: '1mo', text: 'KU 2012 represent! 🎓 best 4 years of my life. Marketing Society lunches at the cafeteria 🥲' },
+      { initials: 'YA', color: 'linear-gradient(135deg,#ea580c,#f97316)', name: 'Yousef Al-Mutawa', headline: 'Founder & CEO at Q8 Logistics', time: '1mo', text: 'And I am glad you had no clue, otherwise you might have gone elsewhere instead of Q8 🙏' },
+      { initials: 'FO', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Fatma Al-Otaibi', headline: 'Marketing Director at Boubyan Bank', time: '1mo', text: 'KU 2012 ❤️ how are we already old enough for nostalgia posts' },
+    ],
+  },
+  'p-layla-marketing': {
+    img: null,
+    time: '2w',
+    body: 'That moment when your 7-year-old explains to her dad that mama works in <span class="hashtag">#marketing</span> which means "she makes people want to buy things they don\'t need" 😅<br><br>Brutally honest. Also kind of accurate. <strong>Khaled</strong> is still laughing.<br><br><span class="hashtag">#ParentingWins</span> <span class="hashtag">#MarketingHumor</span> <span class="hashtag">#KuwaitWomenInBusiness</span>',
+    likes: '412 reactions',
+    comments_count: '34 comments',
+    comments: [
+      { initials: 'KK', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Khaled Al-Khalid', headline: 'Senior Architect • KEO International', time: '2w', text: 'Still laughing tbh. She has a future in stand-up comedy.' },
+      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '2w', text: 'Layla > most marketing consultants I have ever hired' },
+      { initials: 'MS', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Mariam Al-Sabah', headline: 'Senior Marketing • Zain Kuwait', time: '2w', text: 'Already analyzing market psychology at 7. We are cooked.' },
+    ],
+  },
+  'p-loki': {
+    img: { type: 'cat', text: '📷 cat photo<br>(Loki sprawled on a MacBook keyboard, looking judgmental)' },
+    time: '3mo',
+    body: 'Loki update for the cat people in my network: he turned 6 today.<br><br>He still hates everyone except <strong>Layla</strong>, still steals my office chair every morning, still cannot be reasoned with. Living his best life.<br><br>(We rescued him in 2019 as a kitten. Layla picked the name. I should have vetoed.)',
+    likes: '523 reactions',
+    comments_count: '67 comments',
+    comments: [
+      { initials: 'MS', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Mariam Al-Sabah', headline: 'Senior Marketing • Zain Kuwait', time: '3mo', text: 'Loki spotted: still the moodiest cat in Kuwait 🐱' },
+      { initials: 'KK', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Khaled Al-Khalid', headline: 'Senior Architect • KEO International', time: '3mo', text: 'Still hates me. Six years strong. I respect it.' },
+      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '3mo', text: 'Friend cat 🤝' },
+    ],
+  },
+};
+
+const IMG_GRADIENTS = {
+  family: 'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',
+  office: 'linear-gradient(135deg, #0d2949 0%, #1e3a5f 100%)',
+  beach:  'linear-gradient(160deg, #06b6d4 0%, #0ea5e9 50%, #fcd34d 100%)',
+  grad:   'linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)',
+  cat:    'linear-gradient(135deg, #1f2937, #475569)',
+};
+
+function openPost(id) {
+  const post = POSTS[id];
+  if (!post) return;
+  const card = document.getElementById('modalCard');
+  const imgHtml = post.img
+    ? `<div class="modal-post-img" style="background: ${IMG_GRADIENTS[post.img.type] || '#888'}">${post.img.text}</div>`
+    : '';
+  const commentsHtml = post.comments.map(c => `
+    <div class="comment">
+      <div class="comment-img" style="background: ${c.color}">${c.initials}</div>
+      <div class="comment-content">
+        <div class="comment-bubble">
+          <div class="comment-author-row">
+            <span class="comment-author-name">${c.name}</span>
+            <span class="comment-author-headline">${c.headline} • ${c.time}</span>
+          </div>
+          <div class="comment-text">${c.text}</div>
+        </div>
+        <div class="comment-actions">
+          <span>Like</span>
+          <span>Reply</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  card.innerHTML = `
+    <div class="modal-header">
+      <div class="modal-author-img">SK</div>
+      <div class="modal-author-info">
+        <div class="modal-author-name">Sarah Al-Khalid <span style="color:var(--li-text-low);font-weight:400;font-size:12px">(She/Her)</span></div>
+        <div class="modal-author-headline">Marketing Manager at Q8 Logistics • MBA</div>
+        <div class="modal-time">${post.time} • 🌍</div>
+      </div>
+      <button class="modal-close" onclick="closePost()" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-post-text">${post.body}</div>
+      ${imgHtml}
+      <div class="modal-engagement">
+        <div class="reactions">
+          <span class="reaction-emoji like">👍</span>
+          <span class="reaction-emoji clap">👏</span>
+          <span class="reaction-emoji heart">❤️</span>
+          <span style="margin-left:6px">${post.likes}</span>
+        </div>
+        <div>${post.comments_count}</div>
+      </div>
+      <div class="modal-actions">
+        <button class="modal-action">👍 Like</button>
+        <button class="modal-action">💬 Comment</button>
+        <button class="modal-action">🔁 Repost</button>
+        <button class="modal-action">📤 Send</button>
+      </div>
+      <div class="modal-comments-header">
+        <strong>Most relevant ▾</strong>
+      </div>
+      <div class="modal-comment-input">
+        <div class="modal-comment-input-img"></div>
+        <input type="text" placeholder="Add a comment..." />
+      </div>
+      <div class="modal-comments-list">
+        ${commentsHtml}
+      </div>
+    </div>
+  `;
+  document.getElementById('postModal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePost() {
+  document.getElementById('postModal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closePost();
+});
+</script>
 
 </body>
 </html>
