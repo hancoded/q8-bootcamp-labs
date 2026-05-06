@@ -103,7 +103,13 @@
     gap: 24px; padding: 0 16px;
   }
   .main { display: flex; flex-direction: column; gap: 8px; }
-  .sidebar { display: flex; flex-direction: column; gap: 8px; }
+  .sidebar {
+    display: flex; flex-direction: column; gap: 8px;
+    position: sticky; top: 68px; align-self: flex-start;
+    max-height: calc(100vh - 76px); overflow-y: auto;
+  }
+  .sidebar::-webkit-scrollbar { width: 6px; }
+  .sidebar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 3px; }
   .card {
     background: var(--li-card);
     border: 1px solid var(--li-border);
@@ -552,8 +558,9 @@
   }
   .see-more:hover { color: var(--li-blue); }
 
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     .container { grid-template-columns: 1fr; }
+    .sidebar { position: static; max-height: none; }
     .featured-grid { grid-template-columns: 1fr; }
     .interest-grid { grid-template-columns: 1fr; }
   }
@@ -823,7 +830,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
     </div>
 
     <!-- =========== FEATURED =========== -->
-    <div class="card">
+    <div class="card" id="featured-section">
       <div class="panel">
         <h2>Featured</h2>
         <div class="featured-grid">
@@ -869,10 +876,12 @@ Passionate about: building marketing teams that actually ship work, baking sourd
         <h2>Activity</h2>
         <div style="font-size: 14px; color: var(--li-blue); font-weight: 600;">2,847 followers</div>
         <div class="activity-tabs">
-          <button class="pill active">Posts</button>
-          <button class="pill">Comments</button>
-          <button class="pill">Images</button>
+          <button class="pill active" onclick="showActivityTab('posts', this)">Posts</button>
+          <button class="pill" onclick="showActivityTab('comments', this)">Comments</button>
         </div>
+
+        <!-- Posts list (default visible) -->
+        <div id="activity-posts">
 
         <!-- Post 1 -->
         <div class="post" style="border-top:0" onclick="openPost('p-layla-marketing')">
@@ -916,9 +925,6 @@ Passionate about: building marketing teams that actually ship work, baking sourd
             <br><br>
             (We rescued him in 2019 as a kitten. Layla picked the name. I should've vetoed.)
           </div>
-          <div class="post-img" style="background: linear-gradient(135deg,#1f2937,#475569);">
-            📷 cat photo<br>(Loki on Sarah's keyboard)
-          </div>
           <div class="post-engagement-bar">
             <div class="reactions">
               <span class="reaction-emoji like">👍</span>
@@ -929,7 +935,17 @@ Passionate about: building marketing teams that actually ship work, baking sourd
           </div>
         </div>
 
-        <div class="see-more">Show all posts →</div>
+        </div>
+        <!-- end #activity-posts -->
+
+        <!-- Comments tab empty state -->
+        <div id="activity-comments" style="display:none; padding:48px 16px; text-align:center;">
+          <div style="font-size:42px;margin-bottom:12px">💬</div>
+          <div style="font-weight:600;color:var(--li-text);margin-bottom:4px;font-size:16px">No recent comments to show</div>
+          <div style="font-size:13px;color:var(--li-text-low)">When Sarah comments on someone else's post, it'll appear here.</div>
+        </div>
+
+        <div class="see-more" onclick="document.getElementById('featured-section').scrollIntoView({behavior:'smooth', block:'start'})">Show all posts ↑</div>
       </div>
     </div>
 
@@ -1402,6 +1418,14 @@ function closePost() {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closePost();
 });
+
+function showActivityTab(tab, btn) {
+  document.querySelectorAll('.activity-tabs .pill').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('activity-posts').style.display = tab === 'posts' ? 'block' : 'none';
+  document.getElementById('activity-comments').style.display = tab === 'comments' ? 'block' : 'none';
+}
+
 </script>
 
 </body>
