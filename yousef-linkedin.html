@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>(7) Yousef Al-Mutawa | LinkedIn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --li-blue: #0a66c2;
+    --li-blue-hover: #004182;
+    --li-text: #000000e6;
+    --li-text-low: #00000099;
+    --li-text-muted: #00000066;
+    --li-bg: #f4f2ee;
+    --li-card: #ffffff;
+    --li-border: #00000014;
+    --li-divider: #e8e8e8;
+    --li-success: #057642;
+    --li-pill: #f5f5f5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    font-family: 'Source Sans 3', -apple-system, system-ui, sans-serif;
+    background: var(--li-bg);
+    color: var(--li-text);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  a { color: var(--li-blue); text-decoration: none; font-weight: 600; }
+  a:hover { text-decoration: underline; color: var(--li-blue-hover); }
+  button { cursor: pointer; font-family: inherit; }
+  /* ========================== TOP NAV ========================== */
+  .topnav {
+    position: sticky; top: 0; z-index: 100;
+    background: #fff; border-bottom: 1px solid var(--li-border);
+    height: 52px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0);
+  }
+  .topnav-inner {
+    width: 100%; max-width: 1128px; padding: 0 16px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .li-logo {
+    width: 34px; height: 34px;
+    background: var(--li-blue); color: #fff;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 22px;
+  }
+  .search {
+    flex: 0 1 280px;
+    background: #edf3f8;
+    border-radius: 4px;
+    height: 34px;
+    display: flex; align-items: center;
+    padding: 0 8px;
+    gap: 8px;
+  }
+  .search input {
+    border: 0; background: transparent; outline: 0;
+    flex: 1; height: 100%; font-size: 14px;
+    font-family: inherit;
+  }
+  .search-icon { color: var(--li-text-low); font-size: 16px; }
+  .nav-items {
+    display: flex; align-items: center; gap: 4px;
+    margin-left: auto;
+  }
+  .nav-item {
+    padding: 6px 12px;
+    display: flex; flex-direction: column; align-items: center;
+    color: var(--li-text-low);
+    cursor: pointer;
+    min-width: 80px;
+    border-bottom: 2px solid transparent;
+    margin-top: 4px;
+  }
+  .nav-item:hover { color: var(--li-text); }
+  .nav-item.active { color: var(--li-text); border-bottom-color: var(--li-text); }
+  .nav-icon { font-size: 22px; line-height: 1; }
+  .nav-label { font-size: 12px; margin-top: 2px; }
+  .nav-divider { width: 1px; height: 32px; background: var(--li-border); margin: 0 4px; }
+  .nav-me {
+    display: flex; flex-direction: column; align-items: center;
+    cursor: pointer; padding: 4px 12px;
+  }
+  .nav-me-img {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: linear-gradient(135deg, #c084fc, #f472b6);
+    border: 1px solid #fff;
+  }
+  .nav-me-label { font-size: 12px; color: var(--li-text-low); margin-top: 4px; }
+  .nav-me-caret { font-size: 10px; }
+
+  /* ========================== LAYOUT ========================== */
+  .container {
+    max-width: 1128px; margin: 24px auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 24px; padding: 0 16px;
+    align-items: start;
+  }
+  .main {
+    grid-column: 1;
+    min-width: 0;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .sidebar {
+    grid-column: 2;
+    position: sticky; top: 68px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .card {
+    background: var(--li-card);
+    border: 1px solid var(--li-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  /* ========================== PROFILE HEADER ========================== */
+  .cover {
+    height: 201px;
+    background:
+      linear-gradient(135deg, #1a3a52 0%, #2d5a87 35%, #4a7ba6 70%, #87b5d6 100%);
+    position: relative;
+  }
+  .cover::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06) 0%, transparent 40%);
+  }
+  .profile-body {
+    padding: 0 24px 24px;
+    position: relative;
+  }
+  .profile-photo {
+    width: 152px; height: 152px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ea580c, #f97316);
+    border: 4px solid #fff;
+    margin-top: -75px; position: relative; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 56px; font-weight: 600;
+    overflow: hidden;
+  }
+  .profile-photo .ph-text {
+    font-family: 'Source Sans 3', sans-serif;
+    letter-spacing: -2px;
+  }
+  .profile-name-row {
+    margin-top: 12px;
+    display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;
+  }
+  .profile-name { font-size: 24px; font-weight: 600; color: var(--li-text); }
+  .profile-pronouns { color: var(--li-text-low); font-size: 14px; }
+  .profile-headline {
+    font-size: 16px; color: var(--li-text);
+    margin-top: 4px; line-height: 1.4;
+  }
+  .profile-location-row {
+    margin-top: 4px;
+    display: flex; align-items: center; gap: 6px;
+    color: var(--li-text-low); font-size: 14px;
+  }
+  .profile-location-row .dot { color: var(--li-text-muted); }
+  .profile-location-row a { font-weight: 600; color: var(--li-blue); }
+  .current-company {
+    margin-top: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .company-logo {
+    width: 32px; height: 32px;
+    background: #0d2949;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: #f59e0b; font-weight: 700; font-size: 11px;
+    letter-spacing: -0.5px;
+  }
+  .company-name {
+    font-size: 14px; color: var(--li-text); font-weight: 600;
+  }
+  .education-line {
+    margin-top: 4px;
+    display: flex; align-items: center; gap: 8px;
+    color: var(--li-text-low); font-size: 14px;
+  }
+  .ku-logo {
+    width: 32px; height: 32px;
+    background: #003366; border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fbbf24; font-size: 9px; font-weight: 700; letter-spacing: -0.3px;
+  }
+  .profile-actions {
+    margin-top: 16px;
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .btn {
+    height: 32px; padding: 0 16px;
+    border-radius: 16px;
+    font-weight: 600; font-size: 14px;
+    border: 1px solid transparent;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: background .12s;
+  }
+  .btn-primary {
+    background: var(--li-blue); color: #fff;
+  }
+  .btn-primary:hover { background: var(--li-blue-hover); }
+  .btn-secondary {
+    background: transparent; color: var(--li-blue);
+    border-color: var(--li-blue); font-weight: 600;
+  }
+  .btn-secondary:hover { background: rgba(112,181,249,0.15); }
+  .btn-tertiary {
+    background: transparent; color: var(--li-text-low);
+    border-color: var(--li-text-low);
+  }
+  .btn-tertiary:hover { background: rgba(0,0,0,0.06); color: var(--li-text); }
+  .open-to-banner {
+    margin-top: 16px; padding: 12px;
+    background: #f5f5f5; border-radius: 8px;
+    display: flex; align-items: center; gap: 12px;
+    border: 1px solid var(--li-border);
+  }
+  .open-to-banner .label { font-weight: 600; font-size: 14px; }
+  .open-to-banner .desc { color: var(--li-text-low); font-size: 13px; margin-top: 2px; }
+
+  /* ========================== ANALYTICS / HIGHLIGHTS ========================== */
+  .panel {
+    padding: 16px 24px;
+  }
+  .panel h2 {
+    font-size: 20px; font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .panel-row {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 8px 0;
+  }
+  .panel-row .icon {
+    width: 24px; font-size: 22px; color: var(--li-text-low);
+  }
+  .panel-row .text strong { font-weight: 600; }
+  .panel-row .text small { color: var(--li-text-low); display: block; }
+
+  /* ========================== ABOUT ========================== */
+  .about-text {
+    font-size: 14px; color: var(--li-text); line-height: 1.5;
+    white-space: pre-wrap;
+  }
+  .about-text .highlight {
+    background: rgba(245, 158, 11, 0.15);
+    padding: 0 2px; border-radius: 2px;
+  }
+  .top-skills {
+    margin-top: 16px;
+    border: 1px solid var(--li-border);
+    border-radius: 8px; padding: 12px 16px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .top-skills-label {
+    font-size: 14px; font-weight: 600;
+  }
+  .top-skills-value {
+    color: var(--li-text-low); font-size: 14px;
+  }
+
+  /* ========================== FEATURED ========================== */
+  .featured-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .featured-card {
+    border: 1px solid var(--li-border);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .featured-card:hover { background: #f9fafb; }
+  .featured-img {
+    height: 140px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; text-align: center; padding: 12px;
+    font-size: 12px;
+    font-style: italic;
+  }
+  .featured-img.beach {
+    background: linear-gradient(160deg, #06b6d4 0%, #0ea5e9 50%, #fcd34d 100%);
+  }
+  .featured-img.family {
+    background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+  }
+  .featured-img.office {
+    background: linear-gradient(135deg, #0d2949 0%, #1e3a5f 100%);
+  }
+  .featured-img.grad {
+    background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+  }
+  .featured-meta {
+    padding: 12px;
+  }
+  .featured-meta .post-type {
+    font-size: 12px; color: var(--li-text-low); font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .featured-meta .post-text {
+    font-size: 14px; color: var(--li-text);
+    margin-top: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4;
+  }
+  .featured-meta .post-engagement {
+    font-size: 12px; color: var(--li-text-low);
+    margin-top: 8px;
+  }
+
+  /* ========================== ACTIVITY POSTS ========================== */
+  .activity-tabs {
+    display: flex; gap: 8px; margin: 8px 0 16px;
+  }
+  .pill {
+    height: 32px; padding: 0 12px; border-radius: 16px;
+    border: 1px solid var(--li-border);
+    background: transparent; color: var(--li-text);
+    font-size: 14px; font-weight: 600;
+  }
+  .pill.active { background: #01754f1a; color: var(--li-success); border-color: var(--li-success); }
+  .pill:hover:not(.active) { background: #f5f5f5; }
+  .post {
+    border-top: 1px solid var(--li-divider);
+    padding: 12px 0;
+  }
+  .post-header {
+    display: flex; align-items: flex-start; gap: 8px;
+    margin-bottom: 8px;
+  }
+  .post-author-img {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, #ea580c, #f97316);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-weight: 600; flex-shrink: 0;
+  }
+  .post-author-info {
+    flex: 1;
+  }
+  .post-author-action {
+    color: var(--li-text-low); font-size: 12px;
+  }
+  .post-author-action strong { color: var(--li-text); font-weight: 600; }
+  .post-time {
+    color: var(--li-text-low); font-size: 12px;
+  }
+  .post-body {
+    font-size: 14px; line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .post-body .hashtag { color: var(--li-blue); font-weight: 600; }
+  .post-img {
+    margin-top: 8px;
+    height: 200px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; text-align: center;
+    font-style: italic; font-size: 12px;
+    padding: 12px;
+  }
+  .post-engagement-bar {
+    margin-top: 8px;
+    display: flex; align-items: center; justify-content: space-between;
+    color: var(--li-text-low); font-size: 12px;
+    padding: 8px 0;
+    border-top: 1px solid var(--li-divider);
+  }
+  .reactions {
+    display: flex; align-items: center; gap: 4px;
+  }
+  .reaction-emoji {
+    width: 18px; height: 18px; border-radius: 50%;
+    border: 2px solid #fff;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 12px;
+  }
+  .reaction-emoji:not(:first-child) { margin-left: -6px; }
+  .like { background: #df704d; }
+  .clap { background: #f5bb5c; }
+  .heart { background: #df704d; }
+
+  /* ========================== EXPERIENCE / EDUCATION ========================== */
+  .timeline-item {
+    display: flex; gap: 16px; padding: 12px 0;
+    border-top: 1px solid var(--li-divider);
+  }
+  .timeline-item:first-child { border-top: 0; padding-top: 0; }
+  .timeline-icon {
+    width: 48px; height: 48px;
+    border-radius: 4px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 12px;
+  }
+  .timeline-icon.q8 { background: #0d2949; color: #f59e0b; letter-spacing: -0.5px; }
+  .timeline-icon.zain { background: #6b21a8; color: #fff; }
+  .timeline-icon.aub { background: #003366; color: #fbbf24; font-size: 10px; letter-spacing: -0.3px; }
+  .timeline-icon.ku { background: #003366; color: #fbbf24; font-size: 10px; letter-spacing: -0.3px; }
+  .timeline-icon.bbs { background: #16a34a; color: #fff; }
+  .timeline-content { flex: 1; }
+  .timeline-title { font-size: 14px; font-weight: 600; }
+  .timeline-company { font-size: 14px; color: var(--li-text); }
+  .timeline-meta { font-size: 12px; color: var(--li-text-low); margin-top: 2px; }
+  .timeline-desc { font-size: 14px; color: var(--li-text); margin-top: 6px; line-height: 1.5; }
+
+  /* ========================== SKILLS ========================== */
+  .skill-row {
+    padding: 12px 0;
+    border-top: 1px solid var(--li-divider);
+  }
+  .skill-row:first-child { border-top: 0; padding-top: 0; }
+  .skill-name { font-size: 14px; font-weight: 600; }
+  .skill-endorsement {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--li-text-low); margin-top: 4px;
+  }
+  .skill-endorsement-dots {
+    display: flex; gap: -4px;
+  }
+  .endorser-dot {
+    width: 16px; height: 16px; border-radius: 50%;
+    border: 2px solid #fff;
+    background: linear-gradient(135deg, #c084fc, #f472b6);
+    display: inline-block;
+  }
+  .endorser-dot:not(:first-child) { margin-left: -6px; }
+
+  /* ========================== RECOMMENDATIONS ========================== */
+  .rec-tabs {
+    display: flex; gap: 32px;
+    border-bottom: 1px solid var(--li-divider);
+    margin-bottom: 16px;
+  }
+  .rec-tab {
+    padding: 8px 0; font-size: 14px; font-weight: 600;
+    color: var(--li-text-low);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px; cursor: pointer;
+  }
+  .rec-tab.active { color: var(--li-success); border-bottom-color: var(--li-success); }
+  .rec-card {
+    display: flex; gap: 12px;
+    margin-top: 8px;
+  }
+  .rec-card-img {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    color: #fff; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600;
+  }
+  .rec-card-content { flex: 1; }
+  .rec-card-name { font-size: 14px; font-weight: 600; }
+  .rec-card-rel { font-size: 12px; color: var(--li-text-low); }
+  .rec-card-text {
+    font-size: 14px; color: var(--li-text);
+    margin-top: 8px; line-height: 1.5;
+  }
+
+  /* ========================== INTERESTS ========================== */
+  .interest-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    margin-top: 8px;
+  }
+  .interest-card {
+    border: 1px solid var(--li-border);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .interest-img {
+    width: 56px; height: 56px;
+    border-radius: 4px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 11px;
+  }
+  .interest-name {
+    font-size: 14px; font-weight: 600;
+    line-height: 1.3;
+  }
+  .interest-followers { font-size: 12px; color: var(--li-text-low); margin-top: 2px; }
+
+  /* ========================== SIDEBAR ========================== */
+  .sb-card { padding: 16px; }
+  .sb-title {
+    font-size: 16px; font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .sb-people {
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .sb-person {
+    display: flex; gap: 8px; align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--li-divider);
+  }
+  .sb-person:last-child { border-bottom: 0; }
+  .sb-person-img {
+    width: 40px; height: 40px; border-radius: 50%;
+    flex-shrink: 0;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 14px;
+  }
+  .sb-person-info { flex: 1; min-width: 0; }
+  .sb-person-name { font-size: 13px; font-weight: 600; line-height: 1.3; }
+  .sb-person-headline {
+    font-size: 12px; color: var(--li-text-low);
+    margin-top: 2px;
+    line-height: 1.3;
+  }
+  .sb-person-mutual {
+    font-size: 12px; color: var(--li-text-muted);
+    margin-top: 4px;
+  }
+  .sb-connect {
+    margin-top: 8px; height: 28px; padding: 0 12px;
+    border-radius: 14px; font-size: 13px; font-weight: 600;
+    color: var(--li-text); background: transparent;
+    border: 1px solid var(--li-text);
+  }
+  .sb-connect:hover { background: rgba(0,0,0,0.06); }
+  .sb-show-all {
+    margin-top: 12px; text-align: center;
+    color: var(--li-text-low); font-size: 14px; font-weight: 600;
+    padding: 8px;
+    cursor: pointer;
+  }
+  .sb-show-all:hover { background: #f5f5f5; border-radius: 4px; }
+
+  /* ========================== FOOTER ========================== */
+  .footer {
+    margin-top: 24px; text-align: center;
+    color: var(--li-text-low); font-size: 12px;
+    padding: 16px;
+  }
+  .footer-links {
+    display: flex; gap: 16px; justify-content: center;
+    margin-bottom: 8px;
+  }
+  .footer-links a { color: var(--li-text-low); font-weight: 400; }
+
+  /* show-more text */
+  .see-more {
+    font-size: 14px; color: var(--li-text-low);
+    margin-top: 8px; cursor: pointer; display: inline-block;
+  }
+  .see-more:hover { color: var(--li-blue); }
+
+  @media (max-width: 768px) {
+    .container { grid-template-columns: 1fr; }
+    .sidebar { position: static; max-height: none; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .interest-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ========================== INTERACTIVE: clickable posts ========================== */
+  .post, .featured-card { cursor: pointer; transition: background .15s, transform .15s; }
+  .post:hover { background: #fafafa; }
+  .featured-card:hover { background: #f9fafb; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+
+  /* ========================== MODAL ========================== */
+  .modal-backdrop {
+    display: none;
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.6);
+    justify-content: center; align-items: flex-start;
+    padding: 40px 16px 16px;
+    overflow-y: auto;
+  }
+  .modal-backdrop.show { display: flex; }
+  .modal-card {
+    background: #fff;
+    border-radius: 8px;
+    width: 100%; max-width: 580px;
+    overflow: hidden;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+    animation: modalIn .25s ease-out;
+    cursor: default;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(-12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .modal-header {
+    padding: 12px 16px;
+    display: flex; align-items: center; gap: 10px;
+    border-bottom: 1px solid var(--li-divider);
+  }
+  .modal-author-img {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, #ea580c, #f97316);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-weight: 600; flex-shrink: 0;
+  }
+  .modal-author-info { flex: 1; }
+  .modal-author-name { font-size: 14px; font-weight: 600; }
+  .modal-author-headline {
+    font-size: 12px; color: var(--li-text-low);
+    display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .modal-time { font-size: 12px; color: var(--li-text-low); }
+  .modal-close {
+    background: transparent; border: 0; padding: 6px;
+    color: var(--li-text-low); font-size: 24px; cursor: pointer;
+    border-radius: 50%; width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    line-height: 1;
+  }
+  .modal-close:hover { background: #f5f5f5; color: var(--li-text); }
+  .modal-body { padding: 0 16px 12px; }
+  .modal-post-text {
+    font-size: 14px; line-height: 1.5;
+    padding: 12px 0;
+  }
+  .modal-post-img {
+    height: 280px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; text-align: center; padding: 12px;
+    font-style: italic; font-size: 12px;
+    margin-bottom: 12px;
+  }
+  .modal-engagement {
+    display: flex; align-items: center; justify-content: space-between;
+    color: var(--li-text-low); font-size: 13px;
+    padding: 8px 0;
+    border-top: 1px solid var(--li-divider);
+    border-bottom: 1px solid var(--li-divider);
+  }
+  .modal-actions {
+    display: flex; padding: 4px 0;
+    border-bottom: 1px solid var(--li-divider);
+  }
+  .modal-action {
+    flex: 1; padding: 10px;
+    background: transparent; border: 0;
+    color: var(--li-text-low); font-weight: 600;
+    font-size: 14px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    border-radius: 4px;
+  }
+  .modal-action:hover { background: #f5f5f5; }
+  .modal-comments-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 0 8px;
+    font-size: 13px; color: var(--li-text);
+  }
+  .modal-comments-header strong { font-weight: 600; }
+  .modal-comment-input {
+    display: flex; align-items: flex-start; gap: 8px; padding: 8px 0;
+  }
+  .modal-comment-input-img {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: linear-gradient(135deg, #c084fc, #f472b6);
+    flex-shrink: 0;
+  }
+  .modal-comment-input input {
+    flex: 1; height: 36px; padding: 0 12px;
+    border: 1px solid var(--li-text-low);
+    border-radius: 18px;
+    font-family: inherit; font-size: 14px;
+    outline: none;
+  }
+  .comment {
+    display: flex; gap: 8px;
+    padding: 10px 0;
+  }
+  .comment-img {
+    width: 32px; height: 32px; border-radius: 50%;
+    color: #fff; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 12px;
+  }
+  .comment-content { flex: 1; min-width: 0; }
+  .comment-bubble {
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 8px 12px;
+  }
+  .comment-author-row {
+    display: flex; align-items: baseline; gap: 8px;
+    flex-wrap: wrap;
+  }
+  .comment-author-name { font-size: 14px; font-weight: 600; }
+  .comment-author-headline { font-size: 11px; color: var(--li-text-low); }
+  .comment-text {
+    font-size: 14px; line-height: 1.45; margin-top: 4px;
+  }
+  .comment-actions {
+    display: flex; gap: 12px; padding: 4px 12px;
+    font-size: 12px; color: var(--li-text-low); font-weight: 600;
+  }
+  .comment-actions span { cursor: pointer; }
+  .comment-actions span:hover { color: var(--li-text); }
+  .comment-actions .reactions-pill {
+    display: inline-flex; align-items: center; gap: 2px;
+    margin-left: auto;
+    font-size: 11px; color: var(--li-text-low); font-weight: 500;
+  }
+
+
+  /* ========================== PROFILE LINKS ========================== */
+  .profile-link {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-weight: inherit !important;
+  }
+  .profile-link:hover {
+    text-decoration: underline !important;
+    color: var(--li-blue) !important;
+    cursor: pointer;
+  }
+  .sb-person.has-link { cursor: pointer; }
+  .sb-person.has-link:hover { background: #f5f5f5; border-radius: 6px; padding: 8px; margin: -8px; }
+  .sb-person.has-link:hover .sb-person-name { color: var(--li-blue); }
+
+</style>
+</head>
+<body>
+
+<!-- ============================== TOP NAV ============================== -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="li-logo">in</div>
+    <div class="search">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Search" />
+    </div>
+    <div class="nav-items">
+      <div class="nav-item"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></div>
+      <div class="nav-item active"><span class="nav-icon">👥</span><span class="nav-label">My Network</span></div>
+      <div class="nav-item"><span class="nav-icon">💼</span><span class="nav-label">Jobs</span></div>
+      <div class="nav-item"><span class="nav-icon">💬</span><span class="nav-label">Messaging</span></div>
+      <div class="nav-item"><span class="nav-icon">🔔</span><span class="nav-label">Notifications</span></div>
+      <div class="nav-divider"></div>
+      <div class="nav-me">
+        <div class="nav-me-img"></div>
+        <div class="nav-me-label">Me ▾</div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================== MAIN ============================== -->
+<div class="container">
+  <main class="main">
+
+    <!-- =========== PROFILE HEADER CARD =========== -->
+    <div class="card">
+      <div class="cover"></div>
+      <div class="profile-body">
+        <div class="profile-photo"><span class="ph-text">YA</span></div>
+        <div class="profile-name-row">
+          <div class="profile-name">Yousef Al-Mutawa</div>
+          <div class="profile-pronouns">(He/Him)</div>
+        </div>
+        <div class="profile-headline">
+          Founder &amp; CEO at Q8 Logistics &nbsp;•&nbsp; Building MENA's logistics backbone &nbsp;•&nbsp; KU '06
+        </div>
+        <div class="profile-location-row">
+          <span>Kuwait City, Kuwait</span>
+          <span class="dot">•</span>
+          <a href="#">Contact info</a>
+        </div>
+        <div class="profile-location-row" style="margin-top:4px">
+          <a href="#">500+ connections</a>
+        </div>
+
+        <div class="current-company">
+          <div class="company-logo">Q8</div>
+          <div class="company-name"><a class="profile-link" href="q8-logistics.html">Q8 Logistics</a></div>
+        </div>
+        <div class="education-line">
+          <div class="ku-logo">KU</div>
+          <span>Kuwait University</span>
+        </div>
+
+        <div class="profile-actions">
+          <button class="btn btn-primary">Open to ▾</button>
+          <button class="btn btn-secondary">Add profile section ▾</button>
+          <button class="btn btn-secondary">Enhance profile</button>
+          <button class="btn btn-tertiary">Resources ▾</button>
+        </div>
+
+        <div class="open-to-banner">
+          <div style="font-size: 24px;">💼</div>
+          <div>
+            <div class="label">Open to mentoring</div>
+            <div class="desc">Showing recruiters and others you're open to mentoring early-stage founders in Kuwait.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========== ANALYTICS =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>Analytics</h2>
+        <div style="font-size:12px;color:var(--li-text-low);margin-bottom:8px">🔒 Private to you</div>
+        <div class="panel-row">
+          <span class="icon">👁️</span>
+          <div class="text"><strong>247 profile views</strong><small>Discover who's viewed your profile</small></div>
+        </div>
+        <div class="panel-row">
+          <span class="icon">📊</span>
+          <div class="text"><strong>1,892 post impressions</strong><small>Past 7 days</small></div>
+        </div>
+        <div class="panel-row">
+          <span class="icon">🔍</span>
+          <div class="text"><strong>134 search appearances</strong><small>Discover how often you appear in search results</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========== ABOUT =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>About</h2>
+        <div class="about-text">Founder &amp; CEO of <strong>Q8 Logistics</strong> — building MENA's logistics backbone from Kuwait City.
+
+Started Q8 in <strong>October 2014</strong> from a meeting room in <strong>Hawalli</strong> with one truck and one part-time driver. Today we move <strong>50,000+ packages a day</strong> across Kuwait, KSA, and UAE — 400+ people, 200+ vehicles, three country operations.
+
+Before Q8 I spent 8 years at <strong>Agility Logistics</strong> learning how freight actually works (harder than it looks). Before that I was a finance grad at Kuwait University who thought I'd end up at NBK.
+
+I believe logistics is a craft. I believe MENA founders should build for MENA first. I believe shipping is a more honest measure than vision decks.
+
+Outside work I'm husband to <strong>Hessa</strong>, dad to two kids who are growing too fast (<strong>Saud</strong>, born 2016, and <strong>Dana</strong>, born 2019), Real Madrid fan since 1998, and weekend hiker. Born and raised in Kuwait City.
+
+📩 yousef@q8logistics.com  &nbsp;•&nbsp;  DMs open for founders, freight folks, or coffee in Kuwait.</div>
+
+        <div class="top-skills">
+          <div class="top-skills-label">Top skills</div>
+          <div class="top-skills-value">Logistics &nbsp;•&nbsp; Operations Management &nbsp;•&nbsp; Strategic Planning &nbsp;•&nbsp; Founder &nbsp;•&nbsp; MENA Markets</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========== FEATURED =========== -->
+    <div class="card" id="featured-section">
+      <div class="panel">
+        <h2>Featured</h2>
+        <div class="featured-grid">
+          <div class="featured-card" onclick="openPost('p-q8-10yr')">
+            <div class="featured-img family" style="background: linear-gradient(135deg, #ea580c, #fcd34d);">📷 founder photo<br>(Yousef in front of first truck, 2014)</div>
+            <div class="featured-meta">
+              <div class="post-type">POST</div>
+              <div class="post-text">10 years of Q8 Logistics today. From a meeting room in Hawalli with one truck to 400+ people across 3 countries. The road continues. Thank you to every person who took a bet on us.</div>
+              <div class="post-engagement">3,142 reactions • 287 comments</div>
+            </div>
+          </div>
+          <div class="featured-card" onclick="openPost('p-ahmed-hire')">
+            <div class="featured-img office">📷 office photo<br>(Q8 founding team, 2018)</div>
+            <div class="featured-meta">
+              <div class="post-type">POST</div>
+              <div class="post-text">Hiring decision that changed Q8: in March 2018 I asked Ahmed Al-Rashid to set up our IT system on a Tuesday. By Friday we had email, file sharing, and SSO. Best hire I ever made.</div>
+              <div class="post-engagement">1,247 reactions • 89 comments</div>
+            </div>
+          </div>
+          <div class="featured-card" onclick="openPost('p-saudi-launch')">
+            <div class="featured-img beach" style="background: linear-gradient(135deg,#fcd34d 0%,#f59e0b 50%,#dc2626 100%);">📷 ribbon-cutting photo<br>(Riyadh office opening, June 2019)</div>
+            <div class="featured-meta">
+              <div class="post-type">POST</div>
+              <div class="post-text">June 14, 2019: Q8 Logistics officially expands to Saudi Arabia 🇸🇦. From 30 people in Kuwait to a regional platform in 12 months. Hardest year. Best year. Onwards.</div>
+              <div class="post-engagement">2,189 reactions • 178 comments</div>
+            </div>
+          </div>
+          <div class="featured-card" onclick="openPost('p-meed-award')">
+            <div class="featured-img grad">📷 award photo<br>(MEED Awards 2024 — Logistics Company of the Year)</div>
+            <div class="featured-meta">
+              <div class="post-type">POST</div>
+              <div class="post-text">Q8 Logistics won MEED Logistics Company of the Year 2024 last week. Every team member earned this. Special shoutout to Faisal Al-Anjari and the operations team for the heroics in Q3.</div>
+              <div class="post-engagement">1,876 reactions • 156 comments</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========== ACTIVITY =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>Activity</h2>
+        <div style="font-size: 14px; color: var(--li-blue); font-weight: 600;">2,847 followers</div>
+        <div class="activity-tabs">
+          <button class="pill active" onclick="showActivityTab('posts', this)">Posts</button>
+          <button class="pill" onclick="showActivityTab('comments', this)">Comments</button>
+        </div>
+
+        <!-- Posts list (default visible) -->
+        <div id="activity-posts">
+
+        <!-- Post 1 -->
+        <div class="post" style="border-top:0" onclick="openPost('p-founder-reflection')">
+          <div class="post-header">
+            <div class="post-author-img">YA</div>
+            <div class="post-author-info">
+              <div class="post-author-action"><strong>Sarah Al-Khalid</strong> • You</div>
+              <div class="post-author-action">posted this • <strong>3w</strong> • 🌍</div>
+            </div>
+          </div>
+          <div class="post-body">
+            Founder reflection: 10 years in, the only consistent advice I'd give my 2014 self is "hire slower, fire faster, and don't outsource your customer support to save 12k."
+            <br><br>
+            We learned that one the hard way in 2017. <span class="hashtag">#FoundersReflect</span>
+          </div>
+          <div class="post-engagement-bar">
+            <div class="reactions">
+              <span class="reaction-emoji like">👍</span>
+              <span class="reaction-emoji clap">👏</span>
+              <span class="reaction-emoji heart">❤️</span>
+              <span style="margin-left:6px">456 reactions</span>
+            </div>
+            <div>34 comments</div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="post" onclick="openPost('p-mutla-hike')">
+          <div class="post-header">
+            <div class="post-author-img">YA</div>
+            <div class="post-author-info">
+              <div class="post-author-action"><strong>Sarah Al-Khalid</strong> • You</div>
+              <div class="post-author-action">posted this • <strong>2mo</strong> • 🌍</div>
+            </div>
+          </div>
+          <div class="post-body">
+            Took the kids hiking in Mutla Ridge last weekend. Saud (8) made it 4km, Dana (5) made it 800m before announcing she'd been "tricked" into exercise.
+            <br><br>
+            Logistics lesson: load capacity decreases sharply with passenger age, Q4 has worse weather than Q1, and bringing a 5-year-old to a hike is a high-risk operation. Worth it.
+          </div>
+          <div class="post-engagement-bar">
+            <div class="reactions">
+              <span class="reaction-emoji like">👍</span>
+              <span class="reaction-emoji heart">❤️</span>
+              <span style="margin-left:6px">298 reactions</span>
+            </div>
+            <div>67 comments</div>
+          </div>
+        </div>
+
+        </div>
+        <!-- end #activity-posts -->
+
+        <!-- Comments tab empty state -->
+        <div id="activity-comments" style="display:none; padding:48px 16px; text-align:center;">
+          <div style="font-size:42px;margin-bottom:12px">💬</div>
+          <div style="font-weight:600;color:var(--li-text);margin-bottom:4px;font-size:16px">No recent comments to show</div>
+          <div style="font-size:13px;color:var(--li-text-low)">When Sarah comments on someone else's post, it'll appear here.</div>
+        </div>
+
+        <div class="see-more" onclick="document.getElementById('featured-section').scrollIntoView({behavior:'smooth', block:'start'})">Show all posts ↑</div>
+      </div>
+    </div>
+
+    <!-- =========== EXPERIENCE =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>Experience</h2>
+
+        <div class="timeline-item">
+          <div class="timeline-icon q8">Q8</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Founder &amp; CEO</div>
+            <div class="timeline-company"><a class="profile-link" href="q8-logistics.html">Q8 Logistics</a> &nbsp;•&nbsp; Full-time</div>
+            <div class="timeline-meta">Oct 2014 - Present &nbsp;•&nbsp; 10 yrs 7 mos</div>
+            <div class="timeline-meta">Kuwait City, Kuwait</div>
+            <div class="timeline-desc">Founded Q8 Logistics in October 2014 with one truck and one part-time driver. Today: 400+ people, 200+ vehicles, 50,000+ packages/day across Kuwait, KSA, UAE. Won MEED Logistics Company of the Year 2024.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon zain" style="background:#dc2626">AG</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Senior Manager, Strategy &amp; Operations</div>
+            <div class="timeline-company">Agility Logistics &nbsp;•&nbsp; Full-time</div>
+            <div class="timeline-meta">Aug 2010 - Sep 2014 &nbsp;•&nbsp; 4 yrs 2 mos</div>
+            <div class="timeline-meta">Kuwait City, Kuwait</div>
+            <div class="timeline-desc">Led GCC strategy &amp; operations across freight forwarding business. Last role before founding Q8.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon zain" style="background:#dc2626">AG</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Operations Manager</div>
+            <div class="timeline-company">Agility Logistics &nbsp;•&nbsp; Full-time</div>
+            <div class="timeline-meta">Jul 2007 - Aug 2010 &nbsp;•&nbsp; 3 yrs 1 mo</div>
+            <div class="timeline-meta">Kuwait City, Kuwait</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon zain" style="background:#dc2626">AG</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Operations Analyst</div>
+            <div class="timeline-company">Agility Logistics &nbsp;•&nbsp; Full-time</div>
+            <div class="timeline-meta">Jul 2006 - Jul 2007 &nbsp;•&nbsp; 1 yr 1 mo</div>
+            <div class="timeline-meta">Kuwait City, Kuwait</div>
+            <div class="timeline-desc">First job out of KU. Learned the freight industry on the job.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =========== EDUCATION =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>Education</h2>
+
+        <div class="timeline-item">
+          <div class="timeline-icon ku">KU</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Kuwait University</div>
+            <div class="timeline-company">Bachelor of Arts, Finance</div>
+            <div class="timeline-meta">2002 - 2006</div>
+            <div class="timeline-desc">College of Business Administration. GPA 3.5. KU Investment Society 2004-2006.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon bbs" style="background:#0d2949">KES</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Kuwait English School</div>
+            <div class="timeline-company">High School Diploma</div>
+            <div class="timeline-meta">1996 - 2002</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =========== SKILLS =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>Skills</h2>
+
+        <div class="skill-row">
+          <div class="skill-name">Logistics</div>
+          <div class="skill-endorsement">
+            <div class="skill-endorsement-dots">
+              <span class="endorser-dot" style="background: linear-gradient(135deg, #1e40af, #06b6d4);"></span>
+              <span class="endorser-dot" style="background: linear-gradient(135deg, #f59e0b, #ef4444);"></span>
+              <span class="endorser-dot" style="background: linear-gradient(135deg, #16a34a, #22c55e);"></span>
+            </div>
+            <span>Endorsed by <a class="profile-link" href="ahmed-linkedin.html">Ahmed Al-Rashid</a> and 124 others</span>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-name">Operations Management</div>
+          <div class="skill-endorsement">
+            <span style="margin-left: 22px;">98 endorsements</span>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-name">Strategic Planning</div>
+          <div class="skill-endorsement">
+            <div class="skill-endorsement-dots">
+              <span class="endorser-dot" style="background: linear-gradient(135deg, #f59e0b, #ef4444);"></span>
+            </div>
+            <span>Endorsed by <a class="profile-link" href="sarah-linkedin.html">Sarah Al-Khalid</a> and 71 others</span>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-name">Entrepreneurship</div>
+          <div class="skill-endorsement">
+            <span style="margin-left: 22px;">87 endorsements</span>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-name">MENA Markets</div>
+          <div class="skill-endorsement">
+            <span style="margin-left: 22px;">62 endorsements</span>
+          </div>
+        </div>
+
+        <!-- Hidden skills, shown when toggle clicked -->
+        <div id="extra-skills" style="display:none">
+          <div class="skill-row">
+            <div class="skill-name">Supply Chain Management</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">54 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Team Building</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">48 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Business Strategy</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">42 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Fundraising</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">31 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">P&amp;L Management</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">28 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Negotiation</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">24 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Public Speaking</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">19 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Mentoring</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">17 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Arabic - Native or bilingual</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">8 endorsements</span></div>
+          </div>
+        </div>
+
+        <div class="see-more" id="skills-toggle" onclick="toggleSkills()">Show all 14 skills ↓</div>
+      </div>
+    </div>
+
+    <!-- =========== RECOMMENDATIONS =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>Recommendations</h2>
+        <div class="rec-tabs">
+          <div class="rec-tab active" onclick="showRecTab('received', this)">Received</div>
+          <div class="rec-tab" onclick="showRecTab('given', this)">Given</div>
+        </div>
+
+        <!-- Received recommendations -->
+        <div id="rec-received">
+        <div class="rec-card">
+          <div class="rec-card-img" style="background: linear-gradient(135deg,#1e40af,#06b6d4)">AR</div>
+          <div class="rec-card-content">
+            <div class="rec-card-name"><a class="profile-link" href="ahmed-linkedin.html">Ahmed Al-Rashid</a></div>
+            <div class="rec-card-rel">IT Director at Q8 Logistics &nbsp;•&nbsp; March 15, 2024, Yousef managed Ahmed directly</div>
+            <div class="rec-card-text">"Yousef hired me as his 11th employee in March 2018 when Q8 was 4 years old and the engineering culture was \"we'll figure it out.\" Seven years later he's built a real platform — and somehow let me build the IT org how I wanted it. He's the rare founder who hires people he genuinely trusts and then gets out of the way. Highest recommendation."</div>
+          </div>
+        </div>
+
+        <div class="rec-card" style="margin-top:24px">
+          <div class="rec-card-img" style="background: linear-gradient(135deg,#f59e0b,#ef4444)">SK</div>
+          <div class="rec-card-content">
+            <div class="rec-card-name">Sarah Al-Khalid</div>
+            <div class="rec-card-rel">Marketing Manager at Q8 Logistics &nbsp;•&nbsp; April 28, 2024, Yousef managed Sarah directly</div>
+            <div class="rec-card-text">"I joined Q8 in 2018 as employee #31. Yousef told me on day one: 'My job is to give you a hard problem and not get in the way.' He's lived that promise for 7 years. The best founder I've worked with — direct, trusting, surprisingly patient about marketing taking longer than logistics. Highest recommendation."</div>
+          </div>
+        </div>
+        </div>
+        <!-- end #rec-received -->
+
+        <!-- Given recommendations -->
+        <div id="rec-given" style="display:none">
+          <div class="rec-card">
+            <div class="rec-card-img" style="background: linear-gradient(135deg,#1e40af,#06b6d4)">AR</div>
+            <div class="rec-card-content">
+              <div class="rec-card-name">Ahmed Al-Rashid</div>
+              <div class="rec-card-rel">IT Director at Q8 Logistics &nbsp;•&nbsp; January 17, 2024, Yousef managed Ahmed directly</div>
+              <div class="rec-card-text">"Ahmed was hire #11 at Q8. I asked him to set up our IT 'system' on a Tuesday in March 2018. By Friday we had email, file sharing, and SSO. He's been the unflappable engineer I've needed in every Q8 chapter since. He's grown a team of 4, owned our security posture, and saved my reputation more times than I can count. If you're considering him for a senior IT role, just hire him."</div>
+            </div>
+          </div>
+
+          <div class="rec-card" style="margin-top:24px">
+            <div class="rec-card-img" style="background: linear-gradient(135deg,#f59e0b,#ef4444)">SK</div>
+            <div class="rec-card-content">
+              <div class="rec-card-name">Sarah Al-Khalid</div>
+              <div class="rec-card-rel">Marketing Manager at Q8 Logistics &nbsp;•&nbsp; March 3, 2023, Yousef managed Sarah directly</div>
+              <div class="rec-card-text">"I've worked with Sarah since she joined Q8 as our 31st employee. She's been instrumental in shaping who we are as a brand. Patient, detail-obsessed, calm in chaos. Anyone would be lucky to work with her."</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =========== INTERESTS =========== -->
+    <div class="card">
+      <div class="panel">
+        <h2>Interests</h2>
+        <div class="interest-grid">
+          <div class="interest-card">
+            <div class="interest-img" style="background: #0d2949; color: #f59e0b;">Q8</div>
+            <div>
+              <div class="interest-name"><a class="profile-link" href="q8-logistics.html">Q8 Logistics</a></div>
+              <div class="interest-followers">12,847 followers</div>
+            </div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-img" style="background: linear-gradient(135deg,#dc2626,#f59e0b);">HBR</div>
+            <div>
+              <div class="interest-name">Harvard Business Review</div>
+              <div class="interest-followers">21M followers</div>
+            </div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-img" style="background: linear-gradient(135deg,#0ea5e9,#06b6d4);">RM</div>
+            <div>
+              <div class="interest-name">Real Madrid C.F.</div>
+              <div class="interest-followers">8.2M followers</div>
+            </div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-img" style="background: #003366; color: #fbbf24;">KU</div>
+            <div>
+              <div class="interest-name">Kuwait University</div>
+              <div class="interest-followers">189,234 followers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ============================== SIDEBAR ============================== -->
+  <aside class="sidebar">
+
+    <div class="card sb-card">
+      <div class="sb-title">People you may know</div>
+      <div style="font-size: 13px; color: var(--li-text-low); margin-bottom: 12px;">From Sarah's company</div>
+
+      <div class="sb-people">
+        <div class="sb-person has-link" onclick="window.location.href='ahmed-linkedin.html'">
+          <div class="sb-person-img" style="background: linear-gradient(135deg,#1e40af,#3b82f6)">AR</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Ahmed Al-Rashid</div>
+            <div class="sb-person-headline">IT Director at Q8 Logistics</div>
+            <div class="sb-person-mutual">🤝 47 mutual connections</div>
+            <button class="sb-connect" onclick="event.stopPropagation()">Connect</button>
+          </div>
+        </div>
+
+        <div class="sb-person">
+          <div class="sb-person-img" style="background: linear-gradient(135deg,#ea580c,#f97316)">YA</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Yousef Al-Mutawa</div>
+            <div class="sb-person-headline">Founder & CEO at Q8 Logistics</div>
+            <div class="sb-person-mutual">🤝 38 mutual connections</div>
+            <button class="sb-connect" onclick="event.stopPropagation()">Connect</button>
+          </div>
+        </div>
+
+        <div class="sb-person has-link" onclick="window.location.href='sarah-linkedin.html'">
+          <div class="sb-person-img" style="background: linear-gradient(135deg,#f59e0b,#ef4444)">SK</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Sarah Al-Khalid</div>
+            <div class="sb-person-headline">Marketing Manager at Q8 Logistics</div>
+            <div class="sb-person-mutual">🤝 124 mutual connections</div>
+            <button class="sb-connect" onclick="event.stopPropagation()">Connect</button>
+          </div>
+        </div>
+
+        <div class="sb-person">
+          <div class="sb-person-img" style="background: linear-gradient(135deg,#16a34a,#22c55e)">FA</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Faisal Al-Anjari</div>
+            <div class="sb-person-headline">Head of Operations at Q8 Logistics</div>
+            <div class="sb-person-mutual">🤝 387 mutual connections</div>
+            <button class="sb-connect" onclick="event.stopPropagation()">Connect</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="sb-show-all">Show all →</div>
+    </div>
+
+    <div class="card sb-card">
+      <div class="sb-title">You might like</div>
+      <div style="font-size: 13px; color: var(--li-text-low); margin-bottom: 12px;">Pages for you</div>
+
+      <div class="sb-people">
+        <div class="sb-person">
+          <div class="sb-person-img" style="background: #0d2949; color: #f59e0b;">Q8</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name"><a class="profile-link" href="q8-logistics.html">Q8 Logistics</a></div>
+            <div class="sb-person-headline">Logistics & Supply Chain • Kuwait</div>
+            <div class="sb-person-mutual">🏢 12,847 followers</div>
+            <button class="sb-connect">+ Follow</button>
+          </div>
+        </div>
+
+        <div class="sb-person">
+          <div class="sb-person-img" style="background: linear-gradient(135deg,#7c3aed,#2563eb)">CC</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">CODED Academy</div>
+            <div class="sb-person-headline">Coding Bootcamps • Kuwait</div>
+            <div class="sb-person-mutual">🏢 24,891 followers</div>
+            <button class="sb-connect">+ Follow</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card sb-card" style="background: linear-gradient(135deg,#fef3c7,#fde68a); border-color: #fcd34d;">
+      <div class="sb-title">Add to your feed</div>
+      <div style="font-size: 13px; color: var(--li-text);">Follow people and topics to see their posts in your feed.</div>
+      <button class="btn btn-primary" style="margin-top:12px">View suggestions</button>
+    </div>
+
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Accessibility</a>
+        <a href="#">Help Center</a>
+        <a href="#">Privacy & Terms</a>
+      </div>
+      <div>LinkedIn Corporation © 2025</div>
+    </div>
+
+  </aside>
+
+</div>
+
+
+<!-- ============================== MODAL ============================== -->
+<div class="modal-backdrop" id="postModal" onclick="if(event.target===this)closePost()">
+  <div class="modal-card" id="modalCard">
+    <!-- populated by JS -->
+  </div>
+</div>
+
+<script>
+const PROFILE_LINKS = {
+  'Ahmed Al-Rashid': 'ahmed-linkedin.html',
+  'Sarah Al-Khalid': 'sarah-linkedin.html',
+  'Yousef Al-Mutawa': 'yousef-linkedin.html',
+  'Q8 Logistics': 'q8-logistics.html',
+};
+function profileNameHtml(name) {
+  const url = PROFILE_LINKS[name];
+  return url
+    ? `<a class="profile-link" href="${url}">${name}</a>`
+    : name;
+}
+
+const POSTS = {
+  'p-q8-10yr': {
+    img: { type: 'family', text: '📷 founder photo<br>(Yousef in front of first truck, Hawalli, October 2014)' },
+    time: '8mo',
+    body: '10 years of <strong>Q8 Logistics</strong> today.<br><br>October 2014: I rented a meeting room in <strong>Hawalli</strong> for 200 KD a month, bought one truck on a personal loan, and convinced one part-time driver to take a chance on me. We delivered 23 packages our first week.<br><br>Today: 400+ people, 200+ vehicles, 50,000+ packages a day, and three country operations.<br><br>The road continues. Thank you to every person who took a bet on us — especially the early team. You know who you are.<br><br><span class=\"hashtag\">#Q8Logistics</span> <span class=\"hashtag\">#10Years</span>',
+    likes: '3,142 reactions',
+    comments_count: '287 comments',
+    comments: [
+      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#06b6d4)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '8mo', text: 'Hire #11 reporting in. Best decision I ever made was Friday May 11 2018 when you said \"come build this with me.\" 🚀' },
+      { initials: 'SK', color: 'linear-gradient(135deg,#f59e0b,#ef4444)', name: 'Sarah Al-Khalid', headline: 'Marketing Manager at Q8 Logistics', time: '8mo', text: 'Hire #31 here. The trust you give people to do their jobs is the rarest thing in Kuwait business. Onwards 🙏' },
+      { initials: 'FA', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Faisal Al-Anjari', headline: 'Head of Operations at Q8 Logistics', time: '8mo', text: 'I still have the Toyota Hilux key in my desk. Wild ride, brother.' },
+    ],
+  },
+  'p-ahmed-hire': {
+    img: { type: 'office', text: '📷 office photo<br>(Q8 founding team, 2018)' },
+    time: '6mo',
+    body: 'Hiring decision that changed Q8: in <strong>March 2018</strong> I asked <strong>Ahmed Al-Rashid</strong> to set up our IT system on a Tuesday.<br><br>Tuesday morning: an email server I bought on a hosting site that\'s now defunct.<br>Friday: email, file sharing, SSO, and the start of our security posture.<br><br>Best hire I ever made. Seven years later he runs a team of 4 and owns our entire infrastructure. The lesson: hire people who can ship before you can write the spec.<br><br><span class=\"hashtag\">#FoundersReflect</span> <span class=\"hashtag\">#Q8Logistics</span>',
+    likes: '1,247 reactions',
+    comments_count: '89 comments',
+    comments: [
+      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#06b6d4)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '6mo', text: 'You also paid me for the parts I had to buy off my own credit card that week. I\'ve told that story to every junior I\'ve hired since.' },
+      { initials: 'SK', color: 'linear-gradient(135deg,#f59e0b,#ef4444)', name: 'Sarah Al-Khalid', headline: 'Marketing Manager at Q8 Logistics', time: '6mo', text: 'Reading this with the smug satisfaction of someone who joined 7 days after Ahmed and shares his founding-team energy 😎' },
+    ],
+  },
+  'p-saudi-launch': {
+    img: { type: 'beach', text: '📷 ribbon-cutting photo<br>(Riyadh office opening, June 14 2019)' },
+    time: '5y',
+    body: '<strong>June 14, 2019</strong>: Q8 Logistics officially expands to <strong>Saudi Arabia</strong> 🇸🇦<br><br>From 30 people in Kuwait to a regional platform in 12 months. Hardest year of my life. Best year of Q8\'s.<br><br>The data localization requirements broke our infrastructure twice. The hiring market in Riyadh is brutal. The runway calculations gave me 4 hours of sleep most nights for 6 months. I would do all of it again tomorrow.<br><br>Onwards.',
+    likes: '2,189 reactions',
+    comments_count: '178 comments',
+    comments: [
+      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#06b6d4)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '5y', text: 'I have not forgotten the 4AM call about Saudi DNS. I will never forget the 4AM call about Saudi DNS.' },
+      { initials: 'SK', color: 'linear-gradient(135deg,#f59e0b,#ef4444)', name: 'Sarah Al-Khalid', headline: 'Marketing Manager at Q8 Logistics', time: '5y', text: 'The team that pulled the Saudi launch off shaped who we became. Massive day 🇸🇦' },
+    ],
+  },
+  'p-meed-award': {
+    img: { type: 'grad', text: '📷 award photo<br>(MEED Awards Dubai, December 2024)' },
+    time: '5mo',
+    body: 'Q8 Logistics won <strong>MEED Logistics Company of the Year 2024</strong> last week.<br><br>Every team member earned this. Special shoutout to <strong>Faisal Al-Anjari</strong> and the operations team for the heroics in Q3 — you carried us through the busiest quarter in our history with zero major incidents.<br><br>Awards aren\'t the goal. The work is the goal. But it\'s nice when the industry notices.<br><br><span class=\"hashtag\">#MEEDAwards</span> <span class=\"hashtag\">#Q8Logistics</span>',
+    likes: '1,876 reactions',
+    comments_count: '156 comments',
+    comments: [
+      { initials: 'FA', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Faisal Al-Anjari', headline: 'Head of Operations at Q8 Logistics', time: '5mo', text: 'Q3 nearly killed me. Worth it. Onwards 🙏' },
+      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#06b6d4)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '5mo', text: 'Congrats team. Now please nobody touch the Q4 deploys 🙏' },
+      { initials: 'SK', color: 'linear-gradient(135deg,#f59e0b,#ef4444)', name: 'Sarah Al-Khalid', headline: 'Marketing Manager at Q8 Logistics', time: '5mo', text: 'Industry recognition feels good when the team earns it. Big year for Q8 🚀' },
+    ],
+  },
+  'p-founder-reflection': {
+    img: null,
+    time: '3w',
+    body: 'Founder reflection: 10 years in, the only consistent advice I\'d give my 2014 self is "hire slower, fire faster, and don\'t outsource your customer support to save 12k."<br><br>We learned the customer support one the hard way in 2017. Lost 3 enterprise accounts in a month before we caught it.<br><br><span class=\"hashtag\">#FoundersReflect</span>',
+    likes: '456 reactions',
+    comments_count: '67 comments',
+    comments: [
+      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#06b6d4)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '3w', text: 'I would add: never let your security posture be \"we\'ll do it next quarter.\" That ages worse than wine.' },
+      { initials: 'SK', color: 'linear-gradient(135deg,#f59e0b,#ef4444)', name: 'Sarah Al-Khalid', headline: 'Marketing Manager at Q8 Logistics', time: '3w', text: '"Hire slower" is the one I keep relearning every year.' },
+    ],
+  },
+  'p-mutla-hike': {
+    img: null,
+    time: '2mo',
+    body: 'Took the kids hiking in <strong>Mutla Ridge</strong> last weekend. <strong>Saud</strong> (8) made it 4km, <strong>Dana</strong> (5) made it 800m before announcing she\'d been "tricked" into exercise.<br><br>Logistics lesson: load capacity decreases sharply with passenger age, Q4 has worse weather than Q1, and bringing a 5-year-old to a hike is a high-risk operation.<br><br>Worth it.',
+    likes: '298 reactions',
+    comments_count: '42 comments',
+    comments: [
+      { initials: 'SK', color: 'linear-gradient(135deg,#f59e0b,#ef4444)', name: 'Sarah Al-Khalid', headline: 'Marketing Manager at Q8 Logistics', time: '2mo', text: 'Dana getting tricked into exercise is exactly Layla\'s reaction to swimming. Solidarity 💕' },
+      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#06b6d4)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '2mo', text: 'Layan would last exactly 12 minutes. Saud is built different.' },
+    ],
+  },
+};
+
+const IMG_GRADIENTS = {
+  family: 'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',
+  office: 'linear-gradient(135deg, #0d2949 0%, #1e3a5f 100%)',
+  beach:  'linear-gradient(160deg, #06b6d4 0%, #0ea5e9 50%, #fcd34d 100%)',
+  grad:   'linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)',
+  cat:    'linear-gradient(135deg, #1f2937, #475569)',
+};
+
+function openPost(id) {
+  const post = POSTS[id];
+  if (!post) return;
+  const card = document.getElementById('modalCard');
+  const imgHtml = post.img
+    ? `<div class="modal-post-img" style="background: ${IMG_GRADIENTS[post.img.type] || '#888'}">${post.img.text}</div>`
+    : '';
+  const commentsHtml = post.comments.map(c => `
+    <div class="comment">
+      <div class="comment-img" style="background: ${c.color}">${c.initials}</div>
+      <div class="comment-content">
+        <div class="comment-bubble">
+          <div class="comment-author-row">
+            <span class="comment-author-name">${profileNameHtml(c.name)}</span>
+            <span class="comment-author-headline">${c.headline} • ${c.time}</span>
+          </div>
+          <div class="comment-text">${c.text}</div>
+        </div>
+        <div class="comment-actions">
+          <span>Like</span>
+          <span>Reply</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  card.innerHTML = `
+    <div class="modal-header">
+      <div class="modal-author-img">YA</div>
+      <div class="modal-author-info">
+        <div class="modal-author-name">Yousef Al-Mutawa <span style="color:var(--li-text-low);font-weight:400;font-size:12px">(He/Him)</span></div>
+        <div class="modal-author-headline">Founder &amp; CEO at Q8 Logistics</div>
+        <div class="modal-time">${post.time} • 🌍</div>
+      </div>
+      <button class="modal-close" onclick="closePost()" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-post-text">${post.body}</div>
+      ${imgHtml}
+      <div class="modal-engagement">
+        <div class="reactions">
+          <span class="reaction-emoji like">👍</span>
+          <span class="reaction-emoji clap">👏</span>
+          <span class="reaction-emoji heart">❤️</span>
+          <span style="margin-left:6px">${post.likes}</span>
+        </div>
+        <div>${post.comments_count}</div>
+      </div>
+      <div class="modal-actions">
+        <button class="modal-action">👍 Like</button>
+        <button class="modal-action">💬 Comment</button>
+        <button class="modal-action">🔁 Repost</button>
+        <button class="modal-action">📤 Send</button>
+      </div>
+      <div class="modal-comments-header">
+        <strong>Most relevant ▾</strong>
+      </div>
+      <div class="modal-comment-input">
+        <div class="modal-comment-input-img"></div>
+        <input type="text" placeholder="Add a comment..." />
+      </div>
+      <div class="modal-comments-list">
+        ${commentsHtml}
+      </div>
+    </div>
+  `;
+  document.getElementById('postModal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePost() {
+  document.getElementById('postModal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closePost();
+});
+
+function showActivityTab(tab, btn) {
+  document.querySelectorAll('.activity-tabs .pill').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('activity-posts').style.display = tab === 'posts' ? 'block' : 'none';
+  document.getElementById('activity-comments').style.display = tab === 'comments' ? 'block' : 'none';
+}
+function showRecTab(tab, btn) {
+  document.querySelectorAll('.rec-tab').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('rec-received').style.display = tab === 'received' ? 'block' : 'none';
+  document.getElementById('rec-given').style.display = tab === 'given' ? 'block' : 'none';
+}
+function toggleSkills() {
+  const extra = document.getElementById('extra-skills');
+  const toggle = document.getElementById('skills-toggle');
+  if (extra.style.display === 'none' || extra.style.display === '') {
+    extra.style.display = 'block';
+    toggle.innerHTML = 'Show less ↑';
+  } else {
+    extra.style.display = 'none';
+    toggle.innerHTML = 'Show all 14 skills ↓';
+  }
+}
+
+
+</script>
+
+</body>
+</html>
