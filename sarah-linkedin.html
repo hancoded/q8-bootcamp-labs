@@ -99,17 +99,21 @@
   /* ========================== LAYOUT ========================== */
   .container {
     max-width: 1128px; margin: 24px auto;
-    display: grid; grid-template-columns: 1fr 300px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
     gap: 24px; padding: 0 16px;
+    align-items: start;
   }
-  .main { display: flex; flex-direction: column; gap: 8px; }
-  .sidebar {
+  .main {
+    grid-column: 1;
+    min-width: 0;
     display: flex; flex-direction: column; gap: 8px;
-    position: sticky; top: 68px; align-self: flex-start;
-    max-height: calc(100vh - 76px); overflow-y: auto;
   }
-  .sidebar::-webkit-scrollbar { width: 6px; }
-  .sidebar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 3px; }
+  .sidebar {
+    grid-column: 2;
+    position: sticky; top: 68px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
   .card {
     background: var(--li-card);
     border: 1px solid var(--li-border);
@@ -1075,7 +1079,53 @@ Passionate about: building marketing teams that actually ship work, baking sourd
           </div>
         </div>
 
-        <div class="see-more">Show all 14 skills →</div>
+        <!-- Hidden skills, shown when toggle clicked -->
+        <div id="extra-skills" style="display:none">
+          <div class="skill-row">
+            <div class="skill-name">Content Marketing</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">22 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Brand Management</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">17 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Marketing Strategy</div>
+            <div class="skill-endorsement">
+              <div class="skill-endorsement-dots">
+                <span class="endorser-dot"></span>
+                <span class="endorser-dot" style="background: linear-gradient(135deg, #16a34a, #22c55e);"></span>
+              </div>
+              <span>Endorsed by Mariam Al-Sabah and 14 others</span>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Public Relations</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">11 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Marketing Communications</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">9 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Social Media Marketing</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">9 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Adobe Photoshop</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">7 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Microsoft Office</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">6 endorsements</span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Arabic - Native or bilingual</div>
+            <div class="skill-endorsement"><span style="margin-left: 22px;">4 endorsements</span></div>
+          </div>
+        </div>
+
+        <div class="see-more" id="skills-toggle" onclick="toggleSkills()">Show all 14 skills ↓</div>
       </div>
     </div>
 
@@ -1084,9 +1134,12 @@ Passionate about: building marketing teams that actually ship work, baking sourd
       <div class="panel">
         <h2>Recommendations</h2>
         <div class="rec-tabs">
-          <div class="rec-tab active">Received</div>
-          <div class="rec-tab">Given</div>
+          <div class="rec-tab active" onclick="showRecTab('received', this)">Received</div>
+          <div class="rec-tab" onclick="showRecTab('given', this)">Given</div>
         </div>
+
+        <!-- Received recommendations -->
+        <div id="rec-received">
         <div class="rec-card">
           <div class="rec-card-img">AR</div>
           <div class="rec-card-content">
@@ -1102,6 +1155,29 @@ Passionate about: building marketing teams that actually ship work, baking sourd
             <div class="rec-card-name">Yousef Al-Mutawa</div>
             <div class="rec-card-rel">Founder & CEO at Q8 Logistics &nbsp;•&nbsp; March 3, 2023, Yousef managed Sarah directly</div>
             <div class="rec-card-text">"I've worked with Sarah since she joined Q8 as our 31st employee. She's been instrumental in shaping who we are as a brand. Patient, detail-obsessed, calm in chaos. Anyone would be lucky to work with her."</div>
+          </div>
+        </div>
+        </div>
+        <!-- end #rec-received -->
+
+        <!-- Given recommendations -->
+        <div id="rec-given" style="display:none">
+          <div class="rec-card">
+            <div class="rec-card-img" style="background: linear-gradient(135deg,#16a34a,#22c55e)">MS</div>
+            <div class="rec-card-content">
+              <div class="rec-card-name">Mariam Al-Sabah</div>
+              <div class="rec-card-rel">Senior Marketing Specialist at Zain Kuwait &nbsp;•&nbsp; February 8, 2024, Sarah and Mariam were colleagues</div>
+              <div class="rec-card-text">"Mariam was the first person at Zain who told me that 'good enough' wasn't good enough. We worked together for 5 years and shipped the Ramadan 2016 and 2017 campaigns side by side. She has a rare combination of strategic thinking and instinct for what'll resonate locally. Anyone hiring senior marketing in the GCC should call her first."</div>
+            </div>
+          </div>
+
+          <div class="rec-card" style="margin-top:24px">
+            <div class="rec-card-img" style="background: linear-gradient(135deg,#dc2626,#f59e0b)">RH</div>
+            <div class="rec-card-content">
+              <div class="rec-card-name">Reem Al-Hajri</div>
+              <div class="rec-card-rel">Marketing Lead at Q8 Logistics &nbsp;•&nbsp; November 22, 2023, Sarah managed Reem directly</div>
+              <div class="rec-card-text">"I hired Reem in 2021 as our marketing coordinator. Three years later she's leading our Saudi market activation. She's that rare person who treats every brief as a craft project, takes feedback as fuel, and quietly makes everyone around her better. If you're looking for senior marketing talent in Kuwait, talk to Reem before she's gone."</div>
+            </div>
           </div>
         </div>
 
@@ -1425,6 +1501,24 @@ function showActivityTab(tab, btn) {
   document.getElementById('activity-posts').style.display = tab === 'posts' ? 'block' : 'none';
   document.getElementById('activity-comments').style.display = tab === 'comments' ? 'block' : 'none';
 }
+function showRecTab(tab, btn) {
+  document.querySelectorAll('.rec-tab').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('rec-received').style.display = tab === 'received' ? 'block' : 'none';
+  document.getElementById('rec-given').style.display = tab === 'given' ? 'block' : 'none';
+}
+function toggleSkills() {
+  const extra = document.getElementById('extra-skills');
+  const toggle = document.getElementById('skills-toggle');
+  if (extra.style.display === 'none' || extra.style.display === '') {
+    extra.style.display = 'block';
+    toggle.innerHTML = 'Show less ↑';
+  } else {
+    extra.style.display = 'none';
+    toggle.innerHTML = 'Show all 14 skills ↓';
+  }
+}
+
 
 </script>
 
