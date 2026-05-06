@@ -714,6 +714,22 @@
     font-size: 11px; color: var(--li-text-low); font-weight: 500;
   }
 
+
+  /* ========================== PROFILE LINKS ========================== */
+  .profile-link {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-weight: inherit !important;
+  }
+  .profile-link:hover {
+    text-decoration: underline !important;
+    color: var(--li-blue) !important;
+    cursor: pointer;
+  }
+  .sb-person.has-link { cursor: pointer; }
+  .sb-person.has-link:hover { background: #f5f5f5; border-radius: 6px; padding: 8px; margin: -8px; }
+  .sb-person.has-link:hover .sb-person-name { color: var(--li-blue); }
+
 </style>
 </head>
 <body>
@@ -1043,7 +1059,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
               <span class="endorser-dot" style="background: linear-gradient(135deg, #1e40af, #3b82f6);"></span>
               <span class="endorser-dot" style="background: linear-gradient(135deg, #16a34a, #22c55e);"></span>
             </div>
-            <span>Endorsed by Ahmed Al-Rashid and 47 others</span>
+            <span>Endorsed by <a class="profile-link" href="ahmed-linkedin.html">Ahmed Al-Rashid</a> and 47 others</span>
           </div>
         </div>
 
@@ -1143,7 +1159,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
         <div class="rec-card">
           <div class="rec-card-img">AR</div>
           <div class="rec-card-content">
-            <div class="rec-card-name">Ahmed Al-Rashid</div>
+            <div class="rec-card-name"><a class="profile-link" href="ahmed-linkedin.html">Ahmed Al-Rashid</a></div>
             <div class="rec-card-rel">IT Director at Q8 Logistics &nbsp;•&nbsp; July 12, 2023, Ahmed managed Sarah indirectly</div>
             <div class="rec-card-text">"Sarah is the kind of marketing leader who actually ships work. In our 5+ years working together at Q8, she rebuilt our brand from a logo on PowerPoint slides to a regional name people recognize. She's also the only marketer I've met who reads the engineering tickets before complaining about them. Highest recommendation."</div>
           </div>
@@ -1231,13 +1247,13 @@ Passionate about: building marketing teams that actually ship work, baking sourd
       <div style="font-size: 13px; color: var(--li-text-low); margin-bottom: 12px;">From Sarah's company</div>
 
       <div class="sb-people">
-        <div class="sb-person">
+        <div class="sb-person has-link" onclick="window.location.href='ahmed-linkedin.html'">
           <div class="sb-person-img" style="background: linear-gradient(135deg,#1e40af,#3b82f6)">AR</div>
           <div class="sb-person-info">
             <div class="sb-person-name">Ahmed Al-Rashid</div>
             <div class="sb-person-headline">IT Director at Q8 Logistics</div>
             <div class="sb-person-mutual">🤝 47 mutual connections</div>
-            <button class="sb-connect">Connect</button>
+            <button class="sb-connect" onclick="event.stopPropagation()">Connect</button>
           </div>
         </div>
 
@@ -1247,7 +1263,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
             <div class="sb-person-name">Yousef Al-Mutawa</div>
             <div class="sb-person-headline">Founder & CEO at Q8 Logistics</div>
             <div class="sb-person-mutual">🤝 38 mutual connections</div>
-            <button class="sb-connect">Connect</button>
+            <button class="sb-connect" onclick="event.stopPropagation()">Connect</button>
           </div>
         </div>
 
@@ -1257,7 +1273,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
             <div class="sb-person-name">Mariam Al-Sabah</div>
             <div class="sb-person-headline">Senior Marketing at Zain Kuwait</div>
             <div class="sb-person-mutual">🤝 89 mutual connections</div>
-            <button class="sb-connect">Connect</button>
+            <button class="sb-connect" onclick="event.stopPropagation()">Connect</button>
           </div>
         </div>
 
@@ -1267,7 +1283,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
             <div class="sb-person-name">Fatma Al-Otaibi</div>
             <div class="sb-person-headline">Marketing Director at Boubyan Bank</div>
             <div class="sb-person-mutual">🤝 23 mutual connections</div>
-            <button class="sb-connect">Connect</button>
+            <button class="sb-connect" onclick="event.stopPropagation()">Connect</button>
           </div>
         </div>
       </div>
@@ -1331,6 +1347,17 @@ Passionate about: building marketing teams that actually ship work, baking sourd
 </div>
 
 <script>
+const PROFILE_LINKS = {
+  'Ahmed Al-Rashid': 'ahmed-linkedin.html',
+  'Sarah Al-Khalid': 'sarah-linkedin.html',
+};
+function profileNameHtml(name) {
+  const url = PROFILE_LINKS[name];
+  return url
+    ? `<a class="profile-link" href="${url}">${name}</a>`
+    : name;
+}
+
 const POSTS = {
   'p-layla-birthday': {
     img: { type: 'family', text: '📷 family photo<br>(Layla\'s 7th birthday — Layla in a tiara, Sarah in the background)' },
@@ -1429,7 +1456,7 @@ function openPost(id) {
       <div class="comment-content">
         <div class="comment-bubble">
           <div class="comment-author-row">
-            <span class="comment-author-name">${c.name}</span>
+            <span class="comment-author-name">${profileNameHtml(c.name)}</span>
             <span class="comment-author-headline">${c.headline} • ${c.time}</span>
           </div>
           <div class="comment-text">${c.text}</div>
