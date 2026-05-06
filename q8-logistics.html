@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q8 Logistics | LinkedIn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --li-blue: #0a66c2;
+    --li-blue-hover: #004182;
+    --li-text: #000000e6;
+    --li-text-low: #00000099;
+    --li-text-muted: #00000066;
+    --li-bg: #f4f2ee;
+    --li-card: #ffffff;
+    --li-border: #00000014;
+    --li-divider: #e8e8e8;
+    --li-success: #057642;
+    --q8-navy: #0d2949;
+    --q8-gold: #f59e0b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    font-family: 'Source Sans 3', -apple-system, system-ui, sans-serif;
+    background: var(--li-bg);
+    color: var(--li-text);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  a { color: var(--li-blue); text-decoration: none; font-weight: 600; }
+  a:hover { text-decoration: underline; color: var(--li-blue-hover); }
+  button { cursor: pointer; font-family: inherit; }
+
+  /* PROFILE LINKS */
+  .profile-link { color: inherit !important; text-decoration: none !important; font-weight: inherit !important; }
+  .profile-link:hover { text-decoration: underline !important; color: var(--li-blue) !important; cursor: pointer; }
+
+  /* TOP NAV */
+  .topnav {
+    position: sticky; top: 0; z-index: 100;
+    background: #fff; border-bottom: 1px solid var(--li-border);
+    height: 52px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .topnav-inner {
+    width: 100%; max-width: 1128px; padding: 0 16px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .li-logo {
+    width: 34px; height: 34px;
+    background: var(--li-blue); color: #fff;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 22px;
+  }
+  .search {
+    flex: 0 1 280px;
+    background: #edf3f8;
+    border-radius: 4px;
+    height: 34px;
+    display: flex; align-items: center;
+    padding: 0 8px;
+    gap: 8px;
+  }
+  .search input { border: 0; background: transparent; outline: 0; flex: 1; height: 100%; font-size: 14px; font-family: inherit; }
+  .search-icon { color: var(--li-text-low); font-size: 16px; }
+  .nav-items { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+  .nav-item {
+    padding: 6px 12px;
+    display: flex; flex-direction: column; align-items: center;
+    color: var(--li-text-low); cursor: pointer;
+    min-width: 80px; border-bottom: 2px solid transparent; margin-top: 4px;
+  }
+  .nav-item:hover { color: var(--li-text); }
+  .nav-icon { font-size: 22px; line-height: 1; }
+  .nav-label { font-size: 12px; margin-top: 2px; }
+  .nav-divider { width: 1px; height: 32px; background: var(--li-border); margin: 0 4px; }
+  .nav-me { display: flex; flex-direction: column; align-items: center; cursor: pointer; padding: 4px 12px; }
+  .nav-me-img { width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, #c084fc, #f472b6); border: 1px solid #fff; }
+  .nav-me-label { font-size: 12px; color: var(--li-text-low); margin-top: 4px; }
+
+  /* LAYOUT */
+  .container {
+    max-width: 1128px; margin: 24px auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 24px; padding: 0 16px;
+    align-items: start;
+  }
+  .main { grid-column: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+  .sidebar { grid-column: 2; position: sticky; top: 68px; display: flex; flex-direction: column; gap: 8px; }
+  .card {
+    background: var(--li-card);
+    border: 1px solid var(--li-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  /* COMPANY HEADER */
+  .cover {
+    height: 220px;
+    background:
+      linear-gradient(135deg, var(--q8-navy) 0%, #1e3a5f 50%, #2d4a73 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 25% 30%, rgba(245,158,11,0.15) 0%, transparent 35%),
+      radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05) 0%, transparent 50%);
+  }
+  .cover::after {
+    content: 'Q8';
+    position: absolute;
+    right: 60px; top: 30%;
+    font-size: 220px; font-weight: 900;
+    color: rgba(245,158,11,0.06);
+    letter-spacing: -10px;
+    line-height: 1;
+  }
+  .company-body {
+    padding: 0 24px 24px;
+    position: relative;
+  }
+  .company-logo {
+    width: 132px; height: 132px;
+    background: var(--q8-navy);
+    border: 4px solid #fff;
+    border-radius: 8px;
+    margin-top: -68px; position: relative; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--q8-gold);
+    font-size: 56px; font-weight: 900;
+    letter-spacing: -3px;
+  }
+  .company-name-row {
+    margin-top: 12px;
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  }
+  .company-name { font-size: 24px; font-weight: 600; color: var(--li-text); }
+  .verified {
+    display: inline-flex; align-items: center; gap: 4px;
+    color: var(--li-blue); font-size: 13px; font-weight: 600;
+  }
+  .company-tagline {
+    font-size: 16px; color: var(--li-text);
+    margin-top: 2px;
+  }
+  .company-meta {
+    margin-top: 4px;
+    color: var(--li-text-low); font-size: 14px;
+  }
+  .company-meta .dot { color: var(--li-text-muted); margin: 0 4px; }
+  .company-meta a { font-weight: 600; }
+  .followers-and-employees {
+    margin-top: 6px;
+    color: var(--li-text-low); font-size: 14px;
+  }
+  .followers-and-employees a { color: var(--li-blue); font-weight: 600; }
+  .employee-stack {
+    display: inline-flex; align-items: center; margin-right: 6px; vertical-align: middle;
+  }
+  .employee-stack .e-dot {
+    width: 24px; height: 24px; border-radius: 50%;
+    border: 2px solid #fff;
+    display: inline-block;
+  }
+  .employee-stack .e-dot:not(:first-child) { margin-left: -8px; }
+
+  .company-actions {
+    margin-top: 16px;
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .btn {
+    height: 32px; padding: 0 16px;
+    border-radius: 16px;
+    font-weight: 600; font-size: 14px;
+    border: 1px solid transparent;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn-primary { background: var(--li-blue); color: #fff; }
+  .btn-primary:hover { background: var(--li-blue-hover); }
+  .btn-secondary { background: transparent; color: var(--li-text); border-color: var(--li-text); }
+  .btn-secondary:hover { background: rgba(0,0,0,0.06); }
+
+  /* PAGE TABS (Home, About, Posts, Jobs, People, Life) */
+  .page-tabs {
+    display: flex; gap: 0;
+    margin-top: 16px; padding-top: 8px;
+    border-top: 1px solid var(--li-divider);
+    overflow-x: auto;
+  }
+  .page-tab {
+    padding: 10px 16px;
+    color: var(--li-text-low); font-weight: 600; font-size: 14px;
+    cursor: pointer; white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+  .page-tab:hover { color: var(--li-text); background: #f5f5f5; }
+  .page-tab.active { color: var(--li-success); border-bottom-color: var(--li-success); }
+
+  /* PANEL */
+  .panel { padding: 16px 24px; }
+  .panel h2 { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+
+  /* ABOUT */
+  .about-text {
+    font-size: 14px; color: var(--li-text); line-height: 1.6;
+    white-space: pre-wrap;
+  }
+  .about-grid {
+    margin-top: 20px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px;
+  }
+  .about-row { display: flex; flex-direction: column; gap: 2px; }
+  .about-row .label { font-size: 12px; font-weight: 600; color: var(--li-text-low); text-transform: uppercase; letter-spacing: 0.3px; }
+  .about-row .value { font-size: 14px; color: var(--li-text); }
+
+  /* SPECIALTIES */
+  .specialty-list {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .specialty-pill {
+    background: #f5f5f5; border-radius: 16px;
+    padding: 6px 14px;
+    font-size: 13px; color: var(--li-text); font-weight: 500;
+    border: 1px solid var(--li-border);
+  }
+
+  /* LOCATIONS */
+  .location-card {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid var(--li-divider);
+  }
+  .location-card:first-child { border-top: 0; padding-top: 0; }
+  .location-icon {
+    width: 40px; height: 40px;
+    background: var(--li-bg); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .location-info { flex: 1; }
+  .location-name { font-size: 14px; font-weight: 600; color: var(--li-text); }
+  .location-name .primary { font-size: 11px; padding: 2px 6px; background: var(--li-blue); color: #fff; border-radius: 4px; margin-left: 6px; vertical-align: middle; }
+  .location-address { font-size: 13px; color: var(--li-text-low); margin-top: 2px; }
+  .location-link { font-size: 13px; margin-top: 4px; }
+
+  /* PEOPLE */
+  .people-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+  }
+  .person-card {
+    border: 1px solid var(--li-border);
+    border-radius: 8px; padding: 12px;
+    display: flex; gap: 12px; align-items: flex-start;
+    cursor: pointer; transition: background .15s;
+  }
+  .person-card:hover { background: #f9fafb; }
+  .person-card.no-link { cursor: default; }
+  .person-card.no-link:hover { background: transparent; }
+  .person-img {
+    width: 56px; height: 56px;
+    border-radius: 50%; flex-shrink: 0;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 16px;
+  }
+  .person-info { flex: 1; min-width: 0; }
+  .person-name { font-size: 14px; font-weight: 600; color: var(--li-text); }
+  .person-headline { font-size: 12px; color: var(--li-text-low); margin-top: 2px; line-height: 1.4; }
+  .person-shared { font-size: 12px; color: var(--li-text-muted); margin-top: 4px; }
+
+  /* POSTS (company posts feed) */
+  .post {
+    border-top: 1px solid var(--li-divider);
+    padding: 12px 0;
+    cursor: pointer; transition: background .15s;
+  }
+  .post:hover { background: #fafafa; }
+  .post:first-of-type { border-top: 0; padding-top: 0; }
+  .post-header { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+  .post-author-img {
+    width: 48px; height: 48px; border-radius: 8px;
+    background: var(--q8-navy); color: var(--q8-gold);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 18px; flex-shrink: 0;
+    letter-spacing: -1px;
+  }
+  .post-author-info { flex: 1; }
+  .post-author-name { font-size: 14px; font-weight: 600; color: var(--li-text); }
+  .post-author-headline { font-size: 12px; color: var(--li-text-low); }
+  .post-time { color: var(--li-text-low); font-size: 12px; }
+  .post-body { font-size: 14px; line-height: 1.5; margin-bottom: 8px; }
+  .post-body .hashtag { color: var(--li-blue); font-weight: 600; }
+  .post-img {
+    margin-top: 8px;
+    height: 200px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; text-align: center;
+    font-style: italic; font-size: 12px;
+    padding: 12px;
+  }
+  .post-engagement-bar {
+    margin-top: 8px;
+    display: flex; align-items: center; justify-content: space-between;
+    color: var(--li-text-low); font-size: 12px;
+    padding: 8px 0;
+    border-top: 1px solid var(--li-divider);
+  }
+  .reactions { display: flex; align-items: center; gap: 4px; }
+  .reaction-emoji {
+    width: 18px; height: 18px; border-radius: 50%;
+    border: 2px solid #fff;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 12px;
+  }
+  .reaction-emoji:not(:first-child) { margin-left: -6px; }
+  .like { background: #df704d; }
+  .clap { background: #f5bb5c; }
+
+  /* SIDEBAR */
+  .sb-card { padding: 16px; }
+  .sb-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .sb-people { display: flex; flex-direction: column; gap: 12px; }
+  .sb-person {
+    display: flex; gap: 8px; align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--li-divider);
+  }
+  .sb-person:last-child { border-bottom: 0; }
+  .sb-person.has-link { cursor: pointer; }
+  .sb-person.has-link:hover { background: #f5f5f5; border-radius: 6px; padding: 8px; margin: -8px; margin-bottom: 0; }
+  .sb-person-img {
+    width: 48px; height: 48px; border-radius: 8px;
+    flex-shrink: 0; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px;
+    letter-spacing: -0.5px;
+  }
+  .sb-person-info { flex: 1; min-width: 0; }
+  .sb-person-name { font-size: 13px; font-weight: 600; line-height: 1.3; }
+  .sb-person-headline { font-size: 12px; color: var(--li-text-low); margin-top: 2px; line-height: 1.3; }
+  .sb-follow {
+    margin-top: 8px; height: 28px; padding: 0 12px;
+    border-radius: 14px; font-size: 13px; font-weight: 600;
+    color: var(--li-text); background: transparent;
+    border: 1px solid var(--li-text);
+  }
+  .sb-follow:hover { background: rgba(0,0,0,0.06); }
+
+  /* MODAL */
+  .modal-backdrop {
+    display: none;
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.6);
+    justify-content: center; align-items: flex-start;
+    padding: 40px 16px 16px;
+    overflow-y: auto;
+  }
+  .modal-backdrop.show { display: flex; }
+  .modal-card {
+    background: #fff; border-radius: 8px;
+    width: 100%; max-width: 580px;
+    overflow: hidden;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+    animation: modalIn .25s ease-out;
+  }
+  @keyframes modalIn { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
+  .modal-header {
+    padding: 12px 16px;
+    display: flex; align-items: center; gap: 10px;
+    border-bottom: 1px solid var(--li-divider);
+  }
+  .modal-close {
+    background: transparent; border: 0; padding: 6px;
+    color: var(--li-text-low); font-size: 24px; cursor: pointer;
+    border-radius: 50%; width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    line-height: 1;
+  }
+  .modal-close:hover { background: #f5f5f5; }
+  .modal-body { padding: 0 16px 12px; }
+  .modal-post-text { font-size: 14px; line-height: 1.5; padding: 12px 0; }
+  .modal-post-img { height: 280px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; padding: 12px; font-style: italic; font-size: 12px; margin-bottom: 12px; }
+
+  /* see-more */
+  .see-more { font-size: 14px; color: var(--li-text-low); margin-top: 8px; cursor: pointer; display: inline-block; padding: 8px 0; font-weight: 600; }
+  .see-more:hover { color: var(--li-blue); }
+
+  /* footer */
+  .footer { margin-top: 24px; text-align: center; color: var(--li-text-low); font-size: 12px; padding: 16px; }
+  .footer-links { display: flex; gap: 16px; justify-content: center; margin-bottom: 8px; }
+  .footer-links a { color: var(--li-text-low); font-weight: 400; }
+
+  @media (max-width: 768px) {
+    .container { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .people-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="li-logo">in</div>
+    <div class="search">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Search" />
+    </div>
+    <div class="nav-items">
+      <div class="nav-item"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></div>
+      <div class="nav-item"><span class="nav-icon">👥</span><span class="nav-label">My Network</span></div>
+      <div class="nav-item"><span class="nav-icon">💼</span><span class="nav-label">Jobs</span></div>
+      <div class="nav-item"><span class="nav-icon">💬</span><span class="nav-label">Messaging</span></div>
+      <div class="nav-item"><span class="nav-icon">🔔</span><span class="nav-label">Notifications</span></div>
+      <div class="nav-divider"></div>
+      <div class="nav-me">
+        <div class="nav-me-img"></div>
+        <div class="nav-me-label">Me ▾</div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <main class="main">
+
+    <!-- COMPANY HEADER -->
+    <div class="card">
+      <div class="cover"></div>
+      <div class="company-body">
+        <div class="company-logo">Q8</div>
+        <div class="company-name-row">
+          <div class="company-name">Q8 Logistics</div>
+          <div class="verified">✓ Verified</div>
+        </div>
+        <div class="company-tagline">Moving Kuwait. Powering MENA.</div>
+        <div class="company-meta">
+          Transportation, Logistics, Supply Chain and Storage
+          <span class="dot">•</span>
+          Kuwait City, Kuwait
+          <span class="dot">•</span>
+          <a href="#">12,847 followers</a>
+          <span class="dot">•</span>
+          401-500 employees
+        </div>
+        <div class="followers-and-employees">
+          <span class="employee-stack">
+            <span class="e-dot" style="background: linear-gradient(135deg, #ea580c, #f97316);"></span>
+            <span class="e-dot" style="background: linear-gradient(135deg, #1e40af, #06b6d4);"></span>
+            <span class="e-dot" style="background: linear-gradient(135deg, #f59e0b, #ef4444);"></span>
+          </span>
+          <a href="#">Yousef Al-Mutawa, <a class="profile-link" href="ahmed-linkedin.html">Ahmed Al-Rashid</a>, and 8 other connections work here</a>
+        </div>
+
+        <div class="company-actions">
+          <button class="btn btn-primary">+ Follow</button>
+          <button class="btn btn-secondary">🔗 Visit website</button>
+          <button class="btn btn-secondary">📧 Message</button>
+          <button class="btn btn-secondary">⋯ More</button>
+        </div>
+
+        <div class="page-tabs">
+          <div class="page-tab active">Home</div>
+          <div class="page-tab">About</div>
+          <div class="page-tab">Posts</div>
+          <div class="page-tab">Jobs <span style="background: var(--li-blue); color: #fff; font-size: 11px; padding: 1px 6px; border-radius: 8px; margin-left: 4px;">5</span></div>
+          <div class="page-tab">People</div>
+          <div class="page-tab">Life</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OVERVIEW (About short version on Home) -->
+    <div class="card">
+      <div class="panel">
+        <h2>Overview</h2>
+        <div class="about-text">Q8 Logistics is the fastest-growing logistics platform in the GCC. Founded in <strong>2014</strong> by <strong>Yousef Al-Mutawa</strong>, we operate across <strong>Kuwait, Saudi Arabia, and the United Arab Emirates</strong> — moving freight, packages, and partnerships at scale.
+
+Today: <strong>400+ people</strong>, 200+ vehicles in our fleet, 3 country operations, and partnerships with most major retail and e-commerce brands across MENA.
+
+We started in a meeting room in <strong>Hawalli</strong> with one truck. Today we move <strong>50,000+ packages a day</strong> across the region.
+
+Hiring engineers, drivers, and operations leads. We believe logistics is a craft.</div>
+
+        <div class="about-grid">
+          <div class="about-row"><span class="label">Industry</span><span class="value">Transportation, Logistics, Supply Chain &amp; Storage</span></div>
+          <div class="about-row"><span class="label">Company size</span><span class="value">401-500 employees</span></div>
+          <div class="about-row"><span class="label">Headquarters</span><span class="value">Kuwait City, Kuwait</span></div>
+          <div class="about-row"><span class="label">Type</span><span class="value">Privately Held</span></div>
+          <div class="about-row"><span class="label">Founded</span><span class="value">2014</span></div>
+          <div class="about-row"><span class="label">Website</span><span class="value"><a href="#">q8logistics.com</a></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPECIALTIES -->
+    <div class="card">
+      <div class="panel">
+        <h2>Specialties</h2>
+        <div class="specialty-list">
+          <div class="specialty-pill">Last-mile delivery</div>
+          <div class="specialty-pill">E-commerce logistics</div>
+          <div class="specialty-pill">Freight forwarding</div>
+          <div class="specialty-pill">Cold chain logistics</div>
+          <div class="specialty-pill">Warehouse automation</div>
+          <div class="specialty-pill">Reverse logistics</div>
+          <div class="specialty-pill">Fleet management</div>
+          <div class="specialty-pill">Cross-border MENA shipping</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOCATIONS -->
+    <div class="card">
+      <div class="panel">
+        <h2>Locations</h2>
+        <div class="location-card">
+          <div class="location-icon">🏢</div>
+          <div class="location-info">
+            <div class="location-name">Kuwait City <span class="primary">PRIMARY</span></div>
+            <div class="location-address">Block 4, Tunis Street, Hawalli</div>
+            <div class="location-address">Kuwait City, Kuwait</div>
+            <div class="location-link"><a href="#">Get directions</a></div>
+          </div>
+        </div>
+        <div class="location-card">
+          <div class="location-icon">📍</div>
+          <div class="location-info">
+            <div class="location-name">Riyadh</div>
+            <div class="location-address">King Fahd Road, Olaya District</div>
+            <div class="location-address">Riyadh, Saudi Arabia</div>
+            <div class="location-link"><a href="#">Get directions</a></div>
+          </div>
+        </div>
+        <div class="location-card">
+          <div class="location-icon">📍</div>
+          <div class="location-info">
+            <div class="location-name">Dubai</div>
+            <div class="location-address">JLT, Cluster X, Tower 2</div>
+            <div class="location-address">Dubai, United Arab Emirates</div>
+            <div class="location-link"><a href="#">Get directions</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMPLOYEES -->
+    <div class="card">
+      <div class="panel">
+        <h2>Employees at Q8 Logistics <span style="font-weight:400;color:var(--li-text-low);font-size:14px">(437 on LinkedIn)</span></h2>
+
+        <div class="people-grid">
+          <div class="person-card no-link">
+            <div class="person-img" style="background: linear-gradient(135deg,#ea580c,#f97316)">YA</div>
+            <div class="person-info">
+              <div class="person-name">Yousef Al-Mutawa</div>
+              <div class="person-headline">Founder &amp; CEO at Q8 Logistics</div>
+              <div class="person-shared">📍 Kuwait City, Kuwait</div>
+            </div>
+          </div>
+
+          <div class="person-card" onclick="window.location.href='ahmed-linkedin.html'">
+            <div class="person-img" style="background: linear-gradient(135deg,#1e40af,#06b6d4)">AR</div>
+            <div class="person-info">
+              <div class="person-name">Ahmed Al-Rashid</div>
+              <div class="person-headline">IT Director at Q8 Logistics</div>
+              <div class="person-shared">📍 Salmiya, Kuwait</div>
+            </div>
+          </div>
+
+          <div class="person-card" onclick="window.location.href='sarah-linkedin.html'">
+            <div class="person-img" style="background: linear-gradient(135deg,#f59e0b,#ef4444)">SK</div>
+            <div class="person-info">
+              <div class="person-name">Sarah Al-Khalid</div>
+              <div class="person-headline">Marketing Manager at Q8 Logistics</div>
+              <div class="person-shared">📍 Kuwait City, Kuwait</div>
+            </div>
+          </div>
+
+          <div class="person-card no-link">
+            <div class="person-img" style="background: linear-gradient(135deg,#dc2626,#f59e0b)">RH</div>
+            <div class="person-info">
+              <div class="person-name">Reem Al-Hajri</div>
+              <div class="person-headline">Marketing Lead at Q8 Logistics</div>
+              <div class="person-shared">📍 Kuwait City, Kuwait</div>
+            </div>
+          </div>
+
+          <div class="person-card no-link">
+            <div class="person-img" style="background: linear-gradient(135deg,#16a34a,#22c55e)">FA</div>
+            <div class="person-info">
+              <div class="person-name">Faisal Al-Anjari</div>
+              <div class="person-headline">Head of Operations at Q8 Logistics</div>
+              <div class="person-shared">📍 Kuwait City, Kuwait</div>
+            </div>
+          </div>
+
+          <div class="person-card no-link">
+            <div class="person-img" style="background: linear-gradient(135deg,#7c3aed,#a855f7)">NA</div>
+            <div class="person-info">
+              <div class="person-name">Noura Al-Ajmi</div>
+              <div class="person-headline">Senior Backend Engineer at Q8 Logistics</div>
+              <div class="person-shared">📍 Kuwait City, Kuwait</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="see-more">Show all 437 employees →</div>
+      </div>
+    </div>
+
+    <!-- POSTS -->
+    <div class="card">
+      <div class="panel">
+        <h2>Recent Posts</h2>
+
+        <div class="post" onclick="openPost('p-hiring')">
+          <div class="post-header">
+            <div class="post-author-img">Q8</div>
+            <div class="post-author-info">
+              <div class="post-author-name">Q8 Logistics</div>
+              <div class="post-author-headline">12,847 followers</div>
+              <div class="post-time">2w • 🌍</div>
+            </div>
+          </div>
+          <div class="post-body">
+            We're hiring 3 engineers to join our team in Kuwait City: <strong>DevOps</strong>, <strong>Security</strong>, and <strong>Backend</strong>.<br><br>
+            If you want to ship code to a fleet of 200+ vehicles and a regional logistics platform, we'd love to talk. <span class="hashtag">#KuwaitTech</span> <span class="hashtag">#WereHiring</span>
+          </div>
+          <div class="post-engagement-bar">
+            <div class="reactions">
+              <span class="reaction-emoji like">👍</span>
+              <span class="reaction-emoji clap">👏</span>
+              <span style="margin-left:6px">324 reactions</span>
+            </div>
+            <div>47 comments</div>
+          </div>
+        </div>
+
+        <div class="post" onclick="openPost('p-saudi-launch')">
+          <div class="post-header">
+            <div class="post-author-img">Q8</div>
+            <div class="post-author-info">
+              <div class="post-author-name">Q8 Logistics</div>
+              <div class="post-author-headline">12,847 followers</div>
+              <div class="post-time">5y • 🌍</div>
+            </div>
+          </div>
+          <div class="post-body">
+            Today, Q8 Logistics officially expands operations to <strong>Saudi Arabia</strong> 🇸🇦<br><br>
+            From a Kuwait City team of 30 in 2018 to a regional platform in 2019. Riyadh office opening this month, partnerships announced shortly. Thank you to every team member who made this happen.
+          </div>
+          <div class="post-img" style="background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%);">
+            📷 banner image<br>(Saudi expansion announcement, June 2019)
+          </div>
+          <div class="post-engagement-bar">
+            <div class="reactions">
+              <span class="reaction-emoji like">👍</span>
+              <span class="reaction-emoji clap">👏</span>
+              <span style="margin-left:6px">1,892 reactions</span>
+            </div>
+            <div>156 comments</div>
+          </div>
+        </div>
+
+        <div class="post" onclick="openPost('p-anniversary')">
+          <div class="post-header">
+            <div class="post-author-img">Q8</div>
+            <div class="post-author-info">
+              <div class="post-author-name">Q8 Logistics</div>
+              <div class="post-author-headline">12,847 followers</div>
+              <div class="post-time">8mo • 🌍</div>
+            </div>
+          </div>
+          <div class="post-body">
+            10 years of Q8 Logistics 🎉<br><br>
+            Founded by <strong>Yousef Al-Mutawa</strong> in 2014. Today we're 400+ people, 3 countries, and just shipped our 50 millionth package. The road continues.
+          </div>
+          <div class="post-engagement-bar">
+            <div class="reactions">
+              <span class="reaction-emoji like">👍</span>
+              <span class="reaction-emoji clap">👏</span>
+              <span style="margin-left:6px">2,134 reactions</span>
+            </div>
+            <div>247 comments</div>
+          </div>
+        </div>
+
+        <div class="see-more">Show all posts →</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="card sb-card">
+      <div class="sb-title">Affiliated pages</div>
+      <div class="sb-people">
+        <div class="sb-person">
+          <div class="sb-person-img" style="background:#0d2949;color:#f59e0b">Q8</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Q8 Logistics Saudi</div>
+            <div class="sb-person-headline">Logistics &amp; Supply Chain • Riyadh</div>
+            <div style="font-size:12px;color:var(--li-text-muted);margin-top:4px">🏢 2,341 followers</div>
+            <button class="sb-follow">+ Follow</button>
+          </div>
+        </div>
+        <div class="sb-person">
+          <div class="sb-person-img" style="background:#0d2949;color:#f59e0b">Q8</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Q8 Logistics Tech</div>
+            <div class="sb-person-headline">Engineering team blog • Kuwait</div>
+            <div style="font-size:12px;color:var(--li-text-muted);margin-top:4px">🏢 891 followers</div>
+            <button class="sb-follow">+ Follow</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card sb-card">
+      <div class="sb-title">Pages people also viewed</div>
+      <div class="sb-people">
+        <div class="sb-person">
+          <div class="sb-person-img" style="background: linear-gradient(135deg,#dc2626,#f59e0b)">AR</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Aramex</div>
+            <div class="sb-person-headline">Logistics &amp; Supply Chain • Dubai</div>
+            <div style="font-size:12px;color:var(--li-text-muted);margin-top:4px">🏢 1.2M followers</div>
+            <button class="sb-follow">+ Follow</button>
+          </div>
+        </div>
+        <div class="sb-person">
+          <div class="sb-person-img" style="background: linear-gradient(135deg,#1e40af,#06b6d4)">DH</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">DHL Middle East</div>
+            <div class="sb-person-headline">Transportation • Dubai</div>
+            <div style="font-size:12px;color:var(--li-text-muted);margin-top:4px">🏢 890K followers</div>
+            <button class="sb-follow">+ Follow</button>
+          </div>
+        </div>
+        <div class="sb-person">
+          <div class="sb-person-img" style="background: linear-gradient(135deg,#16a34a,#22c55e)">FF</div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Fetchr</div>
+            <div class="sb-person-headline">Logistics • Dubai</div>
+            <div style="font-size:12px;color:var(--li-text-muted);margin-top:4px">🏢 184K followers</div>
+            <button class="sb-follow">+ Follow</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Accessibility</a>
+        <a href="#">Privacy</a>
+      </div>
+      <div>LinkedIn Corporation © 2025</div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="postModal" onclick="if(event.target===this)closePost()">
+  <div class="modal-card" id="modalCard"></div>
+</div>
+
+<script>
+const PROFILE_LINKS = {
+  'Ahmed Al-Rashid': 'ahmed-linkedin.html',
+  'Sarah Al-Khalid': 'sarah-linkedin.html',
+};
+function profileNameHtml(name) {
+  const url = PROFILE_LINKS[name];
+  return url ? `<a class="profile-link" href="${url}">${name}</a>` : name;
+}
+
+const POSTS = {
+  'p-hiring': {
+    img: null,
+    time: '2w',
+    body: 'We\'re hiring 3 engineers to join our team in Kuwait City: <strong>DevOps</strong>, <strong>Security</strong>, and <strong>Backend</strong>.<br><br>You\'ll work on:<br>• A fleet management platform that runs 200+ vehicles<br>• Cross-border shipping infrastructure across Kuwait, KSA, UAE<br>• A platform that moves 50,000+ packages a day<br><br>If you\'re in Kuwait or open to relocation, send us a DM or apply at q8logistics.com/careers.<br><br>Hiring lead: <strong>Ahmed Al-Rashid</strong> (IT Director). Reach out to him directly for the engineering roles.<br><br><span class="hashtag">#KuwaitTech</span> <span class="hashtag">#WereHiring</span> <span class="hashtag">#Engineering</span>',
+    likes: '324 reactions',
+    comments_count: '47 comments',
+  },
+  'p-saudi-launch': {
+    img: { type: 'sa', text: '📷 banner<br>(Saudi expansion announcement, June 2019)' },
+    time: '5y',
+    body: 'Today, <strong>June 14, 2019</strong>, Q8 Logistics officially expands operations to <strong>Saudi Arabia</strong> 🇸🇦<br><br>From a Kuwait City team of 30 in March 2018 to a regional platform a year later. Riyadh office opening this month, partnerships announced shortly.<br><br>Thank you to every team member who made this happen — particularly our IT and infrastructure team for the data localization migration that kept us on schedule.<br><br>The next chapter starts now.',
+    likes: '1,892 reactions',
+    comments_count: '156 comments',
+  },
+  'p-anniversary': {
+    img: null,
+    time: '8mo',
+    body: '10 years of Q8 Logistics 🎉<br><br>Founded by <strong>Yousef Al-Mutawa</strong> in October 2014 with one truck and a meeting room in Hawalli. Today we\'re 400+ people across Kuwait, KSA, and UAE.<br><br>We just shipped our <strong>50 millionth package</strong>. The road continues.<br><br>Thank you to the team — past and present — that built this.',
+    likes: '2,134 reactions',
+    comments_count: '247 comments',
+  },
+};
+
+const IMG_GRADIENTS = {
+  sa: 'linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%)',
+};
+
+function openPost(id) {
+  const post = POSTS[id];
+  if (!post) return;
+  const card = document.getElementById('modalCard');
+  const imgHtml = post.img ? `<div class="modal-post-img" style="background: ${IMG_GRADIENTS[post.img.type] || '#888'}">${post.img.text}</div>` : '';
+  card.innerHTML = `
+    <div class="modal-header">
+      <div class="post-author-img">Q8</div>
+      <div style="flex:1">
+        <div class="post-author-name">Q8 Logistics</div>
+        <div class="post-author-headline">12,847 followers</div>
+        <div class="post-time">${post.time} • 🌍</div>
+      </div>
+      <button class="modal-close" onclick="closePost()" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-post-text">${post.body}</div>
+      ${imgHtml}
+      <div style="display:flex;align-items:center;justify-content:space-between;color:var(--li-text-low);font-size:13px;padding:8px 0;border-top:1px solid var(--li-divider);border-bottom:1px solid var(--li-divider)">
+        <div class="reactions">
+          <span class="reaction-emoji like">👍</span>
+          <span class="reaction-emoji clap">👏</span>
+          <span style="margin-left:6px">${post.likes}</span>
+        </div>
+        <div>${post.comments_count}</div>
+      </div>
+    </div>
+  `;
+  document.getElementById('postModal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePost() {
+  document.getElementById('postModal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closePost();
+});
+</script>
+
+</body>
+</html>
