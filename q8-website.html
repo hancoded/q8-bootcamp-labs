@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q8 Logistics — Moving Kuwait. Powering MENA.</title>
+<meta name="description" content="Q8 Logistics. Logistics craft from Kuwait City to the GCC. 50,000+ packages a day across Kuwait, Saudi Arabia, and the UAE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:        #0d2949;
+    --navy-deep:   #07182d;
+    --navy-soft:   #1a3a5c;
+    --gold:        #d4a24a;
+    --gold-bright: #f0bc62;
+    --gold-deep:   #a07720;
+    --cream:       #faf6ee;
+    --cream-deep:  #f0e8d9;
+    --ink:         #0a0e14;
+    --ink-soft:    #4a5263;
+    --line:        rgba(13,41,73,0.14);
+    --line-soft:   rgba(13,41,73,0.07);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  html, body { -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: 'Manrope', system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--gold); color: var(--navy-deep); }
+
+  .display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+  }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+  }
+
+  /* ============= NAV ============= */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(250,246,238,0.85);
+    backdrop-filter: saturate(120%) blur(8px);
+    -webkit-backdrop-filter: saturate(120%) blur(8px);
+    border-bottom: 1px solid var(--line-soft);
+    z-index: 100;
+    transition: background 0.25s, border-color 0.25s;
+  }
+  .nav-inner {
+    max-width: 1280px; margin: 0 auto;
+    padding: 14px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-brand .mark {
+    width: 36px; height: 36px;
+    background: var(--navy);
+    color: var(--gold);
+    display: grid; place-items: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    border-radius: 4px;
+  }
+  .nav-brand .name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--navy);
+    letter-spacing: -0.015em;
+  }
+  .nav-links { display: flex; align-items: center; gap: 32px; }
+  .nav-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.15s;
+    letter-spacing: 0.01em;
+  }
+  .nav-links a:hover { color: var(--navy); }
+  .nav-portal {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 10px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: background 0.15s, transform 0.05s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-portal:hover { background: var(--navy-deep); }
+  .nav-portal::after {
+    content: '→';
+    transition: transform 0.15s;
+  }
+  .nav-portal:hover::after { transform: translateX(2px); }
+
+  @media (max-width: 768px) {
+    .nav-links a:not(.nav-portal) { display: none; }
+    .nav-inner { padding: 12px 20px; }
+  }
+
+  /* ============= HERO ============= */
+  .hero {
+    position: relative;
+    padding: 160px 32px 100px;
+    background: var(--cream);
+    overflow: hidden;
+  }
+  .hero-decoration {
+    position: absolute;
+    top: 0; right: 0;
+    width: 560px; height: 100%;
+    pointer-events: none;
+    opacity: 0.55;
+  }
+  .hero-inner {
+    max-width: 1280px; margin: 0 auto;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow { margin-bottom: 28px; }
+  .hero h1 {
+    font-size: clamp(48px, 9vw, 132px);
+    margin-bottom: 28px;
+    color: var(--navy);
+    max-width: 14ch;
+  }
+  .hero h1 .accent { color: var(--gold-deep); font-style: italic; font-weight: 400; }
+  .hero-lede {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 36, "SOFT" 50;
+    font-weight: 300;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.45;
+    color: var(--ink-soft);
+    max-width: 520px;
+    margin-bottom: 48px;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    background: var(--navy);
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+  .hero-cta:hover { background: var(--navy-deep); }
+  .hero-cta-arrow {
+    font-family: 'Fraunces', serif;
+    transition: transform 0.2s;
+  }
+  .hero-cta:hover .hero-cta-arrow { transform: translateX(4px); }
+
+  /* ============= STATS BAR ============= */
+  .stats {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 80px 32px;
+    border-top: 1px solid var(--gold-deep);
+  }
+  .stats-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+  }
+  .stat-item .number {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 144, "WONK" 1;
+    font-weight: 400;
+    font-size: clamp(48px, 5vw, 72px);
+    color: var(--gold-bright);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+  .stat-item .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(250,246,238,0.7);
+  }
+  .stat-item .number .small {
+    font-size: 0.5em;
+    color: rgba(240,188,98,0.7);
+    margin-left: 4px;
+    vertical-align: super;
+    font-weight: 400;
+  }
+  @media (max-width: 768px) {
+    .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; }
+    .stats { padding: 60px 24px; }
+  }
+
+  /* ============= SECTION SHARED ============= */
+  section { padding: 120px 32px; }
+  .section-inner { max-width: 1280px; margin: 0 auto; }
+  .section-header {
+    display: grid; grid-template-columns: 200px 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+    align-items: start;
+  }
+  .section-header .eyebrow { padding-top: 12px; }
+  .section-title {
+    font-size: clamp(36px, 5vw, 64px);
+    color: var(--navy);
+    max-width: 18ch;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--gold-deep);
+    font-weight: 400;
+  }
+  @media (max-width: 768px) {
+    .section-header { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
+    section { padding: 80px 24px; }
+  }
+
+  /* ============= ABOUT ============= */
+  #about {
+    background: var(--cream);
+    border-top: 1px solid var(--line-soft);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .about-text p {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 36, "SOFT" 50;
+    font-weight: 300;
+    font-size: clamp(17px, 1.4vw, 20px);
+    line-height: 1.6;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .about-text p strong {
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .about-pull {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 48px 40px;
+    border-radius: 4px;
+    position: sticky; top: 100px;
+    border-left: 4px solid var(--gold);
+  }
+  .about-pull-quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 24px;
+  }
+  .about-pull-attr {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-bright);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .about-pull-attr a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(240,188,98,0.4); padding-bottom: 1px; }
+  .about-pull-attr a:hover { border-color: var(--gold-bright); }
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-pull { position: static; padding: 32px 28px; }
+  }
+
+  /* ============= SERVICES ============= */
+  #services {
+    background: var(--navy-deep);
+    color: var(--cream);
+    border-top: 1px solid var(--gold-deep);
+  }
+  #services .section-title { color: var(--cream); }
+  #services .section-title em { color: var(--gold-bright); }
+  #services .eyebrow { color: var(--gold-bright); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(212,162,74,0.18);
+    border: 1px solid rgba(212,162,74,0.18);
+  }
+  .service-card {
+    background: var(--navy-deep);
+    padding: 40px;
+    transition: background 0.2s;
+    cursor: default;
+    position: relative;
+  }
+  .service-card:hover { background: var(--navy); }
+  .service-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-bright);
+    letter-spacing: 0.15em;
+    margin-bottom: 24px;
+  }
+  .service-card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+  }
+  .service-card p {
+    font-size: 14px;
+    color: rgba(250,246,238,0.65);
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+  .service-price {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--gold-bright);
+    font-weight: 500;
+  }
+  @media (max-width: 900px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ============= LOCATIONS ============= */
+  #locations { background: var(--cream); border-top: 1px solid var(--line-soft); }
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .location-card {
+    background: var(--cream-deep);
+    padding: 40px 36px;
+    border-radius: 4px;
+    border-top: 3px solid var(--gold);
+    position: relative;
+  }
+  .location-card.hq::after {
+    content: 'HQ';
+    position: absolute;
+    top: 32px; right: 32px;
+    background: var(--navy);
+    color: var(--gold-bright);
+    padding: 4px 10px;
+    border-radius: 2px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+  }
+  .location-card .country {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 16px;
+  }
+  .location-card .city {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.05;
+    color: var(--navy);
+    margin-bottom: 16px;
+    letter-spacing: -0.025em;
+  }
+  .location-card .addr {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+  .location-card .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    letter-spacing: 0.05em;
+  }
+  @media (max-width: 900px) {
+    .locations-grid { grid-template-columns: 1fr; gap: 20px; }
+  }
+
+  /* ============= CAREERS / CTA ============= */
+  #careers {
+    background: var(--gold);
+    color: var(--navy-deep);
+    border-top: 1px solid var(--gold-deep);
+    border-bottom: 1px solid var(--gold-deep);
+    text-align: center;
+    padding: 120px 32px;
+  }
+  #careers h2 {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 144;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    max-width: 22ch;
+    margin-left: auto; margin-right: auto;
+    letter-spacing: -0.025em;
+  }
+  #careers .lede {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 36;
+    font-weight: 300;
+    font-size: clamp(16px, 1.6vw, 19px);
+    color: rgba(7,24,45,0.75);
+    max-width: 56ch;
+    margin: 0 auto 40px;
+  }
+  #careers .careers-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--navy);
+    color: var(--cream);
+    padding: 18px 32px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+  #careers .careers-cta:hover { background: var(--navy-deep); }
+
+  /* ============= FOOTER ============= */
+  footer {
+    background: var(--navy-deep);
+    color: rgba(250,246,238,0.6);
+    padding: 80px 32px 32px;
+    font-size: 13px;
+  }
+  .footer-grid {
+    max-width: 1280px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 64px;
+    border-bottom: 1px solid rgba(250,246,238,0.1);
+  }
+  .footer-brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 28px;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+  .footer-tag {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 16px;
+    color: rgba(250,246,238,0.5);
+    max-width: 32ch;
+    line-height: 1.5;
+  }
+  .footer-col h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--gold-bright);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a { color: rgba(250,246,238,0.7); text-decoration: none; transition: color 0.15s; }
+  .footer-col a:hover { color: var(--cream); }
+  .footer-base {
+    max-width: 1280px; margin: 0 auto;
+    padding-top: 32px;
+    display: flex; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: rgba(250,246,238,0.4);
+  }
+  @media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    footer { padding: 56px 24px 24px; }
+  }
+
+  /* Click-to-copy email behavior (carries over from other pages) */
+  a.email-copy { cursor: pointer; }
+  .copy-toast {
+    position: fixed; bottom: 24px; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #057642; color: #fff;
+    padding: 10px 18px; border-radius: 24px;
+    font-size: 14px; font-weight: 600;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.18s, transform 0.18s;
+    z-index: 9999;
+  }
+  .copy-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* Reveal-on-scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal.delay-1 { transition-delay: 0.1s; }
+  .reveal.delay-2 { transition-delay: 0.2s; }
+  .reveal.delay-3 { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- =================== NAV =================== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">
+      <div class="mark">Q8</div>
+      <div class="name">Q8 Logistics</div>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#locations">Locations</a>
+      <a href="#careers">Careers</a>
+      <a href="portal.html" class="nav-portal">Staff Portal</a>
+    </div>
+  </div>
+</nav>
+
+<!-- =================== HERO =================== -->
+<section class="hero" id="top" style="padding-top:160px">
+  <!-- Decorative route lines (SVG) -->
+  <svg class="hero-decoration" viewBox="0 0 560 800" fill="none" preserveAspectRatio="xMaxYMid meet" aria-hidden="true">
+    <defs>
+      <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1" fill="#0d2949" opacity="0.15"/>
+      </pattern>
+    </defs>
+    <rect width="560" height="800" fill="url(#dots)"/>
+    <!-- Route line: Kuwait → Riyadh → Dubai (suggested) -->
+    <path d="M460 160 Q 380 290 420 420 T 360 700" stroke="#d4a24a" stroke-width="1.5" fill="none" stroke-dasharray="4 6" opacity="0.7"/>
+    <circle cx="460" cy="160" r="6" fill="#d4a24a"/>
+    <circle cx="460" cy="160" r="14" fill="none" stroke="#d4a24a" stroke-width="1" opacity="0.4"/>
+    <circle cx="420" cy="420" r="5" fill="#d4a24a"/>
+    <circle cx="360" cy="700" r="5" fill="#d4a24a"/>
+    <text x="475" y="155" font-family="'JetBrains Mono'" font-size="10" fill="#0d2949" letter-spacing="2">KW</text>
+    <text x="435" y="425" font-family="'JetBrains Mono'" font-size="10" fill="#0d2949" letter-spacing="2">SA</text>
+    <text x="375" y="705" font-family="'JetBrains Mono'" font-size="10" fill="#0d2949" letter-spacing="2">AE</text>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="eyebrow hero-eyebrow reveal in">Q8 Logistics · est. 2014 · Hawalli, Kuwait</div>
+    <h1 class="display reveal in delay-1">Moving Kuwait.<br><span class="accent">Powering MENA.</span></h1>
+    <p class="hero-lede reveal in delay-2">A logistics company built for the Gulf, by the Gulf. Fifty thousand packages a day. Three countries. One operating philosophy: shipping is a more honest measure than vision decks.</p>
+    <a href="#services" class="hero-cta reveal in delay-3">
+      Explore our services
+      <span class="hero-cta-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- =================== STATS =================== -->
+<section class="stats" style="padding:80px 32px">
+  <div class="stats-inner">
+    <div class="stat-item reveal">
+      <div class="number">50K<span class="small">+</span></div>
+      <div class="label">Packages / day</div>
+    </div>
+    <div class="stat-item reveal delay-1">
+      <div class="number">400<span class="small">+</span></div>
+      <div class="label">People on the team</div>
+    </div>
+    <div class="stat-item reveal delay-2">
+      <div class="number">3</div>
+      <div class="label">Countries served</div>
+    </div>
+    <div class="stat-item reveal delay-3">
+      <div class="number">200<span class="small">+</span></div>
+      <div class="label">Vehicles in fleet</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ABOUT =================== -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="eyebrow">01 — About</div>
+      <h2 class="display section-title">A craft, <em>not</em> just a service.</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Q8 Logistics started in <strong>October 2014</strong> in a meeting room in Hawalli with one truck and one part-time driver. The thesis was simple: the GCC deserved a logistics company built locally, run with craft, and accountable to its customers.</p>
+        <p>Ten years later we move <strong>50,000+ packages a day</strong> across <strong>Kuwait, Saudi Arabia, and the United Arab Emirates</strong>. Four hundred people on the team. Two hundred vehicles. Three countries. One philosophy.</p>
+        <p>We believe logistics is a craft. We believe MENA founders should build for MENA first. We believe shipping is a more honest measure than vision decks.</p>
+        <p>Our customers are e-commerce platforms, manufacturers, hospitals, and the hundreds of small businesses that built the Gulf's modern economy. Our work is making sure their shipments arrive — on time, intact, and tracked end-to-end.</p>
+      </div>
+      <aside class="about-pull reveal delay-1">
+        <div class="about-pull-quote">"We're a logistics company. The job is to move things from A to B without drama. Every other claim should have to earn that one first."</div>
+        <div class="about-pull-attr"><a href="yousef-linkedin.html">Yousef Al-Mutawa</a> · Founder & CEO</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SERVICES =================== -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="eyebrow">02 — Services</div>
+      <h2 class="display section-title">Six ways we move things <em>that matter</em>.</h2>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01 / Domestic</div>
+        <h3>Express Same-Day Delivery</h3>
+        <p>Same-day shipment within Kuwait City. Up to 5kg, signature on delivery. Real-time tracking from pickup to door.</p>
+        <div class="service-price">From 25.00 KWD</div>
+      </div>
+      <div class="service-card reveal delay-1">
+        <div class="service-num">02 / Domestic</div>
+        <h3>Standard 3-Day Delivery</h3>
+        <p>Reliable 3-business-day delivery within Kuwait. Best for routine commerce shipments and B2B parcels.</p>
+        <div class="service-price">From 8.00 KWD</div>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-num">03 / International</div>
+        <h3>GCC Cross-Border</h3>
+        <p>Door-to-door delivery from Kuwait to Saudi Arabia and the UAE. Full customs handling, 2–5 day transit, end-to-end visibility.</p>
+        <div class="service-price">From 45.00 KWD</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04 / Commercial</div>
+        <h3>Bulk Cargo</h3>
+        <p>Pallet shipping for businesses with high-volume needs. Includes loading, securing, and last-mile distribution.</p>
+        <div class="service-price">From 120.00 KWD / pallet</div>
+      </div>
+      <div class="service-card reveal delay-1">
+        <div class="service-num">05 / Specialized</div>
+        <h3>Cold Chain</h3>
+        <p>Temperature-controlled shipping for pharmaceuticals, perishables, and medical samples. Continuous monitoring.</p>
+        <div class="service-price">From 180.00 KWD</div>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-num">06 / Specialized</div>
+        <h3>White-Glove Furniture Move</h3>
+        <p>Furniture pickup, transport, and assembly. Two-person team, careful handling, full insurance coverage.</p>
+        <div class="service-price">From 95.00 KWD</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== LOCATIONS =================== -->
+<section id="locations">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="eyebrow">03 — Locations</div>
+      <h2 class="display section-title">Three offices. <em>One</em> network.</h2>
+    </div>
+
+    <div class="locations-grid">
+      <div class="location-card hq reveal">
+        <div class="country">🇰🇼 Kuwait</div>
+        <div class="city display">Kuwait City</div>
+        <div class="addr">Block 4, Tunis Street<br>Hawalli, State of Kuwait</div>
+        <div class="meta">EST. OCT 2014 · MAIN HUB</div>
+      </div>
+      <div class="location-card reveal delay-1">
+        <div class="country">🇸🇦 Saudi Arabia</div>
+        <div class="city display">Riyadh</div>
+        <div class="addr">Olaya District<br>Riyadh, Kingdom of Saudi Arabia</div>
+        <div class="meta">EST. JUN 2019 · GCC GATEWAY</div>
+      </div>
+      <div class="location-card reveal delay-2">
+        <div class="country">🇦🇪 United Arab Emirates</div>
+        <div class="city display">Dubai</div>
+        <div class="addr">Jebel Ali Free Zone<br>Dubai, U.A.E.</div>
+        <div class="meta">EST. NOV 2021 · LAST-MILE OPS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CAREERS =================== -->
+<section id="careers">
+  <h2 class="display">We're hiring people who <em>want to build things that ship.</em></h2>
+  <p class="lede">Engineering, operations, customer success, marketing, and more. If you've ever wanted to work on infrastructure that real businesses depend on every day, we should talk.</p>
+  <a href="mailto:careers@q8logistics.com" class="careers-cta email-copy" data-email="careers@q8logistics.com" onclick="copyEmail(this); return false;">
+    careers@q8logistics.com
+    <span style="font-family:'Fraunces',serif">→</span>
+  </a>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Q8 Logistics</div>
+      <div class="footer-tag">Logistics craft from Kuwait City to the GCC. Moving 50,000 packages a day, since 2014.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#locations">Locations</a></li>
+        <li><a href="#careers">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="javascript:void(0)" class="email-copy" data-email="hello@q8logistics.com" onclick="copyEmail(this); return false;">hello@q8logistics.com</a></li>
+        <li><a href="javascript:void(0)" class="email-copy" data-email="careers@q8logistics.com" onclick="copyEmail(this); return false;">careers@q8logistics.com</a></li>
+        <li><a href="javascript:void(0)" class="email-copy" data-email="it@q8logistics.com" onclick="copyEmail(this); return false;">it@q8logistics.com</a></li>
+        <li>+965 2222 8500</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="q8-logistics.html">LinkedIn</a></li>
+        <li><a href="portal.html">Staff Portal</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-base">
+    <div>© 2024 Q8 LOGISTICS · ALL RIGHTS RESERVED</div>
+    <div>HAWALLI, KUWAIT</div>
+  </div>
+</footer>
+
+<script>
+  // Click-to-copy email behavior (matches behavior on profile pages)
+  function copyEmail(el) {
+    const email = el.dataset.email || el.textContent.trim();
+    navigator.clipboard.writeText(email).then(() => {
+      let t = document.getElementById('copy-toast');
+      if (!t) {
+        t = document.createElement('div');
+        t.id = 'copy-toast';
+        t.className = 'copy-toast';
+        document.body.appendChild(t);
+      }
+      t.textContent = '✓ Email copied — ' + email;
+      t.classList.add('show');
+      clearTimeout(t._timeout);
+      t._timeout = setTimeout(() => t.classList.remove('show'), 1800);
+    });
+  }
+
+  // Reveal-on-scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Subtle nav opacity shift on scroll
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      nav.style.background = 'rgba(250,246,238,0.97)';
+      nav.style.borderColor = 'rgba(13,41,73,0.1)';
+    } else {
+      nav.style.background = 'rgba(250,246,238,0.85)';
+      nav.style.borderColor = 'rgba(13,41,73,0.07)';
+    }
+  });
+</script>
+
+</body>
+</html>
