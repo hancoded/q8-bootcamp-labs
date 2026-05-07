@@ -924,7 +924,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
         <h2>Featured</h2>
         <div class="featured-grid">
           <div class="featured-card" onclick="openPost('p-layla-birthday')">
-            <div class="featured-img family">📷 family photo<br>(Layla's 7th birthday)</div>
+            <div class="featured-img" style="background-image: url('images/sarah-feat-birthday.webp'); background-size: cover; background-position: center;"></div>
             <div class="featured-meta">
               <div class="post-type">POST</div>
               <div class="post-text">Layla turned 7 today 💕 She asked me what I want to be when she grows up. Best birthday gift ever. #ParentingWins</div>
@@ -932,7 +932,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
             </div>
           </div>
           <div class="featured-card" onclick="openPost('p-q8-anniversary')">
-            <div class="featured-img office">📷 office photo<br>(Q8 7-year anniversary)</div>
+            <div class="featured-img" style="background-image: url('images/sarah-feat-anniversary.webp'); background-size: cover; background-position: center;"></div>
             <div class="featured-meta">
               <div class="post-type">POST</div>
               <div class="post-text">7 years at Q8 Logistics 🚀 From a marketing team of 3 to a regional brand. Joined March 2018, never looked back. Grateful to Yousef Al-Mutawa for the chance.</div>
@@ -940,7 +940,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
             </div>
           </div>
           <div class="featured-card" onclick="openPost('p-maldives')">
-            <div class="featured-img beach">📷 beach photo<br>(Maldives 2024)</div>
+            <div class="featured-img" style="background-image: url('images/sarah-feat-maldives.webp'); background-size: cover; background-position: center;"></div>
             <div class="featured-meta">
               <div class="post-type">POST</div>
               <div class="post-text">Maldives, again 🏝️ Layla wants to be a marine biologist now. Khaled wants to retire here. I want Wi-Fi that doesn't drop every 4 minutes. We all want different things 😅 #FamilyVacation</div>
@@ -948,7 +948,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
             </div>
           </div>
           <div class="featured-card" onclick="openPost('p-graduation')">
-            <div class="featured-img grad">📷 graduation photo<br>(KU 2012)</div>
+            <div class="featured-img" style="background-image: url('images/sarah-feat-graduation.webp'); background-size: cover; background-position: center;"></div>
             <div class="featured-meta">
               <div class="post-type">POST</div>
               <div class="post-text">13 years ago I graduated Kuwait University with a Marketing degree and absolutely no clue what I was doing. Today my team is launching our first national TV campaign. Class of 2012, where you at?</div>
@@ -1225,7 +1225,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
         <!-- Received recommendations -->
         <div id="rec-received">
         <div class="rec-card">
-          <div class="rec-card-img">AR</div>
+          <div class="rec-card-img" style="background-image: url('images/ahmed-profile.webp'); background-size: cover; background-position: center;"></div>
           <div class="rec-card-content">
             <div class="rec-card-name"><a class="profile-link" href="ahmed-linkedin.html">Ahmed Al-Rashid</a></div>
             <div class="rec-card-rel">IT Director at Q8 Logistics &nbsp;•&nbsp; July 12, 2023, Ahmed managed Sarah indirectly</div>
@@ -1234,7 +1234,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
         </div>
 
         <div class="rec-card" style="margin-top:24px">
-          <div class="rec-card-img" style="background: linear-gradient(135deg,#ea580c,#f97316)">YA</div>
+          <div class="rec-card-img" style="background-image: url(\'images/yousef-profile.webp\'); background-size: cover; background-position: center;"></div>
           <div class="rec-card-content">
             <div class="rec-card-name"><a class="profile-link" href="yousef-linkedin.html">Yousef Al-Mutawa</a></div>
             <div class="rec-card-rel">Founder & CEO at Q8 Logistics &nbsp;•&nbsp; March 3, 2023, Yousef managed Sarah directly</div>
@@ -1316,7 +1316,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
 
       <div class="sb-people">
         <div class="sb-person has-link" onclick="window.location.href='ahmed-linkedin.html'">
-          <div class="sb-person-img" style="background: linear-gradient(135deg,#1e40af,#3b82f6)">AR</div>
+          <div class="sb-person-img" style="background-image: url(\'images/ahmed-profile.webp\'); background-size: cover; background-position: center;"></div>
           <div class="sb-person-info">
             <div class="sb-person-name">Ahmed Al-Rashid</div>
             <div class="sb-person-headline">IT Director at Q8 Logistics</div>
@@ -1326,7 +1326,7 @@ Passionate about: building marketing teams that actually ship work, baking sourd
         </div>
 
         <div class="sb-person">
-          <div class="sb-person-img" style="background: linear-gradient(135deg,#ea580c,#f97316)">YA</div>
+          <div class="sb-person-img" style="background-image: url(\'images/yousef-profile.webp\'); background-size: cover; background-position: center;"></div>
           <div class="sb-person-info">
             <div class="sb-person-name">Yousef Al-Mutawa</div>
             <div class="sb-person-headline">Founder & CEO at Q8 Logistics</div>
@@ -1437,8 +1437,8 @@ const POSTS = {
     comments_count: '31 comments',
     comments: [
       { initials: 'MS', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Mariam Al-Sabah', headline: 'Senior Marketing • Zain Kuwait', time: '1y', text: 'Aunt Mariam wants a hug! Seven?? When did this happen 💕 last time I saw her she was 4!' },
-      { initials: 'YA', color: 'linear-gradient(135deg,#ea580c,#f97316)', name: 'Yousef Al-Mutawa', headline: 'Founder & CEO at Q8 Logistics', time: '1y', text: 'Tell her uncle Yousef wishes her happy birthday and to please not grow up so fast. Rate of change is concerning.' },
-      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '1y', text: 'Layla is my favorite Q8 employee even though she has never set foot in the office.' },
+      { initials: 'YA', img: 'images/yousef-profile.webp', color: 'linear-gradient(135deg,#ea580c,#f97316)', name: 'Yousef Al-Mutawa', headline: 'Founder & CEO at Q8 Logistics', time: '1y', text: 'Tell her uncle Yousef wishes her happy birthday and to please not grow up so fast. Rate of change is concerning.' },
+      { initials: 'AR', img: 'images/ahmed-profile.webp', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '1y', text: 'Layla is my favorite Q8 employee even though she has never set foot in the office.' },
       { initials: 'KK', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Khaled Al-Khalid', headline: 'Senior Architect • KEO International', time: '1y', text: 'Best 7 years of our lives ❤️ proud of her every day.' },
     ],
   },
@@ -1449,8 +1449,8 @@ const POSTS = {
     likes: '892 reactions',
     comments_count: '67 comments',
     comments: [
-      { initials: 'YA', color: 'linear-gradient(135deg,#ea580c,#f97316)', name: 'Yousef Al-Mutawa', headline: 'Founder & CEO at Q8 Logistics', time: '6mo', text: 'Strong opinions about brand consistency = exactly why I hired you. Thank you for everything Sarah. Here\'s to seven more.' },
-      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '6mo', text: 'Remember the all-nighter for the Saudi soft-launch in 2019? Different lifetime. Proud of you.' },
+      { initials: 'YA', img: 'images/yousef-profile.webp', color: 'linear-gradient(135deg,#ea580c,#f97316)', name: 'Yousef Al-Mutawa', headline: 'Founder & CEO at Q8 Logistics', time: '6mo', text: 'Strong opinions about brand consistency = exactly why I hired you. Thank you for everything Sarah. Here\'s to seven more.' },
+      { initials: 'AR', img: 'images/ahmed-profile.webp', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '6mo', text: 'Remember the all-nighter for the Saudi soft-launch in 2019? Different lifetime. Proud of you.' },
       { initials: 'MS', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Mariam Al-Sabah', headline: 'Senior Marketing • Zain Kuwait', time: '6mo', text: 'I knew you were going to do big things at Zain. Look at you now ❤️' },
       { initials: 'FO', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Fatma Al-Otaibi', headline: 'Marketing Director at Boubyan Bank', time: '6mo', text: 'Inspiring as always 👏 congratulations Sarah!' },
     ],
@@ -1464,7 +1464,7 @@ const POSTS = {
     comments: [
       { initials: 'MS', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Mariam Al-Sabah', headline: 'Senior Marketing • Zain Kuwait', time: '3mo', text: 'LIVING THE DREAM 🏝️' },
       { initials: 'KK', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Khaled Al-Khalid', headline: 'Senior Architect • KEO International', time: '3mo', text: 'I will retire here, just watch me 👀' },
-      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '3mo', text: 'Send me Wi-Fi tips, going next month. Resort name?' },
+      { initials: 'AR', img: 'images/ahmed-profile.webp', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '3mo', text: 'Send me Wi-Fi tips, going next month. Resort name?' },
     ],
   },
   'p-graduation': {
@@ -1475,7 +1475,7 @@ const POSTS = {
     comments_count: '48 comments',
     comments: [
       { initials: 'MS', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Mariam Al-Sabah', headline: 'Senior Marketing • Zain Kuwait', time: '1mo', text: 'KU 2012 represent! 🎓 best 4 years of my life. Marketing Society lunches at the cafeteria 🥲' },
-      { initials: 'YA', color: 'linear-gradient(135deg,#ea580c,#f97316)', name: 'Yousef Al-Mutawa', headline: 'Founder & CEO at Q8 Logistics', time: '1mo', text: 'And I am glad you had no clue, otherwise you might have gone elsewhere instead of Q8 🙏' },
+      { initials: 'YA', img: 'images/yousef-profile.webp', color: 'linear-gradient(135deg,#ea580c,#f97316)', name: 'Yousef Al-Mutawa', headline: 'Founder & CEO at Q8 Logistics', time: '1mo', text: 'And I am glad you had no clue, otherwise you might have gone elsewhere instead of Q8 🙏' },
       { initials: 'FO', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Fatma Al-Otaibi', headline: 'Marketing Director at Boubyan Bank', time: '1mo', text: 'KU 2012 ❤️ how are we already old enough for nostalgia posts' },
     ],
   },
@@ -1487,7 +1487,7 @@ const POSTS = {
     comments_count: '34 comments',
     comments: [
       { initials: 'KK', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Khaled Al-Khalid', headline: 'Senior Architect • KEO International', time: '2w', text: 'Still laughing tbh. She has a future in stand-up comedy.' },
-      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '2w', text: 'Layla > most marketing consultants I have ever hired' },
+      { initials: 'AR', img: 'images/ahmed-profile.webp', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '2w', text: 'Layla > most marketing consultants I have ever hired' },
       { initials: 'MS', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Mariam Al-Sabah', headline: 'Senior Marketing • Zain Kuwait', time: '2w', text: 'Already analyzing market psychology at 7. We are cooked.' },
     ],
   },
@@ -1500,7 +1500,7 @@ const POSTS = {
     comments: [
       { initials: 'MS', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Mariam Al-Sabah', headline: 'Senior Marketing • Zain Kuwait', time: '3mo', text: 'Loki spotted: still the moodiest cat in Kuwait 🐱' },
       { initials: 'KK', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Khaled Al-Khalid', headline: 'Senior Architect • KEO International', time: '3mo', text: 'Still hates me. Six years strong. I respect it.' },
-      { initials: 'AR', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '3mo', text: 'Friend cat 🤝' },
+      { initials: 'AR', img: 'images/ahmed-profile.webp', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '3mo', text: 'Friend cat 🤝' },
     ],
   },
 };
@@ -1522,7 +1522,7 @@ function openPost(id) {
     : '';
   const commentsHtml = post.comments.map(c => `
     <div class="comment">
-      <div class="comment-img" style="background: ${c.color}">${c.initials}</div>
+      ${c.img ? `<div class="comment-img" style="background-image: url('${c.img}'); background-size: cover; background-position: center;"></div>` : `<div class="comment-img" style="background: ${c.color}">${c.initials}</div>`}
       <div class="comment-content">
         <div class="comment-bubble">
           <div class="comment-author-row">
