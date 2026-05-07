@@ -1,0 +1,36 @@
+services:
+  web:
+    build: ./web
+    container_name: q8-day4-web
+    ports:
+      - "80:80"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_USER: q8user
+      DB_PASS: q8password
+      DB_NAME: q8portal
+    restart: unless-stopped
+
+  db:
+    image: mysql:8
+    container_name: q8-day4-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass_change_me
+      MYSQL_DATABASE: q8portal
+      MYSQL_USER: q8user
+      MYSQL_PASSWORD: q8password
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - dbdata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-prootpass_change_me"]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+    restart: unless-stopped
+
+volumes:
+  dbdata:
