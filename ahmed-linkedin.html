@@ -730,7 +730,58 @@
   .sb-person.has-link:hover { background: #f5f5f5; border-radius: 6px; padding: 8px; margin: -8px; }
   .sb-person.has-link:hover .sb-person-name { color: var(--li-blue); }
 
-</style>
+
+  /* ============ Contact info modal ============ */
+  .contact-modal {
+    background: #fff;
+    border-radius: 8px;
+    width: 100%; max-width: 540px;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+    animation: modalIn .25s ease-out;
+    cursor: default;
+    overflow: hidden;
+  }
+  .contact-header {
+    padding: 16px 20px 12px;
+    border-bottom: 1px solid var(--li-divider);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .contact-title {
+    font-size: 20px; font-weight: 600; color: var(--li-text);
+  }
+  .contact-subtitle {
+    font-size: 14px; font-weight: 400; color: var(--li-text-low);
+    margin-top: 2px;
+  }
+  .contact-body { padding: 20px 24px 24px; }
+  .contact-section {
+    display: flex; gap: 14px;
+    padding: 12px 0;
+  }
+  .contact-section:not(:last-child) { border-bottom: 1px solid var(--li-divider); }
+  .contact-icon {
+    width: 24px; height: 24px;
+    flex-shrink: 0; color: var(--li-text-low);
+    margin-top: 2px;
+  }
+  .contact-icon svg { width: 24px; height: 24px; fill: currentColor; }
+  .contact-section-content { flex: 1; min-width: 0; }
+  .contact-section-label {
+    font-size: 14px; font-weight: 600;
+    color: var(--li-text); margin-bottom: 2px;
+  }
+  .contact-section-value {
+    font-size: 14px; color: var(--li-text-low);
+    word-break: break-word;
+  }
+  .contact-section-value a {
+    color: var(--li-blue); font-weight: 600; text-decoration: none;
+  }
+  .contact-section-value a:hover { text-decoration: underline; }
+  .contact-section-value div { margin-top: 2px; }
+  .contact-section-value div:first-child { margin-top: 0; }
+
+  </style>
 </head>
 <body>
 
@@ -776,7 +827,7 @@
         <div class="profile-location-row">
           <span>Salmiya, Kuwait</span>
           <span class="dot">•</span>
-          <a href="#">Contact info</a>
+          <a href="#" onclick="openContact(); return false;">Contact info</a>
         </div>
         <div class="profile-location-row" style="margin-top:4px">
           <a href="#">500+ connections</a>
@@ -842,7 +893,7 @@ Outside work I'm husband to <strong>Mariam</strong> (no, not the Mariam from Zai
 
 Born in <strong>Hawalli</strong>, raised in <strong>Salmiya</strong>, KU CS class of 2012, lifetime Kuwait resident.
 
-📩 <a href="mailto:ahmed.alrashid@q8logistics.com">ahmed.alrashid@q8logistics.com</a>  &nbsp;•&nbsp;  DMs open for infrastructure questions, coffee recs, or arguments about Real Madrid.</div>
+📩 See <a href="#" onclick="openContact(); return false;">Contact info</a>  &nbsp;•&nbsp;  DMs open for infrastructure questions, coffee recs, or arguments about Real Madrid.</div>
 
         <div class="top-skills">
           <div class="top-skills-label">Top skills</div>
@@ -1549,5 +1600,95 @@ function toggleSkills() {
 
 </script>
 
+
+<!-- ============ CONTACT INFO MODAL ============ -->
+<div class="modal-backdrop" id="contact-modal-bg" onclick="closeContact()">
+  <div class="contact-modal" onclick="event.stopPropagation()">
+    <div class="contact-header">
+      <div>
+        <div class="contact-title">Ahmed Al-Rashid</div>
+        <div class="contact-subtitle">Contact Info</div>
+      </div>
+      <button class="modal-close" onclick="closeContact()" aria-label="Close">×</button>
+    </div>
+    <div class="contact-body">
+
+      <div class="contact-section">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.6 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+        </div>
+        <div class="contact-section-content">
+          <div class="contact-section-label">Profile</div>
+          <div class="contact-section-value"><a href="#" onclick="return false">linkedin.com/in/ahmed-alrashid-it</a></div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <div class="contact-section-content">
+          <div class="contact-section-label">Email</div>
+          <div class="contact-section-value"><a href="mailto:ahmed.alrashid@q8logistics.com">ahmed.alrashid@q8logistics.com</a></div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </div>
+        <div class="contact-section-content">
+          <div class="contact-section-label">Phone</div>
+          <div class="contact-section-value">+965 2222 8500 ext. 200 <span style="color:var(--li-text-muted); font-size:12px">(Work)</span></div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5zm2 4h5v5H7z"/></svg>
+        </div>
+        <div class="contact-section-content">
+          <div class="contact-section-label">Connected</div>
+          <div class="contact-section-value">Joined LinkedIn in 2018</div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+        </div>
+        <div class="contact-section-content">
+          <div class="contact-section-label">Websites</div>
+          <div class="contact-section-value"><div><a href="https://q8logistics.com" target="_blank">Q8 Logistics (Company)</a></div><div><a href="portal.html">Q8 Staff Portal</a></div></div>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <div class="contact-section-content">
+          <div class="contact-section-label">Address</div>
+          <div class="contact-section-value">Block 4, Tunis Street, Hawalli, Kuwait</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function openContact() {
+  document.getElementById('contact-modal-bg').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeContact() {
+  document.getElementById('contact-modal-bg').classList.remove('show');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeContact();
+});
+</script>
 </body>
 </html>
