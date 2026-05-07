@@ -781,7 +781,25 @@
   .contact-section-value div { margin-top: 2px; }
   .contact-section-value div:first-child { margin-top: 0; }
 
-  </style>
+  
+  /* ============ Email copy toast ============ */
+  .copy-toast {
+    position: fixed; bottom: 24px; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #057642; color: #fff;
+    padding: 10px 18px; border-radius: 24px;
+    font-size: 14px; font-weight: 600;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.18s, transform 0.18s;
+    z-index: 9999;
+  }
+  .copy-toast.show {
+    opacity: 1; transform: translateX(-50%) translateY(0);
+  }
+  /* Make email "links" look the same but behave like buttons */
+  a.email-copy { cursor: pointer; user-select: text; }
+</style>
 </head>
 <body>
 
@@ -1623,6 +1641,21 @@ function toggleSkills() {
           <div class="contact-section-value"><a href="#" onclick="return false">linkedin.com/in/sarah-alkhalid-q8</a></div>
         </div>
       </div>
+      <!-- website-section-marker -->
+      <div class="contact-section">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+        </div>
+        <div class="contact-section-content">
+          <div class="contact-section-label">Websites</div>
+          <div class="contact-section-value">
+            <div><a href="q8-logistics.html">q8logistics.com</a> <span style="color:var(--li-text-muted); font-size:12px">(Company)</span></div>
+            <div><a href="portal.html">portal.q8logistics.com</a> <span style="color:var(--li-text-muted); font-size:12px">(Staff portal)</span></div>
+          </div>
+        </div>
+      </div>
+
+
 
       <div class="contact-section">
         <div class="contact-icon">
@@ -1630,7 +1663,7 @@ function toggleSkills() {
         </div>
         <div class="contact-section-content">
           <div class="contact-section-label">Email</div>
-          <div class="contact-section-value"><a href="mailto:sarah.alkhalid@q8logistics.com">sarah.alkhalid@q8logistics.com</a></div>
+          <div class="contact-section-value"><a href="javascript:void(0)"  class="email-copy" data-email="sarah.alkhalid@q8logistics.com" onclick="copyEmail(this); return false;">sarah.alkhalid@q8logistics.com</a></div>
         </div>
       </div>
 
@@ -1690,6 +1723,30 @@ function closeContact() {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeContact();
 });
+</script>
+<script>
+function copyEmail(el) {
+  const email = el.dataset.email || el.textContent.trim();
+  navigator.clipboard.writeText(email).then(() => {
+    let t = document.getElementById('copy-toast');
+    if (!t) {
+      t = document.createElement('div');
+      t.id = 'copy-toast';
+      t.className = 'copy-toast';
+      document.body.appendChild(t);
+    }
+    t.textContent = '✓ Email copied — ' + email;
+    t.classList.add('show');
+    clearTimeout(t._timeout);
+    t._timeout = setTimeout(() => t.classList.remove('show'), 1800);
+  }).catch(() => {
+    // Fallback for very old browsers
+    const ta = document.createElement('textarea');
+    ta.value = email; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    ta.remove();
+  });
+}
 </script>
 </body>
 </html>
