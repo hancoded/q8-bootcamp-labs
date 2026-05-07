@@ -437,6 +437,24 @@
     .people-grid { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; }
   }
+
+  /* ============ Email copy toast ============ */
+  .copy-toast {
+    position: fixed; bottom: 24px; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #057642; color: #fff;
+    padding: 10px 18px; border-radius: 24px;
+    font-size: 14px; font-weight: 600;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.18s, transform 0.18s;
+    z-index: 9999;
+  }
+  .copy-toast.show {
+    opacity: 1; transform: translateX(-50%) translateY(0);
+  }
+  /* Make email "links" look the same but behave like buttons */
+  a.email-copy { cursor: pointer; user-select: text; }
 </style>
 </head>
 <body>
@@ -969,9 +987,9 @@ document.addEventListener('keydown', e => {
         <div class="contact-section-content">
           <div class="contact-section-label">Email</div>
           <div class="contact-section-value">
-            <div><a href="mailto:hello@q8logistics.com">hello@q8logistics.com</a> <span style="color:var(--li-text-muted); font-size:12px">(General)</span></div>
-            <div><a href="mailto:careers@q8logistics.com">careers@q8logistics.com</a> <span style="color:var(--li-text-muted); font-size:12px">(Recruiting)</span></div>
-            <div><a href="mailto:it@q8logistics.com">it@q8logistics.com</a> <span style="color:var(--li-text-muted); font-size:12px">(IT support)</span></div>
+            <div><a href="javascript:void(0)"  class="email-copy" data-email="hello@q8logistics.com" onclick="copyEmail(this); return false;">hello@q8logistics.com</a> <span style="color:var(--li-text-muted); font-size:12px">(General)</span></div>
+            <div><a href="javascript:void(0)"  class="email-copy" data-email="careers@q8logistics.com" onclick="copyEmail(this); return false;">careers@q8logistics.com</a> <span style="color:var(--li-text-muted); font-size:12px">(Recruiting)</span></div>
+            <div><a href="javascript:void(0)"  class="email-copy" data-email="it@q8logistics.com" onclick="copyEmail(this); return false;">it@q8logistics.com</a> <span style="color:var(--li-text-muted); font-size:12px">(IT support)</span></div>
           </div>
         </div>
       </div>
@@ -1014,5 +1032,29 @@ document.addEventListener('keydown', e => {
   });
 </script>
 
+<script>
+function copyEmail(el) {
+  const email = el.dataset.email || el.textContent.trim();
+  navigator.clipboard.writeText(email).then(() => {
+    let t = document.getElementById('copy-toast');
+    if (!t) {
+      t = document.createElement('div');
+      t.id = 'copy-toast';
+      t.className = 'copy-toast';
+      document.body.appendChild(t);
+    }
+    t.textContent = '✓ Email copied — ' + email;
+    t.classList.add('show');
+    clearTimeout(t._timeout);
+    t._timeout = setTimeout(() => t.classList.remove('show'), 1800);
+  }).catch(() => {
+    // Fallback for very old browsers
+    const ta = document.createElement('textarea');
+    ta.value = email; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    ta.remove();
+  });
+}
+</script>
 </body>
 </html>
