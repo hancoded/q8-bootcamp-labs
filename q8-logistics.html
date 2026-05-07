@@ -626,6 +626,31 @@ Hiring engineers, drivers, and operations leads. We believe logistics is a craft
       <div class="panel">
         <h2>Recent Posts</h2>
 
+        <div class="post" onclick="openPost('p-portal')">
+          <div class="post-header">
+            <div class="post-author-img">Q8</div>
+            <div class="post-author-info">
+              <div class="post-author-name">Q8 Logistics</div>
+              <div class="post-author-headline">12,847 followers</div>
+              <div class="post-time">1w • 🌍</div>
+            </div>
+          </div>
+          <div class="post-body">
+            <strong>Internal announcement</strong> 📢<br><br>
+            Our new <a href="portal.html" onclick="event.stopPropagation()">staff portal</a> is now live for all Q8 employees. Track campaigns, manage shipments, collaborate with the team — all in one place.<br><br>
+            <strong>Username format:</strong> firstname.lastname (your @q8logistics.com email prefix). Existing corporate password.<br><br>
+            Issues signing in? Reach out to <strong><a class="profile-link" href="ahmed-linkedin.html" onclick="event.stopPropagation()">Ahmed Al-Rashid</a></strong> from IT.
+          </div>
+          <div class="post-engagement-bar">
+            <div class="reactions">
+              <span class="reaction-emoji like">👍</span>
+              <span class="reaction-emoji clap">👏</span>
+              <span style="margin-left:6px">87 reactions</span>
+            </div>
+            <div>12 comments</div>
+          </div>
+        </div>
+
         <div class="post" onclick="openPost('p-hiring')">
           <div class="post-header">
             <div class="post-author-img">Q8</div>
@@ -794,6 +819,13 @@ function profileNameHtml(name) {
 }
 
 const POSTS = {
+  'p-portal': {
+    img: null,
+    time: '1w',
+    body: '<strong>Internal announcement</strong> 📢<br><br>Our new <a href="portal.html">staff portal</a> is now live for all Q8 employees.<br><br>Features:<br>• Campaign management<br>• Shipment tracking<br>• Team collaboration<br>• Marketing analytics<br>• Internal docs<br><br><strong>Username format:</strong> firstname.lastname (your @q8logistics.com email prefix).<br><strong>Password:</strong> your existing corporate password.<br><br>Two-factor auth rolling out Q1 2025.<br><br>Issues signing in? Reach out to <strong><a class="profile-link" href="ahmed-linkedin.html">Ahmed Al-Rashid</a></strong> from IT.',
+    likes: '87 reactions',
+    comments_count: '12 comments',
+  },
   'p-hiring': {
     img: null,
     time: '2w',
