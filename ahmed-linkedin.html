@@ -1430,7 +1430,7 @@ function profileNameHtml(name) {
 
 const POSTS = {
   'p-layan-birthday': {
-    img: { type: 'family', text: '📷 birthday cake<br>(Layan\'s 7th — USB-C symbol on it, Ahmed beside it looking smug)' },
+    img: 'images/ahmed-feat-cake.webp',
     time: '2mo',
     body: 'Layan turned 7 yesterday and announced over birthday cake that she wants to be a "computer fixer" like dad. <strong>Mariam</strong> is concerned. I am vindicated.<br><br>(Yes, the cake had a USB-C symbol on it. I made it. No, I will not apologize. Layan picked the design herself, born 2017 and already opinionated about port standards.)<br><br><span class="hashtag">#ParentingWins</span> <span class="hashtag">#FutureSysadmin</span>',
     likes: '287 reactions',
@@ -1442,7 +1442,7 @@ const POSTS = {
     ],
   },
   'p-q8-anniversary': {
-    img: { type: 'office', text: '📷 server room selfie<br>(7 years at Q8, racks visible behind)' },
+    img: 'images/ahmed-feat-server.webp',
     time: '6mo',
     body: '7 years at <strong>Q8 Logistics</strong> today.<br><br>From racking the first server in <strong>Yousef</strong>\'s spare meeting room in <strong>March 2018</strong> to running 20+ production hosts across 3 countries today. The job hasn\'t stopped surprising me.<br><br>Some milestones I\'m oddly proud of:<br>• Migrated us off shared hosting in 2019 (the Saudi launch was the deadline)<br>• Rolled out 2FA across the org in 2021 (took 3 weeks of begging marketing)<br>• Survived 4 holiday weekends without an incident (Yousef counts these)<br><br>Onwards. <span class="hashtag">#Q8Logistics</span> <span class="hashtag">#ITDepartment</span>',
     likes: '412 reactions',
@@ -1455,7 +1455,7 @@ const POSTS = {
     ],
   },
   'p-bernabeu': {
-    img: { type: 'beach', text: '📷 stadium photo<br>(Bernabéu pitch view, Layan in Real Madrid jersey)' },
+    img: 'images/ahmed-feat-stadium.webp',
     time: '8mo',
     body: 'Bucket list ✓<br><br>Took <strong>Layan</strong> to Madrid for her 7th birthday. We went to a <strong>Real Madrid</strong> match together — her first ever. She made me explain offsides four times. I made her a fan for life on time #4.<br><br>The Bernabéu was worth every dinar. Hala Madrid 🤍<br><br>(For those wondering: yes I\'ve been a fan since I was 12, yes 2009 final still hurts, no I do not want to talk about Mbappé yet.)<br><br><span class="hashtag">#HalaMadrid</span> <span class="hashtag">#FamilyFirst</span>',
     likes: '624 reactions',
@@ -1467,7 +1467,7 @@ const POSTS = {
     ],
   },
   'p-ku-reunion': {
-    img: { type: 'grad', text: '📷 reunion photo<br>(KU CS class of 2012, group shot)' },
+    img: 'images/ahmed-feat-reunion.webp',
     time: '1mo',
     body: '<strong>KU CS 2008-2012</strong> reunion last week — first time since 2018 we got the whole batch in one room.<br><br>Most of us have moved into IT, dev, or security roles. A few brave ones went into research. One genuinely runs a cybersecurity firm now (you know who you are 👀).<br><br>Kuwait University built the foundation. Everything after has been on-the-job. Class of 2012, where you at?<br><br><span class="hashtag">#KUCSAlumni</span> <span class="hashtag">#KuwaitTech</span>',
     likes: '245 reactions',
@@ -1517,7 +1517,9 @@ function openPost(id) {
   if (!post) return;
   const card = document.getElementById('modalCard');
   const imgHtml = post.img
-    ? `<div class="modal-post-img" style="background: ${IMG_GRADIENTS[post.img.type] || '#888'}">${post.img.text}</div>`
+    ? (typeof post.img === 'string'
+        ? `<div class="modal-post-img" style="background-image: url('${post.img}'); background-size: cover; background-position: center; aspect-ratio: 16/10; min-height: 240px;"></div>`
+        : `<div class="modal-post-img" style="background: ${IMG_GRADIENTS[post.img.type] || '#888'}">${post.img.text}</div>`)
     : '';
   const commentsHtml = post.comments.map(c => `
     <div class="comment">
@@ -1540,7 +1542,7 @@ function openPost(id) {
 
   card.innerHTML = `
     <div class="modal-header">
-      <div class="modal-author-img">AR</div>
+      <div class="modal-author-img" style="background-image: url('images/ahmed-profile.webp'); background-size: cover; background-position: center;"></div>
       <div class="modal-author-info">
         <div class="modal-author-name">Ahmed Al-Rashid <span style="color:var(--li-text-low);font-weight:400;font-size:12px">(He/Him)</span></div>
         <div class="modal-author-headline">IT Director at Q8 Logistics • Cloud &amp; Security</div>
