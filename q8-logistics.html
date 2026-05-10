@@ -883,14 +883,14 @@ const POSTS = {
     comments_count: '47 comments',
   },
   'p-saudi-launch': {
-    img: { type: 'sa', text: '📷 banner<br>(Saudi expansion announcement, June 2019)' },
+    img: 'images/yousef-feat-riyadh.webp',
     time: '5y',
     body: 'Today, <strong>June 14, 2019</strong>, Q8 Logistics officially expands operations to <strong>Saudi Arabia</strong> 🇸🇦<br><br>From a Kuwait City team of 30 in March 2018 to a regional platform a year later. Riyadh office opening this month, partnerships announced shortly.<br><br>Thank you to every team member who made this happen — particularly our IT and infrastructure team for the data localization migration that kept us on schedule.<br><br>The next chapter starts now.',
     likes: '1,892 reactions',
     comments_count: '156 comments',
   },
   'p-anniversary': {
-    img: null,
+    img: 'images/q8-cover.webp',
     time: '8mo',
     body: '10 years of Q8 Logistics 🎉<br><br>Founded by <strong><a class="profile-link" href="yousef-linkedin.html">Yousef Al-Mutawa</a></strong> in October 2014 with one truck and a meeting room in Hawalli. Today we\'re 400+ people across Kuwait, KSA, and UAE.<br><br>We just shipped our <strong>50 millionth package</strong>. The road continues.<br><br>Thank you to the team — past and present — that built this.',
     likes: '2,134 reactions',
@@ -906,7 +906,11 @@ function openPost(id) {
   const post = POSTS[id];
   if (!post) return;
   const card = document.getElementById('modalCard');
-  const imgHtml = post.img ? `<div class="modal-post-img" style="background: ${IMG_GRADIENTS[post.img.type] || '#888'}">${post.img.text}</div>` : '';
+  const imgHtml = post.img
+    ? (typeof post.img === 'string'
+        ? `<div class="modal-post-img" style="background-image: url('${post.img}'); background-size: cover; background-position: center; aspect-ratio: 16/10; min-height: 240px;"></div>`
+        : `<div class="modal-post-img" style="background: ${IMG_GRADIENTS[post.img.type] || '#888'}">${post.img.text}</div>`)
+    : '';
   card.innerHTML = `
     <div class="modal-header">
       <div class="post-author-img">Q8</div>
