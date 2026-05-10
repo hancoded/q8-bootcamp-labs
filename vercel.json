@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/q8-website.html",
+      "permanent": false
+    }
+  ]
+}
