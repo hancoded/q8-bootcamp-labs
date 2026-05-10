@@ -1430,7 +1430,7 @@ function profileNameHtml(name) {
 
 const POSTS = {
   'p-layla-birthday': {
-    img: { type: 'family', text: '📷 family photo<br>(Layla\'s 7th birthday — Layla in a tiara, Sarah in the background)' },
+    img: 'images/sarah-feat-birthday.webp',
     time: '1y',
     body: 'Layla turned 7 today 💕 She asked me what I want to be when she grows up. Best birthday gift ever.<br><br>Caught between this and the time she asked me last week why we have a cat that hates everyone except her. We\'re raising a future investigative journalist. <span class="hashtag">#ParentingWins</span>',
     likes: '247 reactions',
@@ -1443,7 +1443,7 @@ const POSTS = {
     ],
   },
   'p-q8-anniversary': {
-    img: { type: 'office', text: '📷 office photo<br>(Q8 team holding 7-year cake)' },
+    img: 'images/sarah-feat-anniversary.webp',
     time: '6mo',
     body: '7 years at Q8 Logistics 🚀<br><br>Joined March 2018 as employee #31, when our "marketing team" was me, a printer that worked 60% of the time, and a Google Drive folder. Today we\'re 8 people, regional reach across KSA + UAE, and we just shipped our first national TV campaign.<br><br>Grateful to <strong><a class="profile-link" href="yousef-linkedin.html">Yousef Al-Mutawa</a></strong> for taking a chance on a Zain alumna with strong opinions about brand consistency. Here\'s to many more.<br><br><span class="hashtag">#WorkAnniversary</span> <span class="hashtag">#Q8Logistics</span>',
     likes: '892 reactions',
@@ -1456,7 +1456,7 @@ const POSTS = {
     ],
   },
   'p-maldives': {
-    img: { type: 'beach', text: '📷 beach photo<br>(turquoise water + sunset, Khaled and Layla in silhouette)' },
+    img: 'images/sarah-feat-maldives.webp',
     time: '3mo',
     body: 'Maldives, again 🏝️<br><br>Layla wants to be a marine biologist now. <strong>Khaled</strong> wants to retire here. I want Wi-Fi that doesn\'t drop every 4 minutes. We all want different things 😅<br><br>(But also: you should see the way she lit up snorkeling for the first time. That\'s the kind of memory I\'ll keep forever.)<br><br><span class="hashtag">#FamilyVacation</span> <span class="hashtag">#Maldives</span>',
     likes: '1,243 reactions',
@@ -1468,7 +1468,7 @@ const POSTS = {
     ],
   },
   'p-graduation': {
-    img: { type: 'grad', text: '📷 graduation photo<br>(KU class of 2012, Sarah in blue gown holding diploma)' },
+    img: 'images/sarah-feat-graduation.webp',
     time: '1mo',
     body: '13 years ago I graduated <strong>Kuwait University</strong> with a Marketing degree and absolutely no clue what I was doing.<br><br>Today my team at Q8 Logistics is launching our first national TV campaign — radio, billboards, the whole thing. Time is wild. <strong>Class of 2012</strong>, where you at? 🎓',
     likes: '654 reactions',
@@ -1518,7 +1518,9 @@ function openPost(id) {
   if (!post) return;
   const card = document.getElementById('modalCard');
   const imgHtml = post.img
-    ? `<div class="modal-post-img" style="background: ${IMG_GRADIENTS[post.img.type] || '#888'}">${post.img.text}</div>`
+    ? (typeof post.img === 'string'
+        ? `<div class="modal-post-img" style="background-image: url('${post.img}'); background-size: cover; background-position: center; aspect-ratio: 16/10; min-height: 240px;"></div>`
+        : `<div class="modal-post-img" style="background: ${IMG_GRADIENTS[post.img.type] || '#888'}">${post.img.text}</div>`)
     : '';
   const commentsHtml = post.comments.map(c => `
     <div class="comment">
@@ -1541,7 +1543,7 @@ function openPost(id) {
 
   card.innerHTML = `
     <div class="modal-header">
-      <div class="modal-author-img">SK</div>
+      <div class="modal-author-img" style="background-image: url('images/sarah-profile.webp'); background-size: cover; background-position: center;"></div>
       <div class="modal-author-info">
         <div class="modal-author-name">Sarah Al-Khalid <span style="color:var(--li-text-low);font-weight:400;font-size:12px">(She/Her)</span></div>
         <div class="modal-author-headline">Marketing Manager at Q8 Logistics • MBA</div>
