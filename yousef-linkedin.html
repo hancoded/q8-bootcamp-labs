@@ -1426,7 +1426,7 @@ const POSTS = {
     ],
   },
   'p-ahmed-hire': {
-    img: { type: 'office', text: '📷 office photo<br>(Q8 founding team, 2018)' },
+    img: 'images/yousef-feat-office.webp',
     time: '6mo',
     body: 'Hiring decision that changed Q8: in <strong>March 2018</strong> I asked <strong>Ahmed Al-Rashid</strong> to set up our IT system on a Tuesday.<br><br>Tuesday morning: an email server I bought on a hosting site that\'s now defunct.<br>Friday: email, file sharing, SSO, and the start of our security posture.<br><br>Best hire I ever made. Seven years later he runs a team of 4 and owns our entire infrastructure. The lesson: hire people who can ship before you can write the spec.<br><br><span class=\"hashtag\">#FoundersReflect</span> <span class=\"hashtag\">#Q8Logistics</span>',
     likes: '1,247 reactions',
@@ -1437,7 +1437,7 @@ const POSTS = {
     ],
   },
   'p-saudi-launch': {
-    img: { type: 'beach', text: '📷 ribbon-cutting photo<br>(Riyadh office opening, June 14 2019)' },
+    img: 'images/yousef-feat-riyadh.webp',
     time: '5y',
     body: '<strong>June 14, 2019</strong>: Q8 Logistics officially expands to <strong>Saudi Arabia</strong> 🇸🇦<br><br>From 30 people in Kuwait to a regional platform in 12 months. Hardest year of my life. Best year of Q8\'s.<br><br>The data localization requirements broke our infrastructure twice. The hiring market in Riyadh is brutal. The runway calculations gave me 4 hours of sleep most nights for 6 months. I would do all of it again tomorrow.<br><br>Onwards.',
     likes: '2,189 reactions',
@@ -1448,7 +1448,7 @@ const POSTS = {
     ],
   },
   'p-meed-award': {
-    img: { type: 'grad', text: '📷 award photo<br>(MEED Awards Dubai, December 2024)' },
+    img: 'images/yousef-feat-award.webp',
     time: '5mo',
     body: 'Q8 Logistics won <strong>MEED Logistics Company of the Year 2024</strong> last week.<br><br>Every team member earned this. Special shoutout to <strong>Faisal Al-Anjari</strong> and the operations team for the heroics in Q3 — you carried us through the busiest quarter in our history with zero major incidents.<br><br>Awards aren\'t the goal. The work is the goal. But it\'s nice when the industry notices.<br><br><span class=\"hashtag\">#MEEDAwards</span> <span class=\"hashtag\">#Q8Logistics</span>',
     likes: '1,876 reactions',
@@ -1496,7 +1496,9 @@ function openPost(id) {
   if (!post) return;
   const card = document.getElementById('modalCard');
   const imgHtml = post.img
-    ? `<div class="modal-post-img" style="background: ${IMG_GRADIENTS[post.img.type] || '#888'}">${post.img.text}</div>`
+    ? (typeof post.img === 'string'
+        ? `<div class="modal-post-img" style="background-image: url('${post.img}'); background-size: cover; background-position: center; aspect-ratio: 16/10; min-height: 240px;"></div>`
+        : `<div class="modal-post-img" style="background: ${IMG_GRADIENTS[post.img.type] || '#888'}">${post.img.text}</div>`)
     : '';
   const commentsHtml = post.comments.map(c => `
     <div class="comment">
@@ -1519,7 +1521,7 @@ function openPost(id) {
 
   card.innerHTML = `
     <div class="modal-header">
-      <div class="modal-author-img">YA</div>
+      <div class="modal-author-img" style="background-image: url('images/yousef-profile.webp'); background-size: cover; background-position: center;"></div>
       <div class="modal-author-info">
         <div class="modal-author-name">Yousef Al-Mutawa <span style="color:var(--li-text-low);font-weight:400;font-size:12px">(He/Him)</span></div>
         <div class="modal-author-headline">Founder &amp; CEO at Q8 Logistics</div>
