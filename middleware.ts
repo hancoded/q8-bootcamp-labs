@@ -45,7 +45,7 @@ export default function middleware(request: Request): Response | undefined {
   return new Response('Authentication required', {
     status: 401,
     headers: {
-      'WWW-Authenticate': 'Basic realm="Q8 Logistics — Bootcamp Lab"',
+      'WWW-Authenticate': 'Basic realm="Q8 Logistics Bootcamp Lab"',
       'Content-Type': 'text/plain; charset=utf-8',
     },
   });
