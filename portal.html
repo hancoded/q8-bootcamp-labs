@@ -242,6 +242,21 @@
   .login-foot a { color: var(--text-muted); text-decoration: none; }
   .login-foot a:hover { color: var(--q8-navy); }
 
+  .back-home {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .back-home a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.15s ease;
+  }
+  .back-home a:hover { color: var(--q8-navy); }
+
   /* ===== Success state ===== */
   .success-screen {
     display: none;
@@ -471,6 +486,10 @@
 
       <div class="login-foot">
         <strong>Authorized access only.</strong> All login attempts are logged. Unauthorized access is prohibited and may result in legal action.
+      </div>
+
+      <div class="back-home">
+        <a href="/q8-website">← Return to Q8 Logistics homepage</a>
       </div>
     </div>
   </div>
