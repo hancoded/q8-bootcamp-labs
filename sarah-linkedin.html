@@ -972,8 +972,36 @@ Passionate about: building marketing teams that actually ship work, baking sourd
         <!-- Posts list (default visible) -->
         <div id="activity-posts">
 
-        <!-- Post 1 -->
-        <div class="post" style="border-top:0" onclick="openPost('p-layla-marketing')">
+        <!-- Post 1 (new — cybersecurity reflection) -->
+        <div class="post" style="border-top:0" onclick="openPost('p-cybersecurity-policy')">
+          <div class="post-header">
+            <div class="post-author-img">SK</div>
+            <div class="post-author-info">
+              <div class="post-author-action"><strong>Sarah Al-Khalid</strong> • You</div>
+              <div class="post-author-action">posted this • <strong>1w</strong> • 🌍</div>
+            </div>
+          </div>
+          <div class="post-body">
+            Just sat through a 2-hour cybersecurity awareness training at Q8 and honestly... it shifted my mindset. We always treat cyber threats like some far-off "IT problem" — phishing, breaches, ransomware. But the stats they showed us are wild: 95% of incidents start with one person clicking the wrong link or using a weak password.
+            <br><br>
+            And speaking of passwords — IT just updated our policy this week 😅 Minimum 8 characters, one capital letter, one number, one special character. My brain hurts trying to remember the new one (no, I will not be sharing it with you Khaled 🙄).
+            <br><br>
+            But hey, if it keeps Q8 safe, I'll figure it out. Stay vigilant out there everyone 🔐
+            <br><br>
+            <span class="hashtag">#CyberSecurity</span> <span class="hashtag">#WorkLife</span> <span class="hashtag">#StaySafeOnline</span>
+          </div>
+          <div class="post-engagement-bar">
+            <div class="reactions">
+              <span class="reaction-emoji like">👍</span>
+              <span class="reaction-emoji clap">👏</span>
+              <span style="margin-left:6px">187 reactions</span>
+            </div>
+            <div>23 comments</div>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="post" onclick="openPost('p-layla-marketing')">
           <div class="post-header">
             <div class="post-author-img">SK</div>
             <div class="post-author-info">
@@ -1477,6 +1505,18 @@ const POSTS = {
       { initials: 'MS', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Mariam Al-Sabah', headline: 'Senior Marketing • Zain Kuwait', time: '1mo', text: 'KU 2012 represent! 🎓 best 4 years of my life. Marketing Society lunches at the cafeteria 🥲' },
       { initials: 'YA', img: 'images/yousef-profile.webp', color: 'linear-gradient(135deg,#ea580c,#f97316)', name: 'Yousef Al-Mutawa', headline: 'Founder & CEO at Q8 Logistics', time: '1mo', text: 'And I am glad you had no clue, otherwise you might have gone elsewhere instead of Q8 🙏' },
       { initials: 'FO', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Fatma Al-Otaibi', headline: 'Marketing Director at Boubyan Bank', time: '1mo', text: 'KU 2012 ❤️ how are we already old enough for nostalgia posts' },
+    ],
+  },
+  'p-cybersecurity-policy': {
+    img: null,
+    time: '1w',
+    body: 'Just sat through a 2-hour cybersecurity awareness training at Q8 and honestly... it shifted my mindset. We always treat cyber threats like some far-off "IT problem" — phishing, breaches, ransomware. But the stats they showed us are wild: 95% of incidents start with one person clicking the wrong link or using a weak password.<br><br>And speaking of passwords — IT just updated our policy this week 😅 Minimum 8 characters, one capital letter, one number, one special character. My brain hurts trying to remember the new one (no, I will not be sharing it with you <strong>Khaled</strong> 🙄).<br><br>But hey, if it keeps Q8 safe, I\'ll figure it out. Stay vigilant out there everyone 🔐<br><br><span class="hashtag">#CyberSecurity</span> <span class="hashtag">#WorkLife</span> <span class="hashtag">#StaySafeOnline</span>',
+    likes: '187 reactions',
+    comments_count: '23 comments',
+    comments: [
+      { initials: 'AR', img: 'images/ahmed-profile.webp', color: 'linear-gradient(135deg,#1e40af,#3b82f6)', name: 'Ahmed Al-Rashid', headline: 'IT Director at Q8 Logistics', time: '1w', text: 'And it has been worth every complaint we have gotten 😂 Stay vigilant — and please do not write the new one on a sticky note.' },
+      { initials: 'MS', color: 'linear-gradient(135deg,#16a34a,#22c55e)', name: 'Mariam Al-Sabah', headline: 'Senior Marketing • Zain Kuwait', time: '1w', text: 'Zain just rolled out the same exact policy. The 90-day rotation is a war crime tbh.' },
+      { initials: 'KK', color: 'linear-gradient(135deg,#7c3aed,#a855f7)', name: 'Khaled Al-Khalid', headline: 'Senior Architect • KEO International', time: '1w', text: 'I will absolutely guess your new password by Friday. You are too predictable habibti 😏' },
     ],
   },
   'p-layla-marketing': {
