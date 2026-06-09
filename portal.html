@@ -507,19 +507,19 @@
     </div>
     <div style="display:flex; align-items:center;">
       <div class="userbox">
-        <div class="avatar">SA</div>
-        <span>Sarah Al-Khalid · Marketing</span>
+        <div class="avatar" id="sv-avatar">SA</div>
+        <span id="sv-userline">Sarah Al-Khalid · Marketing</span>
       </div>
       <button class="signout" onclick="signOut()">Sign out</button>
     </div>
   </div>
 
   <div class="welcome">
-    <h1>Welcome back, Sarah 👋</h1>
+    <h1 id="sv-welcome">Welcome back, Sarah 👋</h1>
     <p>Last sign-in: yesterday at 4:32 PM · From <em>Hawalli, Kuwait</em></p>
   </div>
 
-  <div class="grad-banner">
+  <div class="grad-banner" id="sv-grad">
     🎓 <strong>Bootcamp Day 1 Complete.</strong> You used OSINT to discover Sarah's password from her LinkedIn profile and successfully accessed Q8's internal portal. Submit the flag below in the bootcamp scoreboard to earn your points.
   </div>
 
@@ -533,7 +533,7 @@
     <button onclick="copyFlag()">Copy</button>
   </div>
 
-  <div class="grid">
+  <div class="grid" id="sv-grid">
     <div class="card">
       <div class="label">Active Campaigns</div>
       <div class="value">7</div>
@@ -558,22 +558,82 @@
 
   <div class="panel">
     <h3>Recent Activity</h3>
+    <div id="sv-activity">
     <div class="activity-row"><div class="dot"></div>Q4 brand audit ready for your review<span class="when">2h ago</span></div>
     <div class="activity-row"><div class="dot"></div>Reem Al-Hajri tagged you in "MENA expansion deck"<span class="when">5h ago</span></div>
     <div class="activity-row"><div class="dot"></div>Yousef approved Q4 marketing budget<span class="when">yesterday</span></div>
     <div class="activity-row"><div class="dot"></div>3 LinkedIn DM replies pending<span class="when">yesterday</span></div>
     <div class="activity-row"><div class="dot"></div>IT advisory: rotate password by Dec 15<span class="when">2d ago</span></div>
-  </div>
+    </div>
 </div>
 
 <script>
-  // SHA-256 of "SarahLayla2018!"
-  const TARGET_HASH = 'a5f13c4b9fc12dfacf657b703a6a39f21376e1af0324c0d01995693d0dd038b5';
-  const VALID_USER = 'sarah.alkhalid';
+  // Two Q8 staff accounts. Passwords are SHA-256 hashed; the plaintext is
+  // recoverable only by OSINT'ing each person's LinkedIn profile.
+  //   sarah.alkhalid → SarahLayla2018!  (main task — daughter Layla, born 2018)
+  //   ahmed.alrashid → AhmedLayan2017!  (bonus — daughter Layan, born 2017)
+  const USERS = {
+    'sarah.alkhalid': {
+      hash: 'a5f13c4b9fc12dfacf657b703a6a39f21376e1af0324c0d01995693d0dd038b5',
+      name: 'Sarah Al-Khalid', role: 'Marketing', initials: 'SA',
+      welcome: 'Welcome back, Sarah 👋',
+      flag: 'FLAG{osint_unlocked_q8_portal}',
+      grad: '🎓 <strong>Bootcamp Day 1 Complete.</strong> You used OSINT to discover Sarah\'s password from her LinkedIn profile and accessed Q8\'s internal portal. Submit the flag below to earn your points.',
+      cards: [
+        ['Active Campaigns', '7', '+2 this month', ''],
+        ['Brand Mentions (30d)', '2,481', '+18.4%', ''],
+        ['LinkedIn Followers', '12.4K', '+412 this week', ''],
+        ['Open Tickets', '3', '2 high priority', 'neg']
+      ],
+      activity: [
+        ['Q4 brand audit ready for your review', '2h ago'],
+        ['Reem Al-Hajri tagged you in "MENA expansion deck"', '5h ago'],
+        ['Yousef approved Q4 marketing budget', 'yesterday'],
+        ['3 LinkedIn DM replies pending', 'yesterday'],
+        ['IT advisory: rotate password by Dec 15', '2d ago']
+      ]
+    },
+    'ahmed.alrashid': {
+      hash: '615a6630e5b3057e44ffd553781f15842caca31a0438cfc835b6c8b37fed2f59',
+      name: 'Ahmed Al-Rashid', role: 'IT Director', initials: 'AA',
+      welcome: 'Welcome back, Ahmed 👋',
+      flag: 'FLAG{osint_cracked_the_it_director}',
+      grad: '🎁 <strong>Bonus Complete.</strong> You OSINT\'d the <strong>IT Director</strong> — even Q8\'s security lead reused the name + child + birthyear pattern (daughter Layan, born 2017). Submit the bonus flag below.',
+      cards: [
+        ['Production Hosts', '23', '+3 this quarter', ''],
+        ['Uptime (30d)', '99.97%', 'SLA met', ''],
+        ['Open Incidents', '2', '1 high priority', 'neg'],
+        ['Patch Compliance', '94%', '+6% this month', '']
+      ],
+      activity: [
+        ['Nightly prod DB backup verified', '2h ago'],
+        ['Sarah Al-Khalid requested VPN access', '5h ago'],
+        ['Yousef approved Q4 cloud budget', 'yesterday'],
+        ['⚠ Failed SSH logins flagged on web-01', 'yesterday'],
+        ['Reminder: rotate root credentials', '2d ago']
+      ]
+    }
+  };
 
   async function sha256(text) {
     const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
     return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  function renderDashboard(u) {
+    document.getElementById('sv-avatar').textContent = u.initials;
+    document.getElementById('sv-userline').textContent = u.name + ' · ' + u.role;
+    document.getElementById('sv-welcome').textContent = u.welcome;
+    document.getElementById('sv-grad').innerHTML = u.grad;
+    document.getElementById('flag-value').textContent = u.flag;
+    document.getElementById('sv-grid').innerHTML = u.cards.map(c =>
+      '<div class="card"><div class="label">' + c[0] + '</div><div class="value">' + c[1] +
+      '</div><div class="delta ' + c[3] + '">' + c[2] + '</div></div>'
+    ).join('');
+    document.getElementById('sv-activity').innerHTML = u.activity.map(a =>
+      '<div class="activity-row"><div class="dot"></div>' + a[0] +
+      '<span class="when">' + a[1] + '</span></div>'
+    ).join('');
   }
 
   document.getElementById('login-form').addEventListener('submit', async (e) => {
@@ -591,8 +651,10 @@
     await new Promise(r => setTimeout(r, 600));
 
     const hash = await sha256(password);
+    const user = USERS[username];
 
-    if (username === VALID_USER && hash === TARGET_HASH) {
+    if (user && hash === user.hash) {
+      renderDashboard(user);
       document.body.classList.add('logged-in');
       window.scrollTo(0, 0);
     } else {
