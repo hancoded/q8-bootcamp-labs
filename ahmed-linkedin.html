@@ -176,12 +176,14 @@
   }
   .company-logo {
     width: 32px; height: 32px;
-    background: #0d2949;
+    background: #fff;
     border-radius: 4px;
+    overflow: hidden;
     display: flex; align-items: center; justify-content: center;
     color: #f59e0b; font-weight: 700; font-size: 11px;
     letter-spacing: -0.5px;
   }
+  .company-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .company-name {
     font-size: 14px; color: var(--li-text); font-weight: 600;
   }
@@ -852,7 +854,7 @@
         </div>
 
         <div class="current-company">
-          <div class="company-logo">Q8</div>
+          <div class="company-logo"><img src="images/q8-logo.jpg" alt="Q8"></div>
           <div class="company-name"><a class="profile-link" href="q8-logistics.html">Q8 Logistics</a></div>
         </div>
         <div class="education-line">

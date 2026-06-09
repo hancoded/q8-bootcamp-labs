@@ -129,11 +129,12 @@
   }
   .company-logo {
     width: 132px; height: 132px;
-    background: var(--q8-navy);
+    background: #fff;
     border: 4px solid #fff;
     border-radius: 8px;
     margin-top: -68px; position: relative; z-index: 2;
     display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
     color: var(--q8-gold);
     font-size: 56px; font-weight: 900;
     letter-spacing: -3px;
@@ -288,11 +289,13 @@
   .post-header { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
   .post-author-img {
     width: 48px; height: 48px; border-radius: 8px;
-    background: var(--q8-navy); color: var(--q8-gold);
+    background: #fff; color: var(--q8-gold);
     display: flex; align-items: center; justify-content: center;
     font-weight: 900; font-size: 18px; flex-shrink: 0;
     letter-spacing: -1px;
+    overflow: hidden;
   }
+  .post-author-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .post-author-info { flex: 1; }
   .post-author-name { font-size: 14px; font-weight: 600; color: var(--li-text); }
   .post-author-headline { font-size: 12px; color: var(--li-text-low); }
@@ -489,7 +492,7 @@
     <div class="card">
       <div class="cover" style="background-image: url('images/q8-cover.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
       <div class="company-body">
-        <div class="company-logo">Q8</div>
+        <div class="company-logo"><img src="images/q8-logo.jpg" alt="Q8 Logistics" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div class="company-name-row">
           <div class="company-name">Q8 Logistics</div>
           <div class="verified">✓ Verified</div>
@@ -677,7 +680,7 @@ Hiring engineers, drivers, and operations leads. We believe logistics is a craft
 
         <div class="post" onclick="openPost('p-portal')">
           <div class="post-header">
-            <div class="post-author-img">Q8</div>
+            <div class="post-author-img"><img src="images/q8-logo.jpg" alt="Q8"></div>
             <div class="post-author-info">
               <div class="post-author-name">Q8 Logistics</div>
               <div class="post-author-headline">12,847 followers</div>
@@ -702,7 +705,7 @@ Hiring engineers, drivers, and operations leads. We believe logistics is a craft
 
         <div class="post" onclick="openPost('p-hiring')">
           <div class="post-header">
-            <div class="post-author-img">Q8</div>
+            <div class="post-author-img"><img src="images/q8-logo.jpg" alt="Q8"></div>
             <div class="post-author-info">
               <div class="post-author-name">Q8 Logistics</div>
               <div class="post-author-headline">12,847 followers</div>
@@ -725,7 +728,7 @@ Hiring engineers, drivers, and operations leads. We believe logistics is a craft
 
         <div class="post" onclick="openPost('p-saudi-launch')">
           <div class="post-header">
-            <div class="post-author-img">Q8</div>
+            <div class="post-author-img"><img src="images/q8-logo.jpg" alt="Q8"></div>
             <div class="post-author-info">
               <div class="post-author-name">Q8 Logistics</div>
               <div class="post-author-headline">12,847 followers</div>
@@ -749,7 +752,7 @@ Hiring engineers, drivers, and operations leads. We believe logistics is a craft
 
         <div class="post" onclick="openPost('p-anniversary')">
           <div class="post-header">
-            <div class="post-author-img">Q8</div>
+            <div class="post-author-img"><img src="images/q8-logo.jpg" alt="Q8"></div>
             <div class="post-author-info">
               <div class="post-author-name">Q8 Logistics</div>
               <div class="post-author-headline">12,847 followers</div>
@@ -783,7 +786,7 @@ Hiring engineers, drivers, and operations leads. We believe logistics is a craft
       <div class="sb-title">Affiliated pages</div>
       <div class="sb-people">
         <div class="sb-person">
-          <div class="sb-person-img" style="background:#0d2949;color:#f59e0b">Q8</div>
+          <div class="sb-person-img" style="background:#fff;overflow:hidden"><img src="images/q8-logo.jpg" alt="Q8" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
           <div class="sb-person-info">
             <div class="sb-person-name">Q8 Logistics Saudi</div>
             <div class="sb-person-headline">Logistics &amp; Supply Chain • Riyadh</div>
@@ -792,7 +795,7 @@ Hiring engineers, drivers, and operations leads. We believe logistics is a craft
           </div>
         </div>
         <div class="sb-person">
-          <div class="sb-person-img" style="background:#0d2949;color:#f59e0b">Q8</div>
+          <div class="sb-person-img" style="background:#fff;overflow:hidden"><img src="images/q8-logo.jpg" alt="Q8" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
           <div class="sb-person-info">
             <div class="sb-person-name">Q8 Logistics Tech</div>
             <div class="sb-person-headline">Engineering team blog • Kuwait</div>
@@ -911,7 +914,7 @@ function openPost(id) {
     : '';
   card.innerHTML = `
     <div class="modal-header">
-      <div class="post-author-img">Q8</div>
+      <div class="post-author-img"><img src="images/q8-logo.jpg" alt="Q8"></div>
       <div style="flex:1">
         <div class="post-author-name">Q8 Logistics</div>
         <div class="post-author-headline">12,847 followers</div>

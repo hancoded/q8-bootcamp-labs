@@ -70,15 +70,10 @@
   }
   .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
   .nav-brand .mark {
-    width: 36px; height: 36px;
-    background: var(--navy);
-    color: var(--gold);
-    display: grid; place-items: center;
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: -0.01em;
-    border-radius: 4px;
+    width: 40px; height: 40px;
+    border-radius: 6px;
+    object-fit: cover;
+    display: block;
   }
   .nav-brand .name {
     font-family: 'Fraunces', serif;
@@ -487,6 +482,13 @@
     letter-spacing: -0.02em;
     margin-bottom: 14px;
   }
+  .footer-logo {
+    width: 64px; height: 64px;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  }
   .footer-tag {
     font-family: 'Fraunces', serif;
     font-style: italic;
@@ -560,7 +562,7 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="#top" class="nav-brand">
-      <div class="mark">Q8</div>
+      <img class="mark" src="images/q8-logo.jpg" alt="Q8 Logistics">
       <div class="name">Q8 Logistics</div>
     </a>
     <div class="nav-links">
@@ -744,6 +746,7 @@
 <footer>
   <div class="footer-grid">
     <div>
+      <img class="footer-logo" src="images/q8-logo.jpg" alt="Q8 Logistics">
       <div class="footer-brand">Q8 Logistics</div>
       <div class="footer-tag">Logistics craft from Kuwait City to the GCC. Moving 50,000 packages a day, since 2014.</div>
     </div>
