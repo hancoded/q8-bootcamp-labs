@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/jpeg" href="images/q8-logo.jpg">
+<link rel="apple-touch-icon" href="images/q8-logo.jpg">
 <title>Q8 Logistics Staff Portal · Sign In</title>
 <meta name="description" content="Q8 Logistics internal staff portal. Authorized personnel only.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,13 +86,12 @@
   }
   .brand-logo .mark {
     width: 48px; height: 48px;
-    background: var(--q8-gold);
     border-radius: 10px;
-    display: grid; place-items: center;
-    color: var(--q8-navy);
-    font-weight: 900; font-size: 20px;
-    letter-spacing: -0.5px;
+    overflow: hidden;
+    object-fit: cover;
+    display: block;
   }
+  .brand-logo img.mark { display: block; }
   .brand-logo .name {
     font-weight: 700; font-size: 18px; letter-spacing: -0.2px;
   }
@@ -443,7 +444,7 @@
   <!-- Left brand panel -->
   <div class="brand-panel">
     <div class="brand-logo">
-      <div class="mark">Q8</div>
+      <img class="mark" src="images/q8-logo.jpg" alt="Q8 Logistics">
       <div class="name">
         Q8 Logistics
         <small>Staff Portal</small>
@@ -499,7 +500,7 @@
 <div class="success-screen" id="success-view">
   <div class="topbar">
     <div class="brand-logo">
-      <div class="mark">Q8</div>
+      <img class="mark" src="images/q8-logo.jpg" alt="Q8 Logistics">
       <div class="name">
         Q8 Logistics
         <small>Staff Portal</small>
