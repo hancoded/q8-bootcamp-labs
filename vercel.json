@@ -1,8 +1,9 @@
 {
+  "cleanUrls": true,
   "redirects": [
     {
       "source": "/",
-      "destination": "/q8-website.html",
+      "destination": "/q8-website",
       "permanent": false
     }
   ]
