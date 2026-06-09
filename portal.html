@@ -571,7 +571,7 @@
   // Two Q8 staff accounts. Passwords are SHA-256 hashed; the plaintext is
   // recoverable only by OSINT'ing each person's LinkedIn profile.
   //   sarah.alkhalid → SarahLayla2018!  (main task — daughter Layla, born 2018)
-  //   ahmed.alrashid → AhmedLayan2017!  (bonus — daughter Layan, born 2017)
+  //   ahmed.alrashid → Madrid#2009      (bonus — Real Madrid clue, "don't bring up 2009" + "2009 final still hurts")
   const USERS = {
     'sarah.alkhalid': {
       hash: 'a5f13c4b9fc12dfacf657b703a6a39f21376e1af0324c0d01995693d0dd038b5',
@@ -594,11 +594,11 @@
       ]
     },
     'ahmed.alrashid': {
-      hash: '615a6630e5b3057e44ffd553781f15842caca31a0438cfc835b6c8b37fed2f59',
+      hash: '0c09a832a2e9f3ff1929d44d95acb0ed58c132231ced293960f7cfc0a101cba1',
       name: 'Ahmed Al-Rashid', role: 'IT Director', initials: 'AA',
       welcome: 'Welcome back, Ahmed 👋',
       flag: 'FLAG{osint_cracked_the_it_director}',
-      grad: '🎁 <strong>Bonus Complete.</strong> You OSINT\'d the <strong>IT Director</strong> — even Q8\'s security lead reused the name + child + birthyear pattern (daughter Layan, born 2017). Submit the bonus flag below.',
+      grad: '🎁 <strong>Bonus Complete.</strong> You OSINT\'d the <strong>IT Director</strong>. Ahmed lectures the Kuwait IT community about weak passwords — yet his own is his favourite football team and the year he can\'t stop bringing up (<em>Real Madrid + 2009</em>). Lesson: <strong>sports loyalty + a memorable year</strong> is one of the top real-world breach patterns. Submit the bonus flag below.',
       cards: [
         ['Production Hosts', '23', '+3 this quarter', ''],
         ['Uptime (30d)', '99.97%', 'SLA met', ''],
