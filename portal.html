@@ -569,11 +569,37 @@
 </div>
 
 <script>
-  // Two Q8 staff accounts. Passwords are SHA-256 hashed; the plaintext is
-  // recoverable only by OSINT'ing each person's LinkedIn profile.
-  //   sarah.alkhalid → SarahLayla2018!  (main task — daughter Layla, born 2018)
-  //   ahmed.alrashid → Madrid#2009      (bonus — Real Madrid clue, "don't bring up 2009" + "2009 final still hurts")
+  // Three Q8 staff accounts. Passwords are SHA-256 hashed; the plaintext is
+  // recoverable only by OSINT'ing each person's LinkedIn profile. THREE different
+  // password archetypes so students can't pattern-match across targets:
+  //   reem.alhajri   → AlHajri_90!      (DEMO — instructor walks through OSINT live;
+  //                                      family-name + 2-digit birth year + ! ;
+  //                                      clue: "turned 30 in 2020" + "born in 1990")
+  //   sarah.alkhalid → SarahLayla2018!  (CW main — first-name + child + birth year + ! ;
+  //                                      personal/family archetype)
+  //   ahmed.alrashid → Madrid#2009      (CW bonus — team + # + memorable year ;
+  //                                      identity/sports-loyalty archetype)
   const USERS = {
+    'reem.alhajri': {
+      hash: '4aa723be1947036383ea1efb64984a2cc4b060fff7fee4f5c174f8b8701f1739',
+      name: 'Reem Al-Hajri', role: 'Marketing Lead', initials: 'RH',
+      welcome: 'Welcome back, Reem 👋',
+      flag: 'FLAG{demo_crack_complete}',
+      grad: '🎬 <strong>Demo Complete.</strong> Your instructor just walked through full OSINT-to-login on Reem live. Pattern: <em>family name (Al-Hajri) + 2-digit birth year (90) + special char (!)</em>. Clue trail on her profile: "turned 30 in 2020" + "born in 1990". Now your turn — <strong>Sarah</strong> (main) and <strong>Ahmed</strong> (bonus) use <em>different</em> password archetypes. Read each profile carefully — don\'t pattern-match.',
+      cards: [
+        ['Active Campaigns', '5', '+1 this quarter', ''],
+        ['Brand Reach (MENA)', '1.8M', '+22% YoY', ''],
+        ['MENA Launch (2019)', 'Live', '3 countries', ''],
+        ['Open Briefs', '4', '2 priority', 'neg']
+      ],
+      activity: [
+        ['MENA Q1 brand audit ready for review', '1h ago'],
+        ['Sarah Al-Khalid shared "Spring campaign deck"', '3h ago'],
+        ['Yousef approved 2025 MENA budget', 'yesterday'],
+        ['Agency partner deliverables overdue', 'yesterday'],
+        ['IT advisory: rotate password by Dec 15', '2d ago']
+      ]
+    },
     'sarah.alkhalid': {
       hash: 'a5f13c4b9fc12dfacf657b703a6a39f21376e1af0324c0d01995693d0dd038b5',
       name: 'Sarah Al-Khalid', role: 'Marketing', initials: 'SA',

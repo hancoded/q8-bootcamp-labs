@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/jpeg" href="images/q8-logo.jpg">
+<link rel="apple-touch-icon" href="images/q8-logo.jpg">
+<title>(1) Reem Al-Hajri | LinkedIn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --li-blue: #0a66c2;
+    --li-blue-hover: #004182;
+    --li-text: #000000e6;
+    --li-text-low: #00000099;
+    --li-text-muted: #00000066;
+    --li-bg: #f4f2ee;
+    --li-card: #ffffff;
+    --li-border: #00000014;
+    --li-divider: #e8e8e8;
+    --li-success: #057642;
+    --li-pill: #f5f5f5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    font-family: 'Source Sans 3', -apple-system, system-ui, sans-serif;
+    background: var(--li-bg);
+    color: var(--li-text);
+    font-size: 14px; line-height: 1.4;
+  }
+  a { color: var(--li-blue); text-decoration: none; font-weight: 600; }
+  a:hover { text-decoration: underline; color: var(--li-blue-hover); }
+  button { cursor: pointer; font-family: inherit; }
+
+  /* TOPNAV */
+  .topnav {
+    position: sticky; top: 0; z-index: 100;
+    background: #fff; border-bottom: 1px solid var(--li-border);
+    height: 52px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .topnav-inner {
+    width: 100%; max-width: 1128px; padding: 0 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .li-logo {
+    width: 34px; height: 34px;
+    background: var(--li-blue); color: #fff;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 22px;
+  }
+  .search {
+    flex: 0 1 280px;
+    background: #edf3f8;
+    border-radius: 4px;
+    height: 34px;
+    display: flex; align-items: center;
+    padding: 0 8px; gap: 8px;
+  }
+  .search input { border: 0; background: transparent; outline: 0; flex: 1; height: 100%; font-size: 14px; }
+  .nav-items { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+  .nav-item {
+    padding: 6px 12px;
+    display: flex; flex-direction: column; align-items: center;
+    color: var(--li-text-low); cursor: pointer;
+    min-width: 80px; border-bottom: 2px solid transparent; margin-top: 4px;
+  }
+  .nav-icon { font-size: 22px; line-height: 1; }
+  .nav-label { font-size: 12px; margin-top: 2px; }
+
+  /* PAGE LAYOUT */
+  .page {
+    max-width: 1128px; margin: 24px auto; padding: 0 16px;
+    display: grid; grid-template-columns: 1fr 320px; gap: 24px;
+  }
+  @media (max-width: 900px) { .page { grid-template-columns: 1fr; } }
+
+  /* CARD */
+  .card {
+    background: var(--li-card);
+    border: 1px solid var(--li-border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .card-body { padding: 16px 24px 20px; }
+  .card-section-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+
+  /* PROFILE HEADER */
+  .cover {
+    height: 200px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    background-size: cover; background-position: center;
+  }
+  .profile-body { padding: 0 24px 24px; position: relative; }
+  .profile-img {
+    width: 152px; height: 152px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    background: #ccc center/cover no-repeat;
+    margin-top: -76px;
+    position: relative; z-index: 2;
+  }
+  .profile-name { font-size: 24px; font-weight: 700; margin-top: 12px; }
+  .profile-headline { font-size: 16px; color: var(--li-text); margin-top: 4px; font-weight: 500; line-height: 1.4; }
+  .profile-location-row { display: flex; align-items: center; gap: 6px; color: var(--li-text-low); margin-top: 4px; font-size: 14px; }
+  .profile-location-row a { font-weight: 600; color: var(--li-blue); }
+  .education-line { margin-top: 8px; display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--li-text); }
+  .education-line .university-logo {
+    width: 24px; height: 24px;
+    background: #14243f;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: #f59e0b; font-weight: 800; font-size: 10px;
+  }
+  .profile-connections { margin-top: 8px; color: var(--li-text-low); font-size: 14px; }
+  .profile-connections strong { color: var(--li-text); font-weight: 600; }
+  .profile-actions { margin-top: 16px; display: flex; gap: 8px; }
+  .btn {
+    border-radius: 16px; padding: 6px 16px;
+    font-weight: 600; font-size: 14px;
+    border: 1px solid; cursor: pointer;
+  }
+  .btn-primary { background: var(--li-blue); color: #fff; border-color: var(--li-blue); }
+  .btn-outline { background: transparent; color: var(--li-blue); border-color: var(--li-blue); }
+  .btn-tertiary { background: transparent; color: var(--li-text-low); border-color: var(--li-text-low); }
+
+  /* ABOUT */
+  .about-text {
+    font-size: 14px; color: var(--li-text);
+    line-height: 1.6;
+    white-space: pre-line;
+  }
+  .about-text strong { font-weight: 700; }
+
+  /* FEATURED POST */
+  .featured-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    margin-top: 12px;
+  }
+  .featured-card {
+    border: 1px solid var(--li-border);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+  .featured-card:hover { border-color: var(--li-text-low); }
+  .featured-img { aspect-ratio: 1.4; background: #e8e8e8 center/cover no-repeat; }
+  .featured-body { padding: 12px 14px; }
+  .featured-title { font-weight: 600; color: var(--li-text); font-size: 14px; line-height: 1.4; }
+  .featured-snippet { font-size: 13px; color: var(--li-text-low); margin-top: 4px; line-height: 1.4; }
+
+  /* TIMELINE */
+  .timeline-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--li-divider); }
+  .timeline-item:last-child { border-bottom: 0; }
+  .timeline-logo {
+    width: 48px; height: 48px;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .timeline-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .timeline-body { flex: 1; min-width: 0; }
+  .timeline-title { font-weight: 600; color: var(--li-text); font-size: 14px; }
+  .timeline-company { font-size: 14px; color: var(--li-text); }
+  .timeline-meta { font-size: 12px; color: var(--li-text-low); margin-top: 2px; }
+  .timeline-desc { font-size: 14px; color: var(--li-text); margin-top: 6px; line-height: 1.5; }
+
+  /* SIDEBAR */
+  .sb-section-title { font-size: 14px; font-weight: 600; color: var(--li-text); padding: 16px 16px 0; }
+  .sb-section-sub { font-size: 12px; color: var(--li-text-low); padding: 2px 16px 8px; }
+  .sb-list { padding: 0 16px 12px; }
+  .sb-person { display: flex; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--li-divider); }
+  .sb-person:last-child { border-bottom: 0; }
+  .sb-person.has-link { cursor: pointer; }
+  .sb-person.has-link:hover { background: #f5f5f5; border-radius: 6px; padding: 8px; margin: -8px; margin-bottom: 0; }
+  .sb-person.has-link:hover .sb-person-name { color: var(--li-blue); }
+  .sb-person-img {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px;
+    background: #ccc center/cover no-repeat;
+  }
+  .sb-person-info { flex: 1; min-width: 0; }
+  .sb-person-name { font-size: 13px; font-weight: 600; line-height: 1.3; }
+  .sb-person-headline { font-size: 12px; color: var(--li-text-low); margin-top: 2px; line-height: 1.3; }
+
+  /* HASHTAGS */
+  .hashtag { color: var(--li-blue); font-weight: 600; }
+
+  /* MODAL */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center; justify-content: center;
+    padding: 20px; z-index: 1000;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: #fff; border-radius: 8px;
+    max-width: 552px; width: 100%;
+    max-height: 90vh; overflow-y: auto;
+  }
+  .modal-header {
+    padding: 16px 24px;
+    display: flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid var(--li-divider);
+  }
+  .modal-close { margin-left: auto; background: transparent; border: 0; font-size: 24px; color: var(--li-text-low); cursor: pointer; }
+  .modal-body { padding: 12px 24px 20px; font-size: 14px; line-height: 1.5; }
+  .modal-author { font-weight: 600; }
+  .modal-author-meta { font-size: 12px; color: var(--li-text-low); }
+  .modal-image { width: 100%; aspect-ratio: 1.4; background: #e8e8e8 center/cover no-repeat; margin: 12px 0; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="li-logo">in</div>
+    <div class="search">
+      <span style="color:var(--li-text-low);font-size:16px;">🔎</span>
+      <input type="text" placeholder="Search" value="">
+    </div>
+    <div class="nav-items">
+      <div class="nav-item"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></div>
+      <div class="nav-item"><span class="nav-icon">👥</span><span class="nav-label">My Network</span></div>
+      <div class="nav-item"><span class="nav-icon">💼</span><span class="nav-label">Jobs</span></div>
+      <div class="nav-item"><span class="nav-icon">💬</span><span class="nav-label">Messaging</span></div>
+      <div class="nav-item"><span class="nav-icon">🔔</span><span class="nav-label">Notifications</span></div>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <main>
+    <!-- PROFILE HEADER -->
+    <div class="card">
+      <div class="cover"></div>
+      <div class="profile-body">
+        <div class="profile-img" style="background-image: url('images/reem-profile.webp');"></div>
+        <div class="profile-name">Reem Al-Hajri</div>
+        <div class="profile-headline">Marketing Lead at Q8 Logistics 🚀 · Brand strategy · Campaign craft</div>
+        <div class="profile-location-row">
+          <span>Salmiya, Kuwait</span>
+          <span>·</span>
+          <a href="q8-logistics.html">Q8 Logistics</a>
+        </div>
+        <div class="education-line">
+          <div class="university-logo">KU</div>
+          <span>Kuwait University · BA Mass Communication</span>
+        </div>
+        <div class="profile-connections">
+          <strong>312</strong> connections · <strong>2nd</strong> · <span style="color:var(--li-success);">●</span> Open to networking
+        </div>
+        <div class="profile-actions">
+          <button class="btn btn-primary">Connect</button>
+          <button class="btn btn-outline">Message</button>
+          <button class="btn btn-tertiary">More</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-section-title">About</h2>
+        <p class="about-text">Marketing Lead at Q8 Logistics. Joined the team in <strong>2018</strong> as employee #38 — the year we made the leap from "Kuwait company" to "regional player." I led the rebrand and the MENA campaign rollout the year after.
+
+Born and raised in <strong>Salmiya</strong> (still here, still loyal). KU Mass Comm <strong>'14</strong>. Turned <strong>30 in 2020</strong> and the lockdown made me realise life is short — so I started saying yes to weird hobbies (calligraphy, pottery, the cookbook club my sister dragged me into).
+
+Off-duty: yoga at 6am (don't ask why), endless lattes, and convincing my niece Maryam that aunts are cooler than moms (she's 4, jury's still out).
+
+📩 DMs open for: brand partnerships, MENA-market questions, or recommendations on the best dessert places in Salmiya.</p>
+      </div>
+    </div>
+
+    <!-- FEATURED -->
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-section-title">Featured</h2>
+        <p style="font-size:13px;color:var(--li-text-low);margin-bottom:8px;">Posts I've pinned</p>
+        <div class="featured-grid">
+          <div class="featured-card" onclick="openPost('p-birthday')">
+            <div class="featured-img" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);"></div>
+            <div class="featured-body">
+              <div class="featured-title">The big 3-0 🎂 — and a thank-you note</div>
+              <div class="featured-snippet">Hard to believe I turned 30 last week. Quietly, because lockdown — but the team sent a cake to my door…</div>
+            </div>
+          </div>
+          <div class="featured-card" onclick="openPost('p-mena')">
+            <div class="featured-img" style="background: linear-gradient(135deg, #3a6ba5, #1e4477);"></div>
+            <div class="featured-body">
+              <div class="featured-title">MENA Expansion launch — June 2019 🇸🇦🇦🇪</div>
+              <div class="featured-snippet">When Yousef pulled me aside in March 2019 and said "we're going regional, you're leading the campaign" I genuinely thought he was joking…</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-section-title">Experience</h2>
+        <div class="timeline-item" style="margin-top:8px;">
+          <div class="timeline-logo"><img src="images/q8-logo.jpg" alt="Q8"></div>
+          <div class="timeline-body">
+            <div class="timeline-title">Marketing Lead</div>
+            <div class="timeline-company">Q8 Logistics · Full-time</div>
+            <div class="timeline-meta">Jan 2022 - Present &nbsp;•&nbsp; 3 yrs 4 mos</div>
+            <div class="timeline-meta">Kuwait City</div>
+            <div class="timeline-desc">Lead the marketing team (8 people across Kuwait/KSA/UAE). Own brand, demand-gen, and partnerships strategy. Owned the 2019 MENA expansion campaign (KSA + UAE launch) end-to-end.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-logo"><img src="images/q8-logo.jpg" alt="Q8"></div>
+          <div class="timeline-body">
+            <div class="timeline-title">Marketing Manager</div>
+            <div class="timeline-company">Q8 Logistics · Full-time</div>
+            <div class="timeline-meta">Mar 2018 - Dec 2021 &nbsp;•&nbsp; 3 yrs 10 mos</div>
+            <div class="timeline-desc">Joined as employee #38. Built the marketing function from scratch — brand identity, content engine, and the campaign infrastructure that later carried the MENA launch.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-logo" style="background:#0a66c2;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;">Z</div>
+          <div class="timeline-body">
+            <div class="timeline-title">Brand Associate</div>
+            <div class="timeline-company">Zain Kuwait · Full-time</div>
+            <div class="timeline-meta">Sep 2014 - Feb 2018 &nbsp;•&nbsp; 3 yrs 6 mos</div>
+            <div class="timeline-desc">First job out of KU. Brand campaigns and event marketing for one of Kuwait's largest telecoms.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside>
+    <div class="card">
+      <div class="sb-section-title">People you may know</div>
+      <div class="sb-section-sub">From Q8 Logistics</div>
+      <div class="sb-list">
+        <div class="sb-person has-link" onclick="window.location.href='yousef-linkedin.html'">
+          <div class="sb-person-img" style="background-image: url('images/yousef-profile.webp');"></div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Yousef Al-Mutawa</div>
+            <div class="sb-person-headline">Founder &amp; CEO at Q8 Logistics</div>
+          </div>
+        </div>
+        <div class="sb-person has-link" onclick="window.location.href='sarah-linkedin.html'">
+          <div class="sb-person-img" style="background-image: url('images/sarah-profile.webp');"></div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Sarah Al-Khalid</div>
+            <div class="sb-person-headline">Marketing Manager at Q8 Logistics</div>
+          </div>
+        </div>
+        <div class="sb-person has-link" onclick="window.location.href='ahmed-linkedin.html'">
+          <div class="sb-person-img" style="background-image: url('images/ahmed-profile.webp');"></div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Ahmed Al-Rashid</div>
+            <div class="sb-person-headline">IT Director at Q8 Logistics</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="sb-section-title">Affiliated pages</div>
+      <div class="sb-list">
+        <div class="sb-person has-link" onclick="window.location.href='q8-logistics.html'">
+          <div class="sb-person-img" style="background:#fff;overflow:hidden;"><img src="images/q8-logo.jpg" alt="Q8" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="sb-person-info">
+            <div class="sb-person-name">Q8 Logistics</div>
+            <div class="sb-person-headline">Logistics &amp; Supply Chain · Kuwait City</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<!-- POST MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closePost(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="sb-person-img" style="width:48px;height:48px;background-image:url('images/reem-profile.webp');"></div>
+      <div>
+        <div class="modal-author">Reem Al-Hajri</div>
+        <div class="modal-author-meta">Marketing Lead at Q8 Logistics</div>
+      </div>
+      <button class="modal-close" onclick="closePost()">×</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+  const POSTS = {
+    'p-birthday': {
+      image: 'linear-gradient(135deg, #f59e0b, #fbbf24)',
+      body: '<strong>The big 3-0</strong> 🎂<br><br>Hard to believe I turned <strong>30</strong> last week. Quietly, because lockdown 2020 — but the team somehow coordinated a cake delivery to my front door and a card signed by everyone. I cried a little.<br><br>I was born in <strong>1990</strong>. That makes me older than the iPhone, younger than the Kuwait stock exchange, and exactly the same age as Kuwait\'s mobile phone industry (apparently — the trivia hit me at 3am).<br><br>Thirty things I\'m grateful for: my parents, my sister, Maryam (my niece — the love of my life), KU, <strong><a href="yousef-linkedin.html" style="color:#0a66c2">Yousef</a></strong> for taking a chance on me in 2018, the team at Q8 for being my second family, and the latte from Caribou on Salem Al-Mubarak that gets me through every Monday.<br><br>To the next decade — let\'s keep building. <span class="hashtag">#Grateful</span> <span class="hashtag">#30s</span>'
+    },
+    'p-mena': {
+      image: 'linear-gradient(135deg, #3a6ba5, #1e4477)',
+      body: '<strong>MENA Expansion launch — June 2019</strong> 🇸🇦🇦🇪<br><br>When <strong><a href="yousef-linkedin.html" style="color:#0a66c2">Yousef</a></strong> pulled me aside in March 2019 and said "we\'re going regional, you\'re leading the campaign" I genuinely thought he was joking. Three months later: Riyadh office opening, Dubai team hired, brand rolled out across three countries, first regional TV spot live.<br><br>The team that pulled this off:<br>• <strong><a href="sarah-linkedin.html" style="color:#0a66c2">Sarah Al-Khalid</a></strong> — content engine on overdrive<br>• <strong><a href="ahmed-linkedin.html" style="color:#0a66c2">Ahmed Al-Rashid</a></strong> — kept the systems standing while we launched in two new countries simultaneously<br>• Our agency partners in Riyadh and Dubai (you know who you are)<br><br>Everyone said we couldn\'t do it in 3 months. We did it in 11 weeks.<br><br>Lessons for any marketer about to lead a regional launch: trust the local teams, over-invest in brand consistency, and never underestimate how much coffee an expansion campaign consumes ☕<br><br><span class="hashtag">#MENA2019</span> <span class="hashtag">#BrandStrategy</span> <span class="hashtag">#Q8Logistics</span>'
+    }
+  };
+
+  function openPost(id) {
+    const post = POSTS[id];
+    if (!post) return;
+    const html = '<div class="modal-image" style="background:' + post.image + ';"></div>' + post.body;
+    document.getElementById('modal-body').innerHTML = html;
+    document.getElementById('modal-overlay').classList.add('open');
+  }
+  function closePost(e) {
+    if (e && e.target.closest('.modal') && !e.target.classList.contains('modal-close')) return;
+    document.getElementById('modal-overlay').classList.remove('open');
+  }
+</script>
+
+</body>
+</html>
