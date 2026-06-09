@@ -92,8 +92,7 @@
   /* PROFILE HEADER */
   .cover {
     height: 200px;
-    background: linear-gradient(135deg, #f59e0b, #fbbf24);
-    background-size: cover; background-position: center;
+    background: url('images/reem-cover.jpg') center/cover no-repeat;
   }
   .profile-body { padding: 0 24px 24px; position: relative; }
   .profile-img {
@@ -293,14 +292,14 @@ Off-duty: yoga at 6am (don't ask why), endless lattes, and convincing my niece M
         <p style="font-size:13px;color:var(--li-text-low);margin-bottom:8px;">Posts I've pinned</p>
         <div class="featured-grid">
           <div class="featured-card" onclick="openPost('p-birthday')">
-            <div class="featured-img" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);"></div>
+            <div class="featured-img" style="background-image: url('images/reem-feat-30th.jpg'); background-size: cover; background-position: center;"></div>
             <div class="featured-body">
               <div class="featured-title">The big 3-0 🎂 — and a thank-you note</div>
               <div class="featured-snippet">Hard to believe I turned 30 last week. Quietly, because lockdown — but the team sent a cake to my door…</div>
             </div>
           </div>
           <div class="featured-card" onclick="openPost('p-mena')">
-            <div class="featured-img" style="background: linear-gradient(135deg, #3a6ba5, #1e4477);"></div>
+            <div class="featured-img" style="background-image: url('images/reem-feat-mena.jpg'); background-size: cover; background-position: center;"></div>
             <div class="featured-body">
               <div class="featured-title">MENA Expansion launch — June 2019 🇸🇦🇦🇪</div>
               <div class="featured-snippet">When Yousef pulled me aside in March 2019 and said "we're going regional, you're leading the campaign" I genuinely thought he was joking…</div>
@@ -410,11 +409,11 @@ Off-duty: yoga at 6am (don't ask why), endless lattes, and convincing my niece M
 <script>
   const POSTS = {
     'p-birthday': {
-      image: 'linear-gradient(135deg, #f59e0b, #fbbf24)',
+      image: "url('images/reem-feat-30th.jpg') center/cover no-repeat",
       body: '<strong>The big 3-0</strong> 🎂<br><br>Hard to believe I turned <strong>30</strong> last week. Quietly, because lockdown 2020 — but the team somehow coordinated a cake delivery to my front door and a card signed by everyone. I cried a little.<br><br>I was born in <strong>1990</strong>. That makes me older than the iPhone, younger than the Kuwait stock exchange, and exactly the same age as Kuwait\'s mobile phone industry (apparently — the trivia hit me at 3am).<br><br>Thirty things I\'m grateful for: my parents, my sister, Maryam (my niece — the love of my life), KU, <strong><a href="yousef-linkedin.html" style="color:#0a66c2">Yousef</a></strong> for taking a chance on me in 2018, the team at Q8 for being my second family, and the latte from Caribou on Salem Al-Mubarak that gets me through every Monday.<br><br>To the next decade — let\'s keep building. <span class="hashtag">#Grateful</span> <span class="hashtag">#30s</span>'
     },
     'p-mena': {
-      image: 'linear-gradient(135deg, #3a6ba5, #1e4477)',
+      image: "url('images/reem-feat-mena.jpg') center/cover no-repeat",
       body: '<strong>MENA Expansion launch — June 2019</strong> 🇸🇦🇦🇪<br><br>When <strong><a href="yousef-linkedin.html" style="color:#0a66c2">Yousef</a></strong> pulled me aside in March 2019 and said "we\'re going regional, you\'re leading the campaign" I genuinely thought he was joking. Three months later: Riyadh office opening, Dubai team hired, brand rolled out across three countries, first regional TV spot live.<br><br>The team that pulled this off:<br>• <strong><a href="sarah-linkedin.html" style="color:#0a66c2">Sarah Al-Khalid</a></strong> — content engine on overdrive<br>• <strong><a href="ahmed-linkedin.html" style="color:#0a66c2">Ahmed Al-Rashid</a></strong> — kept the systems standing while we launched in two new countries simultaneously<br>• Our agency partners in Riyadh and Dubai (you know who you are)<br><br>Everyone said we couldn\'t do it in 3 months. We did it in 11 weeks.<br><br>Lessons for any marketer about to lead a regional launch: trust the local teams, over-invest in brand consistency, and never underestimate how much coffee an expansion campaign consumes ☕<br><br><span class="hashtag">#MENA2019</span> <span class="hashtag">#BrandStrategy</span> <span class="hashtag">#Q8Logistics</span>'
     }
   };
